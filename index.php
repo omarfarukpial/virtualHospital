@@ -17,6 +17,8 @@
     <!-- Font Awesome adding -->
     <script src="https://kit.fontawesome.com/c045880d2c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- swiper  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
     <title>Virtual Hospital</title>
 
@@ -35,6 +37,23 @@
         .card:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+        }
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
         }
         
     </style>
@@ -63,9 +82,44 @@
 
     </div><br>
 
+    <!-- swiper  -->
+    <div class="container">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="img/v0.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/v1.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/v2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/v3.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/v4.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/v5.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/v6.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/v04.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/v0.jpg" />
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
 
     <!-- carousel part -->
-    <div class="container">
+    <!-- <div class="container">
 
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-interval="800">
             <div class="carousel-indicators">
@@ -108,7 +162,7 @@
             </button>
         </div>
 
-    </div>
+    </div> -->
     <!-- search part  -->
     <div style="border: 1px solid gray; margin-top: 15px; border-radius: 10px; box-shadow: 5px 10px 8px #888888; margin-bottom: 20px;"
         class="container">
@@ -277,6 +331,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            autoplay: { delay: 2000 },
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            // pagination: {
+            //     el: ".swiper-pagination",
+            // },
+        });
+    </script>
 </body>
 
 </html>
