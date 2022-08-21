@@ -11,7 +11,12 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet">
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="js/bootstrap.min.js">
     <!-- Font Awesome adding -->
@@ -70,7 +75,7 @@
     <!-- intro part -->
     <div class="container d-flex">
         <article
-            style="border: 1px solid gray;margin-top: 15px; padding: 10px; border-radius: 15px; box-shadow: 4px 7px 6px #888888;">
+            style="border: 1px solid gray;margin-top: 15px; padding: 10px; border-radius: 15px; box-shadow: 4px 7px 6px #888888;font-family:DynaPuff;">
             <h5 style="color: #141514;"><span style="color: orangered;"><b>A virtual hospital</b> </span> is a
                 way to
                 provide remote hospital-level care and
