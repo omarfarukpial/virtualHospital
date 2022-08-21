@@ -108,7 +108,7 @@
                     <img src="img/v6.png" />
                 </div>
                 <div class="swiper-slide">
-                    <img src="img/v04.png" />
+                    <img src="img/v4.png" />
                 </div>
                 <div class="swiper-slide">
                     <img src="img/v0.jpg" />
