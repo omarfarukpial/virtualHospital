@@ -56,14 +56,13 @@
 
     </a>
 
-
     <section id="news" class="container my-5 pt-4">
         <h1 class="text-center header-font my-5"> Clinic <span class="p-text">Registration Form</span> </h1>
     </section>
 
 
     <div style = "display:flex">
-        <div class="dform" style="width:40%; margin-left:50px">
+        <div class="dform" style="width:40%; margin-left:50px;">
             <form action="clinicformup.php" method="post">
             <label for="clinicname">Clinic Name</label>
             <input type="text" id="clinicname" name="clinicname" placeholder="Clinic name...">
