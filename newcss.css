@@ -366,7 +366,7 @@ footer p {
     width: 300px;
     height: 450px;
     color: white;
-    background-image: linear-gradient(to right, #00ff8c, #00ddff);
+    background-image: linear-gradient(to top, #00ff8c, #00ddff);
     /* transition: ease-out;
     color: white;
     background-image: linear-gradient(to right, #ff00d4, #00ddff);
