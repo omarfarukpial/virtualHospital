@@ -94,7 +94,7 @@
                         echo "<div class='col'>
                                 <div class='card border rounded h-100 cbody'>
                                     <div class='card-body text-center px-5'>
-                                        <h1 class='p-text'>".$row["clinicname"]."</h1> <br>
+                                        <h2 class='p-text'>".$row["clinicname"]."</h2> <br>
                                         <h4 class='p-text'> Location: ".$row["location"]."</h4>
                                         <h4 class='p-text'> Beds: ".$row["nbeds"]."</h4>
 

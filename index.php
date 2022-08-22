@@ -14,7 +14,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
     <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -75,7 +77,7 @@
     <!-- intro part -->
     <div class="container d-flex">
         <article
-            style="border: 1px solid gray;margin-top: 15px; padding: 10px; border-radius: 15px; box-shadow: 4px 7px 6px #888888;font-family:DynaPuff;">
+            style="border: 1px solid gray;margin-top: 15px; padding: 10px; border-radius: 15px; box-shadow: 4px 7px 6px #888888;font-family:Neuton; text-align: justify;">
             <h5 style="color: #141514;"><span style="color: orangered;"><b>A virtual hospital</b> </span> is a
                 way to
                 provide remote hospital-level care and
@@ -269,7 +271,7 @@
         </div>
 
         <div class="link2">
-            <p style="padding: 10px;"> <b style="color: orange; font-size: large;">Virtual Hospital</b> in devoloping
+            <p style="padding: 10px;text-align: justify;"> <b style="color: orange; font-size: large;">Virtual Hospital</b> in devoloping
                 countries
                 like
                 Bangladesh are not adequate. The

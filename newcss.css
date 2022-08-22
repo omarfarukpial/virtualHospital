@@ -1,5 +1,7 @@
 body {
-    font-family: 'DynaPuff', cursive;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 button.btn-back {
@@ -335,25 +337,37 @@ footer p {
 
 
 .clinicliststyle {
+    justify-content: space-evenly;
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 50px;
     border-radius: 20px;
 
+
 }
+
 .cbody {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 20px;
-    padding: 20px;
-    width: 80%;
+    /* padding: 20px; */
+    width: 250px;
+    height: 400px;
+    transition-duration: .5s;
+    transition-timing-function: ease;
+    transition-delay: .1s;
+    transition-timing-function: ease-in-out;
 
 }
 
 .cbody:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 20px;
-    padding: 20px;
-    width: 80%;
+    /* padding: 20px; */
+    width: 300px;
+    height: 450px;
+    color: white;
+    background-image: linear-gradient(to right, #00ff8c, #00ddff);
+    /* transition: ease-out;
     color: white;
     background-image: linear-gradient(to right, #ff00d4, #00ddff);
     /* background-color: purple; */
