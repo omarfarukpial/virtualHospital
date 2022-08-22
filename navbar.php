@@ -19,7 +19,7 @@
      
             <div class="container" >
                 <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
-                <ul style="color: white; font-family: 'DynaPuff', cursive; font-size: 18px;" class="navdecor">
+                <ul style="color: white; font-family: 'DynaPuff', cursive; " class="navdecor">
                 <!-- nav nav-tabs nav-fill p-3 -->
                     <li class="nav-item">
                         <a class="nav-link text-white" href="index.php">HOME</a>
