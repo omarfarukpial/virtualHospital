@@ -2,7 +2,7 @@
 <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <div class="flex">
-                <a class="navbar-brand text-dark" href="index.html"><img class="logo" src="img/svh1.png" alt="">
+                <a class="navbar-brand text-dark" href="index.php"><img class="logo" src="img/svh1.png" alt="">
                     <b style="font-size: 32pt;">Swift<span style="color: red;font-size: 32pt; "> Virtual Hospital</span> </b> </a>
             </div>
 
@@ -13,13 +13,13 @@
         </div>
     </nav>
     <!-- Start Navbar -->
-    <nav style="background-color: purple; color: white; margin:0 10px 0 10px;  " class="shadow rounded">
+    <nav style="background-color: purple; color: white; margin:0 2% 0 2%;  " class="shadow rounded">
         <div class="container-fluid">
 
      
             <div class="container" >
                 <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
-                <ul style="color: white;" class="navdecor">
+                <ul style="color: white; font-family: 'DynaPuff', cursive; font-size: 18px;" class="navdecor">
                 <!-- nav nav-tabs nav-fill p-3 -->
                     <li class="nav-item">
                         <a class="nav-link text-white" href="index.php">HOME</a>
