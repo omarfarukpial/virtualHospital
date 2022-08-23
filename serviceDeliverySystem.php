@@ -42,7 +42,7 @@
         </div>
         
         <div class="col-md-6 text-right">
-            <a href="serviceDeliverySystemForm.php">
+            <a href="suggestionForm.php">
                 <button type="button" class="addB">Add SDS</button>
             </a>
         </div>
