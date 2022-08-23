@@ -35,7 +35,7 @@
                         <a class="nav-link text-white" href="nurse.php">NURSES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="clinic.php">CLINICS</a>
+                        <a class="nav-link text-white" href="cliniclist.php">CLINICS</a>
                     </li>
 
                     <li class="nav-item">

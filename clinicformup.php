@@ -13,7 +13,7 @@
     values(?, ?, ?, ?, ?)");
     $stmt->bind_param("sisss", $clinicname, $nbeds, $doc, $location, $nurse);
     $stmt->execute();
-    header("Location: clinic.php");
+    header("Location: cliniclist.php");
     
     
     $stmt->close();
