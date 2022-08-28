@@ -372,3 +372,17 @@ footer p {
     background-image: linear-gradient(to right, #ff00d4, #00ddff);
     /* background-color: purple; */
 }
+
+
+
+
+.lform-modal {
+    
+    background-color: purple;
+    padding: 20px;
+    width: 100%;
+    color: white;
+  
+    
+    
+  }
