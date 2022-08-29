@@ -51,18 +51,13 @@
 
 
 
-    <a href="clinic.php">
-        <button class="btn-back"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
-
-    </a>
-
-    <section id="news" class="container my-5 pt-4">
-        <h1 class="text-center header-font my-5"> Clinic <span class="p-text">Registration Form</span> </h1>
+    <section id="news" class="container pt-4">
+        <h1 class="text-center header-font mt-4"> Clinic <span class="p-text">Registration Form</span> </h1>
     </section>
 
 
     <div style = "display:flex">
-        <div class="dform" style="width:40%; margin-left:50px;">
+        <div class="dform mt-5" style="width:40%; margin:auto;">
             <form action="clinicformup.php" method="post">
             <label for="clinicname">Clinic Name</label>
             <input type="text" id="clinicname" name="clinicname" placeholder="Clinic name...">
@@ -216,6 +211,12 @@
     
 
     </div>
+
+            <div style="margin-right:10px" class="container text-right">
+                <a href="clinic.php">
+                    <button type = "button" class="btn-back"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+                </a>
+            </div>
 
     
     <script>

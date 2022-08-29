@@ -2,8 +2,23 @@
 <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <div class="flex">
-                <a class="navbar-brand text-dark" href="index.php"><img class="logo" src="img/svh1.png" alt="">
-                    <b style="font-size: 32pt;">Swift<span style="color: red;font-size: 32pt; "> Virtual Hospital</span> </b> </a>
+                
+                <a class="navbar-brand text-dark align-items-center" href="index.php">
+                    <div class="d-flex flex-row">
+                            <div>
+                            <img class="logo" src="img/svh1.png" alt="">
+                            </div>
+                            <div class="mt-2 " >
+                        <b style="font-size: 32pt; mb-0">Swift<span style="color: red;font-size: 32pt; "> Virtual Hospital</span> <p class="mt-0">SVH 24/7: Savings life, protecting people </p> </b> 
+                        </div>
+                    </div>
+                    
+                    
+                
+                     
+                </a>
+                
+                    
             </div>
 
             <form class="d-flex">
@@ -11,6 +26,33 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
+        <!--div class="container-fluid">
+            <div class="d-flex flex-row">
+                <div>
+                    <a class="navbar-brand text-dark " href="index.php">
+                        <div class="d-flex flex-row">
+                                <div>
+                                    <img class="logo" src="img/svh1.png" alt="">
+                                </div>
+                                <div style="font-weight:bold">
+                                    <p style="font-size: 32pt; margin:15px 0px 0px 0px; padding:0px">
+                                    Swift <span style="color: red;">Virtual Hospital</span>
+                                    </p>
+                                    <p style="margin:0px; padding:0px">SVH 24/7: Savings life, protecting people </p> 
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+
+            </div>
+        </!--div-->
     </nav>
     <!-- Start Navbar -->
     <nav style="background-color: purple; color: white; margin:0 2% 0 2%;  " class="shadow rounded">

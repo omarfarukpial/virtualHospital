@@ -28,13 +28,10 @@
 ?>
 
 
-    <a href="mods.php">
-        <button class="btn-back"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
-
-    </a>
 
 
-    <section id="news" class="container my-5 pt-4">
+
+    <section id="news" class="container  pt-4">
         <h1 class="text-center header-font my-5"> MODS <span class="p-text">Registration Form</span> </h1>
     </section>
 
@@ -126,6 +123,13 @@
           <input type="submit" value="Submit">
         </form>
       </div>
+
+
+      <div style="margin-right:10px" class="container text-right">
+            <a href="mods.php">
+                <button type = "button" class="btn-back"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+            </a>
+            </div>
 
 
 <!-- footer section -->

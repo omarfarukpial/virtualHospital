@@ -36,19 +36,14 @@
 
 
 
-    <section id="news" class="container my-5 pt-4">
-        <h1 class="text-center header-font my-5"> Mobile Infectious Disease <span class="p-text">Control Systems</span> </h1>
+    <section id="news" class="container pt-4">
+        <h1 class="text-center header-font mt-4"> Mobile Infectious Disease <span class="p-text">Control Systems</span> </h1>
     </section>
 
     <div class="row" style="margin-left: 10%; margin-right:10%">
         
-        <div class="col-md-6 text-left">
-            <a href="index.html">
-                <button type = "button" class="btn-back"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
-            </a>
-        </div>
         
-        <div class="col-md-6 text-right">
+    <div style="margin-left:1030px" class="container">
             <a href="midcsForm.php">
                 <button type="button" class="addB">Add MIDCS</button>
             </a>
@@ -105,6 +100,13 @@
             ?>
                 
             </table>
+
+
+            <div style="margin-right:155px" class="container text-right">
+            <a href="index.php">
+                <button type = "button" class="btn-back"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+            </a>
+            </div>
 <!-- footer section -->
 <br>
 <br>

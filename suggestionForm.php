@@ -57,19 +57,14 @@
 
 
 
-    <a href="serviceDeliverySystem.php">
-        <button class="btn-back"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
 
-    </a>
-
-
-    <section id="news" class="container my-5 pt-4">
+    <section id="news" class="container pt-4">
         <h1 class="text-center header-font my-5">Service Delivery <span class="p-text">System Form</span> </h1>
     </section>
 
     <div style="display: flex; padding-left=10px; padding-right:10px">
 
-    <div class="dform" style="width:40%">
+    <div class="dform" style="width:40% margin-auto">
         <form action="sdsformup.php" method="post">
 
         <label for="symptom">Symptom</label>
@@ -190,7 +185,11 @@
 
     </div>
 
-
+          <div style="margin-right:10px" class="container text-right">
+              <a href="serviceDeliverySystem.php">
+                  <button type = "button" class="btn-back"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+              </a>
+          </div>
 
 
     

@@ -27,20 +27,16 @@
 <?php
     include('navbar.php');
 ?>
-    
-    <a href="ambulance.php">
-        <button class="btn-back"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
-
-    </a>
 
 
 
-    <section id="news" class="container my-5 pt-4">
-        <h1 class="text-center header-font my-5"> Ambulance <span class="p-text">Form</span> </h1>
+
+    <section id="news" class="container pt-4">
+        <h1 class="text-center header-font mt-4"> Ambulance <span class="p-text">Form</span> </h1>
     </section>
 
 
-    <div class="dform">
+    <div class="dform  my-5">
         <form action="ambulanceformup.php" method="post">
           <label for="name">Ambulance Name</label>
           <input type="text" id="name" name="name" placeholder="Ambulance name...">
@@ -131,6 +127,13 @@
           <input type="submit" value="Submit">
         </form>
       </div>
+
+
+      <div style="margin-right:10px" class="container text-right">
+                <a href="clinic.php">
+                    <button type = "button" class="btn-back"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+                </a>
+            </div>
 
 
 <!-- footer section -->
