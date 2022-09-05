@@ -361,6 +361,7 @@ include('footer.php');
                 $('#editmodal').modal('show');
 
                 $tr = $(this).closest('tr');
+                
 
                 var data = $tr.children("td").map(function () {
                     return $(this).text();
