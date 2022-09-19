@@ -25,7 +25,7 @@ $q = intval($_GET['q']);
 
 
 mysqli_select_db($conn,"healthinformatics");
-$sql="SELECT * FROM doctorform WHERE id = '".$q."'";
+$sql="SELECT * FROM doctor WHERE id = '".$q."'";
 $result = mysqli_query($conn,$sql);
 
 echo "<h4>Doctor Details</h4>";
