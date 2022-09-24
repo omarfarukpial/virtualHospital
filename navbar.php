@@ -101,7 +101,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="/virtualHospital/sds/serviceDeliverySystem.php">SERVICE DELIVERY SYSTEM</a>
+                        <a class="nav-link text-white" href="/virtualHospital/sds/sds.php">SERVICE DELIVERY SYSTEM</a>
                     </li>
 
                 </ul>

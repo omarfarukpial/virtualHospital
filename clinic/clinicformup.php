@@ -3,17 +3,26 @@
 
     $clinicname = $_POST['clinicname'];
     $nbeds = $_POST['nbeds'];
-    // $fpbed = $_POST['fpbed'];
+    $phn = $_POST['phn'];
     $location = $_POST['location'];
-    // $remarks = $_POST['remarks'];
-    $doc = $_POST['cdoctor'];
-    $nurse = $_POST['cnurse'];
+   
 
-    $stmt = $conn->prepare("insert into clinicform (clinicname, nbeds, doctor, location, nurse)
-    values(?, ?, ?, ?, ?)");
-    $stmt->bind_param("sisss", $clinicname, $nbeds, $doc, $location, $nurse);
-    $stmt->execute();
-    header("Location: cliniclist.php");
+  
+
+
+    $stmt = "INSERT INTO clinic (clinicname, nbeds, phn,location)
+    VALUES ('$clincname', '$nbeds', '$phn', '$location')";
+
+
+    if ($conn->query($stmt) === TRUE) {
+        echo "New record created successfully";
+        header("Location: clinic.php");
+      } else {
+        echo "Error: " . $stmt . "<br>" . $conn->error;
+      }
+
+
+   
     
     
     $stmt->close();

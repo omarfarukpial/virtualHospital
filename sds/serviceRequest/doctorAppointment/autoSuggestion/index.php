@@ -1,130 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/img/logo.png">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../../../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../js/bootstrap.min.js">
+    <link rel="stylesheet" href="../../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../../js/bootstrap.min.js">
     <!-- Font Awesome adding -->
     <script src="https://kit.fontawesome.com/c045880d2c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/newcss.css">
-    <link rel="stylesheet" href="../css/inputFormNew.css">
+    <link rel="stylesheet" href="../../../../css/newcss.css">
+    <link rel="stylesheet" href="../../../../css/inputFormNew.css">
 
-    <title>Doctor Form</title>
+    <title>Automatic Doctor Suggestion</title>
 
+ 
 
 </head>
 <body>
-
-
-  
-   
+    
 <?php
-    include('../navbar.php');
-
+    include('../../../../navbar.php');
 ?>
-
-
-
-
-<section id="news" class="d-flex justify-content-between ml-2 mr-2">
-
-<div>
-    <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
-</div>
-
-    <div>
-    <h1 class="text-center header-font mt-4"> Doctor <span class="p-text">Registration Form</span> </h1>
-    </div>
-
-    <div>
-    <button style="display:none;" type="button" class="btn-add"  onclick="location.href = 'DocForm.php' ">Add Doctor</button>
-    </div>
   
-    
-
+<!-- Back Button and Heading -->
+<section id="news" class="d-flex justify-content-between ml-2 mr-2">
+    <div>
+        <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+    </div>
+    <div>
+        <h1 class="text-center header-font mt-4"> Doctor <span class="p-text">Auto Suggestion</span> </h1>
+    </div>
+    <div>
+        <button style="visibility:hidden;" type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+    </div>
 </section>
-    
-    <div style="display:flex">
+
+
+<!-- Appointment info form -->
+
+
+    <div style="display: flex;">
+
+    <div class="dform">
+        <form action="doctorSuggestion.php" method="post">
+
+        <label for="symptom">Symptom</label>
+        <select name="symptom" id="symptom">
+            <option disable selected>Select your symptom</option>
+            <option value="Cardiology">Chest pain</option>
+            <option value="Cardiology">Shortness of breath</option>
+            <option value="Darmatology">rashes on skin</option>
+            <option value="Orthopedics">Fracture in bone</option>
+            <option value="GeneralMedicine">Fever for two days</option>
+            <option value="Gynecology">Bleeding after menopause</option>
+        </select>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" onkeyup="inputvalsds(this.value)" value="">
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" >
+
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" >
+      
+        <label for="gender">Gender</label>
+        <input type="text" id="gender" name="gender" >
+
+        <label for="phn">Phone Number</label>
+        <input type="text" id="phn" name="phn" >
 
         
-    <div class="dform">
-        <form action="docformup.php" method="post">
-          <label for="fname">Name</label>
-          <input type="text" id="name" name="name" >
-      
-
-          <label for="phn">Phone number</label>
-          <input type="text" id="phn" name="phone" >
-
-          <label for="dob">Date of Birth</label> <br>
-          <input type="date" id="dob" name="dob">
-          <br><br>
 
 
-          <label for="gender">Gender</label>
-          <select id="gender" name="gender">
-            <option disabled selected>Select Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
-
-          <label for="specialization">Specialization</label>
-          <select id="specialization" name="specialization">
-          <option selected>Specialists</option>
-                <option value="Allergy and immunology">Allergy and immunology</option>
-                <option value="Anesthesiology">Anesthesiology</option>
-                <option value="Cardiology">Cardiology</option>
-                <option value="Dermatology">Dermatology</option>
-                <option value="Diagnostic radiology">Diagnostic radiology</option>
-                <option value="Emergency medicine">Emergency medicine</option>
-                <option value="Family medicine">Family medicine</option>
-                <option value="General Medicine">General medicine</option>
-                <option value="Gynecology">Gynecology</option>
-                <option value="Internal medicine">Internal medicine</option>
-                <option value="Medical genetics">Medical genetics</option>
-                <option value="Neurology">Neurology</option>
-                <option value="Nuclear medicine">Nuclear medicine</option>
-                <option value="Obstetrics and gynecology">Obstetrics and gynecology</option>
-                <option value="Ophthalmology">Ophthalmology</option>
-                <option value="Orthopedics">Orthopedics</option>
-                <option value="Pathology">Pathology</option>
-                <option value="Pediatrics">Pediatrics</option>
-                <option value="Physical medicine and rehabilitation">Physical medicine and rehabilitation</option>
-                <option value="Preventive medicine">Preventive medicine</option>
-                <option value="Psychiatry">Psychiatry</option>
-                <option value="Radiation oncology">Radiation oncology</option>
-                <option value="Surgery">Surgery</option>
-                <option value="Urology">Urology</option>
-          </select>
-
-
-          <label for="designation">Designation</label>
-          <select id="designation" name="designation">
-          <option selected>Designation</option>
-                <option value="Professor">Professor</option>
-                <option value="Associate Professor">Associate Professor</option>
-                <option value="Assistant Professor">Assistant Professor</option>
-          </select>
-
-
-
-
-
-          <label for="fees">Fees</label>
-          <input type="text" id="fees" name="fees" >
           
 
+          
 
-      
+          
           <label for="location">Current Location</label>
           <select id="location" name="location">
             <option disabled selected>Select District</option>
@@ -193,32 +154,33 @@
             <option value="Tangail">Tangail</option>
             <option value="Thakurgaon">Thakurgaon</option>
           </select>
+
+          <br>
+
+
+
+        <!-- <label for="problem">Write your problem</label>
+        <input type="text" id="cloc" name="cloc" > -->
+
+        <label for="problem">Tell us about your problem</label>
+        <textarea class="form-control mb-4" id="problem" rows="5"></textarea>
+
+      
+          
           <input type="submit" value="Submit">
         </form>
       </div>
 
-    
-        <div class="descontent">
-          <div style="margin-left:40%;">
-          <img src="../img/doctorimage.webp" alt="Doctor logo" height=200px width=200px style="border-radius: 50%;">
-          </div>
-          
-          <br>
-          <h5>A doctor is someone who is experienced and certified to practice medicine to help maintain or restore physical and mental health. A doctor is tasked with interacting with patients, diagnosing medical problems and successfully treating illness or injury. There are many specific areas in the field of medicine that students can study. </h5>
-
-        </div>
-
-
-    </div>
-
-
-
-
 
       
-      <br>
 
 
+      <div style="text-align:center">
+        <p id= "str1"></p>
+       
+      </div>
+
+</div>
 
 
 
@@ -228,7 +190,7 @@
 <br>
 <br>
 <?php
-include('../footer.php');
+include('../../../../footer.php');
 ?>
 
 
@@ -237,9 +199,8 @@ include('../footer.php');
         crossorigin="anonymous"></script>
 
 
-
+            
     
-
 
 
 
