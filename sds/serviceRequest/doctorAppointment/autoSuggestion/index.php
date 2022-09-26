@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/img/logo.png">
-    <link rel="stylesheet" href="../../../../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +49,7 @@
     <div style="display: flex;">
 
     <div class="dform">
-        <form action="doctorSuggestion.php" method="post">
+        <form action="doctorAutoSuggestion.php" method="post">
 
         <label for="symptom">Symptom</label>
         <select name="symptom" id="symptom">
@@ -64,7 +63,7 @@
         </select>
 
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" onkeyup="inputvalsds(this.value)" value="">
+        <input type="text" id="username" name="username" onkeyup="userinfofill(this.value)" value="">
 
         <label for="name">Name</label>
         <input type="text" id="name" name="name" >
@@ -159,11 +158,8 @@
 
 
 
-        <!-- <label for="problem">Write your problem</label>
-        <input type="text" id="cloc" name="cloc" > -->
-
         <label for="problem">Tell us about your problem</label>
-        <textarea class="form-control mb-4" id="problem" rows="5"></textarea>
+        <textarea class="form-control mb-4" name = "problem" id="problem" rows="5"></textarea>
 
       
           
@@ -197,6 +193,38 @@ include('../../../../footer.php');
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+
+
+
+
+
+
+<!-- User info fillup using fetch api  -->
+    <script>
+      async function userinfofill(x) {
+   
+
+        const user = x;
+
+       
+
+        const res = await fetch("userfill.php?username="+x);
+        const userdata = await res.json();
+
+
+        document.getElementById("name").value = userdata.name;
+        document.getElementById("age").value = userdata.age;
+        document.getElementById("gender").value = userdata.gender;
+        document.getElementById("phn").value = userdata.phone;
+        document.getElementById("location").value = userdata.location;
+
+
+
+
+
+
+      }
+    </script>
 
 
             
