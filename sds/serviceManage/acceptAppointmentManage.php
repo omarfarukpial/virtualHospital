@@ -2,6 +2,7 @@
 <?php
 
 include('../../connect.php');
+date_default_timezone_set("Asia/Dhaka");
 
 $aid = $_POST['aid'];
 $appointmenttime = $_POST['appointmentDateTime'];
