@@ -19,8 +19,13 @@
     <link rel="stylesheet" href="../css/inputForm.css">
 
     <title>Clinic</title>
-  
 
+
+   
+    <!-- Jquery adding for Table management -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 
 </head>
 <body>
@@ -53,69 +58,86 @@
 </section>
     
         
-
-            <table class="table table-striped table-borderd text-center w-75 mx-auto  table-hover" style="border-radius: 1em;
-    overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-            <thead class="thead-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>Clinic Name</th>
-                    <th>Current Location</th>
-                    <!-- <th>Doctor</th>
-                    <th>Nurse</th> -->
-                    <th>Number of Beds</th>
-                    <th colspan="2">Action</th>
+<div style="width:95%; margin: auto;">
+    
+    <table id = "table_id" class="table table-striped table-borderd text-center mx-auto  table-hover" style="border-radius: 1em;
+        overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Clinic Name</th>
+                        <th>Current Location</th>
+                        <th>Number of Beds</th>
+                        <th>Action</th>
                   
+                        
+                    </tr>
+                </thead>
+                <?php
                     
-                </tr>
-            </thead>
-            <?php
-                
-                include('../connect.php');
+                    include('../connect.php');
 
-                $sql = "SELECT * FROM clinic";
-                $result = $conn->query($sql);
-                
-                
-                if ($result->num_rows > 0) {
-                    // output data of each row
-                
-                    while($row = $result->fetch_assoc()) {
+                    $sql = "SELECT * FROM clinic";
+                    $result = $conn->query($sql);
+                    
+                    
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                    
+                        while($row = $result->fetch_assoc()) {
 
 
-                       
+                        
 
 
-                        echo"<tr>";
-                        echo "<td align=right>". $row["id"]. "</td>".
-                            "<td>". $row["clinicname"]. "</td>" .
-                            "<td>". $row["location"] . "</td>".
-                         
-                       
-                            "<td align=right>". $row["nbeds"] . "</td>". 
-                            "<td>"?> <button type="button" class="btn btn-success btn-sm editbtn"> Edit</button>
-                          <td>
-                            <button type="button" class="btn btn-danger btn-sm deletebtn"> DELETE </button>
-                          </td>
-                          
-                         <?php "</td>";
-                        echo"</tr>";
+                            echo"<tr>";
+                            echo "<td align=right>". $row["id"]. "</td>".
+                                "<td>". $row["clinicname"]. "</td>" .
+                                "<td>". $row["location"] . "</td>".
+                                "<td align=right>". $row["nbeds"] . "</td>". 
+                                "<td> <button type= 'button' class = 'btn btn-success btn-sm editbtn'> Edit</button> ".
+                                "<button type='button' class = 'btn btn-danger btn-sm deletebtn'> DELETE </button></td>";
+                            echo"</tr>";
+                        }
+                    } else {
+                        echo "0 results";
                     }
-                } else {
-                    echo "0 results";
-                }
 
 
-            ?>
-                
-            </table>
+                ?>
+                    
+    </table>
 
         
 
+</div>
 
 
 
-            <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+
+
+
+
+  
+
+
+
+            <!-- footer section -->
+<br>
+<br>
+<br>
+<?php
+include('../footer.php');
+?>
+
+
+
+
+
+
+<!-- Delete modal  -->
+
+<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -143,18 +165,6 @@
             </div>
         </div>
     </div>
-
-
-
-            <!-- footer section -->
-<br>
-<br>
-<br>
-<?php
-include('../footer.php');
-?>
-
-
 
 
 
@@ -254,54 +264,6 @@ include('../footer.php');
             </select>
 
 
-
-            <!-- <label for="remarks">Remarks</label>
-            <input type="text" id="remarks" name="remarks" placeholder="Remarks...">
-
-            <label for="nbeds">Number of Beds</label>
-            <input type="text" id="nbeds" name="nbeds" placeholder="Number of Beds...">
-
-            <label for="fpbed">Fees per Bed</label>
-            <input type="text" id="fpbed" name="fpbed" placeholder="Fees per Bed..."> -->
-
-
-            <label for="cdoctor">Doctor</label>
-            <select name="cdoctor" id="cdoctor" onchange="showUser(this.value)">
-                <option disable selected>Select Doctor</option>
-                <?php
-                    $sql='select id, firstName from doctorform';
-                    $res=$conn->query( $sql );
-                    
-                    while( $row = $res->fetch_assoc() ){
-                        printf(
-                            '<option value="%s">%s',
-                            $row['id'],
-                            $row['firstName']
-                        );
-                    }
-                ?>
-                
-            </select>
-
-
-            <label for="cnurse">Nurse</label>
-            <select name="cnurse" id="cnurse" onchange="showUserNurse(this.value)">
-                <option disable selected>Select Nurse</option>
-                <?php
-                    $sql='select id, firstName from nurseform';
-                    $res=$conn->query( $sql );
-                    
-                    while( $row = $res->fetch_assoc() ){
-                        printf(
-                            '<option value="%s">%s',
-                            $row['id'],
-                            $row['firstName']
-                        );
-                    }
-                ?>
-                
-            </select>
-
             <label for="nbeds">Number of Beds</label>
             <input type="text" id="nbeds" name="nbeds" placeholder="Number of Beds...">
 
@@ -331,9 +293,19 @@ include('../footer.php');
     <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
 
+ 
+<script>
+        $(document).ready( function () {
+        $('#table_id').DataTable();
+        } );
+</script>
+  
 
     <script>
         $(document).ready(function () {
+
+      
+
 
       
             $('.editbtn').on('click', function () {

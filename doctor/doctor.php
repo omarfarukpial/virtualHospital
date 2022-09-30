@@ -19,6 +19,12 @@
     <link rel="stylesheet" href="../css/newcss.css">
     <title>Doctor</title>
 
+
+    <!-- Jquery adding for Table management -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
  
 
 </head>
@@ -67,9 +73,9 @@
         
     </div>
 
-    <div style="border-radius: 15px;">
+    <div style="width:95%; margin: auto;">
 
-        <table class="table table-striped table-borderd text-center w-75 mx-auto  table-hover" style="border-radius: 1em;
+        <table id = "table_id" class="table table-striped table-borderd text-center  mx-auto  table-hover" style="border-radius: 1em;
     overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 <thead class="thead-dark">
                 <tr>
@@ -142,6 +148,13 @@ include('../footer.php');
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+
+
+    <script>
+        $(document).ready( function () {
+        $('#table_id').DataTable();
+        } );
+    </script>
 
 
             

@@ -10,12 +10,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="js/bootstrap.min.js">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/bootstrap.min.js">
     <!-- Font Awesome adding -->
     <script src="https://kit.fontawesome.com/c045880d2c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="newcss.css">
+    <link rel="stylesheet" href="../css/newcss.css">
 
     <title>Ambulance</title>
 
@@ -30,37 +30,30 @@
 
     
 <?php
-    include('navbar.php');
+    include('../navbar.php');
 ?>
 
+<section id="news" class="d-flex justify-content-between ml-2 mr-2">
 
+<div>
+    <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+</div>
+
+    <div>
+    <h1 class="text-center header-font mt-4"> Ambulance <span class="p-text">List</span> </h1>
+    </div>
+    <div>
+    <button type="button" class="btn-add"  onclick="location.href = 'ambulanceform.php' ">Add Ambulance</button>
+    </div>
+    
+
+</section>
  
 
 
 
 
-
-
-    <section id="news" class="container pt-4">
-        <h1 class="text-center header-font mt-4"> Ambulances <span class="p-text">List</span> </h1>
-    </section>
-
-    <div class="row" style="margin-left: 10%; margin-right:10%">
-        
-        <!-- <div class="col-md-6 text-left">
-            <a href="index.html">
-                <button type = "button" class="btn-back"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
-            </a>
-        </div> -->
-        
-        <div style="margin-left:1030px" class="container">
-            <a href="ambulanceform.php">
-                <button type="button" class="addB">Add Ambulance</button>
-            </a>
-        </div>
-    
-        
-    </div>
+ 
 
 
     
@@ -84,9 +77,9 @@
  
             <?php
                 
-                include('connect.php');
+                include('../connect.php');
 
-                $sql = "SELECT * FROM ambulanceform";
+                $sql = "SELECT * FROM ambulance";
                 $result = $conn->query($sql);
                 
                 
@@ -114,11 +107,7 @@
                 
             </table>
 
-            <div style="margin-right:155px" class="container text-right">
-            <a href="index.php">
-                <button type = "button" class="btn-back"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
-            </a>
-            </div>
+  
 
 
                <!-- footer section -->
@@ -127,7 +116,7 @@
           <br>
           <br>
           <?php
-            include('footer.php');
+            include('../footer.php');
         ?>
 
 
