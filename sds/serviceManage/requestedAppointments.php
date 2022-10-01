@@ -23,21 +23,21 @@
  
 
 </head>
-<body>
+<body class="container-fluid">
     
 <?php
     include('../../navbar.php');
 ?>
   
 
-  <section id="news" class="d-flex justify-content-between ml-2 mr-2">
+  <section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
 
 <div>
     <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
 </div>
 
     <div>
-    <h1 class="text-center header-font mt-4"> Requested <span class="p-text">Appointments</span> </h1>
+    <h1 class="text-center text-white header-font mt-4"> Requested Appointments</h1>
     </div>
 
     <div>
@@ -53,7 +53,7 @@
 
 <div style="border-radius: 15px;">
 
-<table class="table table-striped table-borderd text-center w-75 mx-auto  table-hover" style="border-radius: 1em;
+<table class="table table-striped table-borderd text-center w-75 mx-auto  table-hover" style="border-radius: .5em;
 overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
         <thead class="thead-dark">
         <tr>

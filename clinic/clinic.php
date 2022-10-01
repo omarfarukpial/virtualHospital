@@ -28,7 +28,7 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 
 </head>
-<body>
+<body class="container-fluid">
     
 
   
@@ -41,14 +41,14 @@
 
 
 
- <section id="news" class="d-flex justify-content-between ml-2 mr-2">
+ <section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
 
     <div>
         <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
     </div>
 
     <div>
-    <h1 class="text-center header-font mt-4"> Clinic <span class="p-text">List</span> </h1>
+    <h1 class="text-center text-white header-font mt-4"> Clinic List</h1>
     </div>
     <div>
     <button type="button" class="btn-add"  onclick="location.href = 'ClinicForm.php' ">Add Clinic</button>
@@ -58,19 +58,19 @@
 </section>
     
         
-<div style="width:95%; margin: auto;">
+<div class="container" style="width:100%; margin: auto;">
     
-    <table id = "table_id" class="table table-striped table-borderd text-center mx-auto  table-hover" style="border-radius: 1em;
+    <table id = "table_id" class="table table-striped table-borderd text-center mx-auto  table-hover" style="border-radius: .5em;
         overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 <thead class="thead-dark">
                     <tr>
-                        <th>ID</th>
-                        <th>Clinic Name</th>
-                        <th>Current Location</th>
-                        <th>Doctor List</th>
-                        <th>Nurse List</th>
-                        <th>Number of Beds</th>
-                        <th>Action</th>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Clinic Name</th>
+                        <th class="text-center">Current Location</th>
+                        <th class="text-center">Doctor List</th>
+                        <th class="text-center">Nurse List</th>
+                        <th class="text-center">Number of Beds</th>
+                        <th class="text-center">Action</th>
                   
                         
                     </tr>
@@ -93,12 +93,12 @@
 
 
                             echo"<tr>";
-                            echo "<td align=right>". $row["id"]. "</td>".
-                                "<td>". $row["clinicname"]. "</td>" .
-                                "<td>". $row["location"] . "</td>".
+                            echo "<td align=middle>". $row["id"]. "</td>".
+                                "<td align=middle>>". $row["clinicname"]. "</td>" .
+                                "<td align=middle>>". $row["location"] . "</td>".
                                 "<td><a href= 'doctorAdding.php?cid=".$row["id"]."'><button type='button' class = 'btn btn-primary btn-sm'> See List </button></a></td>".
-                                "<td align=right>". $row["nbeds"] . "</td>". 
-                                "<td> <button type= 'button' class = 'btn btn-success btn-sm editbtn'> Edit</button> ".
+                                "<td align=middle>". $row["nbeds"] . "</td>". 
+                                "<td align=middle>> <button type= 'button' class = 'btn btn-success btn-sm editbtn'> Edit</button> ".
                                 "<button type='button' class = 'btn btn-danger btn-sm deletebtn'> DELETE </button></td>";
                             echo"</tr>";
                         }

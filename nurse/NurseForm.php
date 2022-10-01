@@ -21,7 +21,7 @@
     <title>Nurse Form</title>
 
 </head>
-<body>
+<body class="container-fluid">
    
 
    
@@ -34,14 +34,14 @@
 
 
 
-    <section id="news" class="d-flex justify-content-between ml-2 mr-2">
+<section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
 
 <div>
     <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
 </div>
 
     <div>
-    <h1 class="text-center header-font mt-4"> Nurse <span class="p-text">Registration Form</span> </h1>
+    <h1 class="text-center text-white header-font mt-4"> Nurse Registration Form</h1>
     </div>
 
     <div>

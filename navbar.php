@@ -1,5 +1,5 @@
 <!-- 1st nav like cdc  -->
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light bg-light mt-2">
         <div class="container-fluid">
             <div class="flex">
                 
@@ -8,14 +8,12 @@
                             <div>
                             <img class="logo" src="/virtualHospital/img/svh1.png" alt="">
                             </div>
-                            <div class="mt-2 " >
+                            <div class="" >
                         <b style="font-size: 32pt; mb-0">Swift<span style="color: red;font-size: 32pt; "> Virtual Hospital</span> <p class="mt-0">SVH 24/7: Savings life, protecting people </p> </b> 
                         </div>
                     </div>
                     
-                    
-                
-                     
+                  
                 </a>
                 
                     
@@ -26,40 +24,15 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
-        <!--div class="container-fluid">
-            <div class="d-flex flex-row">
-                <div>
-                    <a class="navbar-brand text-dark " href="index.php">
-                        <div class="d-flex flex-row">
-                                <div>
-                                    <img class="logo" src="img/svh1.png" alt="">
-                                </div>
-                                <div style="font-weight:bold">
-                                    <p style="font-size: 32pt; margin:15px 0px 0px 0px; padding:0px">
-                                    Swift <span style="color: red;">Virtual Hospital</span>
-                                    </p>
-                                    <p style="margin:0px; padding:0px">SVH 24/7: Savings life, protecting people </p> 
-                            </div>
-                        </div>
-                    </a>
-                </div>
+        
+ </nav>
 
-                <div>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
-
-            </div>
-        </!--div-->
-    </nav>
     <!-- Start Navbar -->
-    <nav style="background-color: purple; color: white; margin:0 2% 0 2%;  " class="shadow rounded">
+    <nav style="background-color: purple; color: white; margin:0;  " class="shadow rounded">
         <div class="container-fluid">
 
      
-            <div class="container" >
+            <div class="container-fluid py-0" style="" >
                 <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
                 <ul style="color: white; font-family: 'DynaPuff', cursive; " class="navdecor">
                 <!-- nav nav-tabs nav-fill p-3 -->

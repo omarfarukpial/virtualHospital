@@ -22,7 +22,7 @@
 
 
 </head>
-<body>
+<body class="container-fluid">
    
 
 <?php
@@ -38,14 +38,14 @@
 
 
 
-<section id="news" class="d-flex justify-content-between ml-2 mr-2">
+<section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
 
 <div>
     <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
 </div>
 
 <div>
-<h1 class="text-center header-font mt-4"> Clinic <span class="p-text">Registration</span> </h1>
+<h1 class="text-center text-white header-font mt-4"> Clinic Registration</h1>
 </div>
 <div>
 <button style="display:none;" type="button" class="btn-add"  onclick="location.href = 'ClinicForm.php' ">Add Clinic</button>

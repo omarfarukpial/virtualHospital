@@ -1,6 +1,6 @@
 
     <!-- footer section -->
-    <footer class="container-fluid">
+    <footer class="container-fluid rounded">
         <!-- <div class="container partition">
             <div>
                 <h6 style="margin-top: 20px;">Have Questions?</h6>

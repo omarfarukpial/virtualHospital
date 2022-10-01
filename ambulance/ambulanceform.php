@@ -21,7 +21,7 @@
 
 
 </head>
-<body>
+<body class="container-fluid">
     
 <?php
     include('../navbar.php');
@@ -30,9 +30,21 @@
 
 
 
-    <section id="news" class="container pt-4">
-        <h1 class="text-center header-font mt-4"> Ambulance <span class="p-text">Form</span> </h1>
-    </section>
+<section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
+
+<div>
+    <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+</div>
+
+<div>
+<h1 class="text-center text-white header-font mt-4"> Ambulance Form</h1>
+</div>
+<div>
+<button style="display:none;" type="button" class="btn-add"  onclick="location.href = 'ClinicForm.php' ">Add Clinic</button>
+</div>
+
+
+</section>
 
 
     <div class="dform  my-5">
@@ -128,11 +140,7 @@
       </div>
 
 
-      <div style="margin-right:10px" class="container text-right">
-                <a href="clinic.php">
-                    <button type = "button" class="btn-back"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
-                </a>
-            </div>
+      
 
 
 <!-- footer section -->

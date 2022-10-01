@@ -31,7 +31,7 @@
 
 </head>
 
-<body>
+<body class="container-fluid">
 
 
     <?php
@@ -53,7 +53,7 @@
                 communication, IoT devices, AI for disease patterns identification, and more.</h5>
         </article>
 
-    </div><br>
+    </div>
 
     <!-- swiper  -->
     <div class="container">

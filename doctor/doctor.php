@@ -28,7 +28,7 @@
  
 
 </head>
-<body>
+<body class="container-fluid">
     
 
     
@@ -40,14 +40,14 @@
 
 
 
-    <section id="news" class="d-flex justify-content-between ml-2 mr-2">
+<section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
 
     <div>
         <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
     </div>
 
         <div>
-        <h1 class="text-center header-font mt-4"> Doctors <span class="p-text">List</span> </h1>
+        <h1 class="text-center text-white header-font mt-4"> Doctors List</h1>
         </div>
         <div>
         <button type="button" class="btn-add"  onclick="location.href = 'DocForm.php' ">Add Doctor</button>
@@ -58,7 +58,7 @@
 
    
 
-    <div class="row" style="margin-left: 10%; margin-right:10%">
+    <div class="row" style="">
         
         <!-- <div class="col-md-6 text-left">
             <a href="index.html">
@@ -66,28 +66,28 @@
             </a>
         </div> -->
         
-        <div style="margin-left:1030px" class="container">
+        <div style="" class="container-fluid">
       
         </div>
     
         
     </div>
 
-    <div style="width:95%; margin: auto;">
+    <div class="container" style="width:100%; margin: auto;">
 
-        <table id = "table_id" class="table table-striped table-borderd text-center  mx-auto  table-hover" style="border-radius: 1em;
+        <table id = "table_id" class="table table-striped table-borderd text-center  mx-auto  table-hover" style="border-radius: .5em;
     overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                <thead class="thead-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                    <th>Specialization</th>
-                    <th>Designation</th>
-                    <th>Fees</th>
-                    <th>Current Location</th>
-                    <th>Phone Number</th>
+                <thead class="thead-dark text-center align-middle">
+                <tr class="text-center">
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Age</th>
+                    <th class="text-center">Gender</th>
+                    <th class="text-center">Specialization</th>
+                    <th class="text-center">Designation</th>
+                    <th class="text-center">Fees</th>
+                    <th class="text-center">Current Location</th>
+                    <th class="text-center">Phone Number</th>
                 </tr>
                 </thead>
             <?php
@@ -104,15 +104,15 @@
                     while($row = $result->fetch_assoc()) {
                         
                         echo"<tr>";
-                        echo "<td align=right>". $row["id"]. "</td>".
-                            "<td>". $row["name"]. "</td>" .
-                            "<td align=right>". date_diff(date_create($row["dob"]), date_create(date("Y-m-d")))->format('%y') . "</td>".
-                            "<td>". $row["gender"] . "</td>".
-                            "<td>". $row["specialization"] . "</td>".
-                            "<td>". $row["designation"] . "</td>".
-                            "<td align=right>". number_format($row["fees"],2) . "</td>".
-                            "<td>". $row["location"] . "</td>".
-                            "<td align=right>". $row["phoneNumber"] . "</td>"
+                        echo "<td align=middle>". $row["id"]. "</td>".
+                            "<td align=middle>". $row["name"]. "</td>" .
+                            "<td align=middle>". date_diff(date_create($row["dob"]), date_create(date("Y-m-d")))->format('%y') . "</td>".
+                            "<td align=middle>". $row["gender"] . "</td>".
+                            "<td align=middle>". $row["specialization"] . "</td>".
+                            "<td align=middle>". $row["designation"] . "</td>".
+                            "<td align=middle>". number_format($row["fees"],2) . "</td>".
+                            "<td align=middle>". $row["location"] . "</td>".
+                            "<td align=middle>". $row["phoneNumber"] . "</td>"
                             
                             ;
                         echo"</tr>";
