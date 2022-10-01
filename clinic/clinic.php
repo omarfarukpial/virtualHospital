@@ -64,9 +64,6 @@
         overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 <thead class="thead-dark">
                     <tr>
-<<<<<<< HEAD
-                        
-=======
                         <th>ID</th>
                         <th>Clinic Name</th>
                         <th>Number of Beds</th>
@@ -75,7 +72,6 @@
                         <th>Doctor List</th>
                         <th>Nurse List</th>
                         <th>Action</th>
->>>>>>> 188d54978acbc5a10c476a6f72aec4533c0cbeb7
                   
                         
                     </tr>
@@ -98,9 +94,6 @@
 
 
                             echo"<tr>";
-<<<<<<< HEAD
-                            
-=======
                             echo "<td align=right>". $row["id"]. "</td>".
                                 "<td>". $row["clinicname"]. "</td>" .
                                 "<td align=right>". $row["nbeds"] . "</td>". 
@@ -109,7 +102,6 @@
                                 "<td><a href= 'doctorList.php?cid=".$row["id"]."&cname=".$row['clinicname']."'><button type='button' class = 'btn btn-primary btn-sm'> See Doctors </button></a></td>".
                                 "<td><a href= 'nurseList.php?cid=".$row["id"]."'><button type='button' class = 'btn btn-primary btn-sm'> See Nurses </button></a></td>".
                                 "<td> <button type= 'button' class = 'btn btn-success btn-sm editbtn'> Edit</button> ".
->>>>>>> 188d54978acbc5a10c476a6f72aec4533c0cbeb7
                                 "<button type='button' class = 'btn btn-danger btn-sm deletebtn'> DELETE </button></td>";
                             echo"</tr>";
                         }

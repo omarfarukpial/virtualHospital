@@ -44,7 +44,7 @@ $_SESSION['clinicid'] = $cid;
  
 
 </head>
-<body>
+<body class="container-fluid">
     
 
     
@@ -56,14 +56,15 @@ $_SESSION['clinicid'] = $cid;
 
 
 
-    <section id="news" class="d-flex justify-content-between ml-2 mr-2">
+<section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
 
     <div>
         <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
     </div>
 
         <div>
-        <h1 class="text-center header-font mt-4"> Doctors in <?php echo $clinicname ?> </h1>
+        <h1 class="text-center text-white header-font mt-4">  Doctors in <?php echo $clinicname ?> </h1>
+        <!-- <h1 class="text-center header-font mt-4"> Doctors in  </h1> -->
         </div>
         <div>
             <a href="doctorAdding.php"><button type="button" class="btn-add">Add Doctor</button></a>
@@ -75,7 +76,7 @@ $_SESSION['clinicid'] = $cid;
 
    
 
-    <div class="row" style="margin-left: 10%; margin-right:10%">
+    <div class="row" style="">
         
         <!-- <div class="col-md-6 text-left">
             <a href="index.html">
@@ -90,7 +91,7 @@ $_SESSION['clinicid'] = $cid;
         
     </div>
 
-    <div style="width:95%; margin: auto;">
+    <div class="container" style="width:100%; margin: auto;">
 
         <table id = "table_id" class="table table-striped table-borderd text-center  mx-auto  table-hover" style="border-radius: 1em;
     overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
