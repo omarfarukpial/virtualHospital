@@ -64,13 +64,18 @@
         overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 <thead class="thead-dark">
                     <tr>
-                        <th class="text-center">ID</th>
-                        <th class="text-center">Clinic Name</th>
-                        <th class="text-center">Current Location</th>
-                        <th class="text-center">Doctor List</th>
-                        <th class="text-center">Nurse List</th>
-                        <th class="text-center">Number of Beds</th>
-                        <th class="text-center">Action</th>
+<<<<<<< HEAD
+                        
+=======
+                        <th>ID</th>
+                        <th>Clinic Name</th>
+                        <th>Number of Beds</th>
+                        <th>Hotline</th>
+                        <th>Current Location</th>
+                        <th>Doctor List</th>
+                        <th>Nurse List</th>
+                        <th>Action</th>
+>>>>>>> 188d54978acbc5a10c476a6f72aec4533c0cbeb7
                   
                         
                     </tr>
@@ -93,12 +98,18 @@
 
 
                             echo"<tr>";
-                            echo "<td align=middle>". $row["id"]. "</td>".
-                                "<td align=middle>>". $row["clinicname"]. "</td>" .
-                                "<td align=middle>>". $row["location"] . "</td>".
-                                "<td><a href= 'doctorAdding.php?cid=".$row["id"]."'><button type='button' class = 'btn btn-primary btn-sm'> See List </button></a></td>".
-                                "<td align=middle>". $row["nbeds"] . "</td>". 
-                                "<td align=middle>> <button type= 'button' class = 'btn btn-success btn-sm editbtn'> Edit</button> ".
+<<<<<<< HEAD
+                            
+=======
+                            echo "<td align=right>". $row["id"]. "</td>".
+                                "<td>". $row["clinicname"]. "</td>" .
+                                "<td align=right>". $row["nbeds"] . "</td>". 
+                                "<td>". $row["phn"]. "</td>" .
+                                "<td>". $row["location"] . "</td>".
+                                "<td><a href= 'doctorList.php?cid=".$row["id"]."&cname=".$row['clinicname']."'><button type='button' class = 'btn btn-primary btn-sm'> See Doctors </button></a></td>".
+                                "<td><a href= 'nurseList.php?cid=".$row["id"]."'><button type='button' class = 'btn btn-primary btn-sm'> See Nurses </button></a></td>".
+                                "<td> <button type= 'button' class = 'btn btn-success btn-sm editbtn'> Edit</button> ".
+>>>>>>> 188d54978acbc5a10c476a6f72aec4533c0cbeb7
                                 "<button type='button' class = 'btn btn-danger btn-sm deletebtn'> DELETE </button></td>";
                             echo"</tr>";
                         }
@@ -196,7 +207,16 @@ include('../footer.php');
         
             
 
+         
+            <label for="nbeds">Number of Beds</label>
+            <input type="text" id="nbeds" name="nbeds" placeholder="Number of Beds...">
+
             
+            <label for="phn">Hotline number</label>
+            <input type="text" id="phn" name="phn" >
+
+
+               
             <label for="location">Current Location</label>
             <select id="location" name="location">
                 <option disabled selected>Select District</option>
@@ -267,10 +287,6 @@ include('../footer.php');
             </select>
 
 
-            <label for="nbeds">Number of Beds</label>
-            <input type="text" id="nbeds" name="nbeds" placeholder="Number of Beds...">
-
-
 
 
             <div class="modal-footer">
@@ -326,10 +342,11 @@ include('../footer.php');
 
                 $('#update_id').val(data[0]);
                 $('#clinicname').val(data[1]);
-                $('#location').val(data[2]);
-                $('#cdoctor').val(data[5]);
-                $('#cnurse').val(data[6]);
-                $('#nbeds').val(data[7]);
+                $('#nbeds').val(data[2]);
+                $('#phn').val(data[3]);
+                $('#location').val(data[4]);
+
+                
                 
 
                

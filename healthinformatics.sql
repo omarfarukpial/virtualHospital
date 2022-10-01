@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2022 at 07:46 AM
+-- Generation Time: Oct 01, 2022 at 12:02 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -104,6 +104,7 @@ CREATE TABLE `clinic` (
   `id` int(11) NOT NULL,
   `clinicname` varchar(50) NOT NULL,
   `nbeds` int(11) NOT NULL,
+  `phn` varchar(20) NOT NULL,
   `location` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -111,10 +112,32 @@ CREATE TABLE `clinic` (
 -- Dumping data for table `clinic`
 --
 
-INSERT INTO `clinic` (`id`, `clinicname`, `nbeds`, `location`) VALUES
-(3, 'Clinic 1', 100, 'Dinajpur'),
-(4, 'Fatema Clinic', 200, 'Jashore'),
-(5, 'JUST Medical Center', 50, 'Jashore');
+INSERT INTO `clinic` (`id`, `clinicname`, `nbeds`, `phn`, `location`) VALUES
+(1, 'Clinic 1', 200, '01700000001', 'Dhaka'),
+(2, 'Clinic 2', 250, '01700000002', 'Khulna'),
+(3, 'Clinic 3', 100, '01700000003', 'Jashore');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clinicdoclist`
+--
+
+CREATE TABLE `clinicdoclist` (
+  `clinic_doc_id` int(11) NOT NULL,
+  `doctor_id` int(11) NOT NULL,
+  `clinic_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `clinicdoclist`
+--
+
+INSERT INTO `clinicdoclist` (`clinic_doc_id`, `doctor_id`, `clinic_id`) VALUES
+(1, 1, 1),
+(2, 3, 1),
+(3, 3, 2),
+(4, 4, 3);
 
 -- --------------------------------------------------------
 
@@ -405,6 +428,12 @@ ALTER TABLE `clinic`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `clinicdoclist`
+--
+ALTER TABLE `clinicdoclist`
+  ADD PRIMARY KEY (`clinic_doc_id`);
+
+--
 -- Indexes for table `deptweight`
 --
 ALTER TABLE `deptweight`
@@ -502,7 +531,13 @@ ALTER TABLE `bloodbank`
 -- AUTO_INCREMENT for table `clinic`
 --
 ALTER TABLE `clinic`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `clinicdoclist`
+--
+ALTER TABLE `clinicdoclist`
+  MODIFY `clinic_doc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `deptweight`
