@@ -141,7 +141,7 @@
         <option value="Tangail">Tangail</option>
         <option value="Thakurgaon">Thakurgaon</option>
       </select>
-      <input type="submit" value="Submit">
+      <input type="submit" value="Next">
     </form>
   </div>
 

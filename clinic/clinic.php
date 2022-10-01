@@ -67,6 +67,8 @@
                         <th>ID</th>
                         <th>Clinic Name</th>
                         <th>Current Location</th>
+                        <th>Doctor List</th>
+                        <th>Nurse List</th>
                         <th>Number of Beds</th>
                         <th>Action</th>
                   
@@ -94,6 +96,7 @@
                             echo "<td align=right>". $row["id"]. "</td>".
                                 "<td>". $row["clinicname"]. "</td>" .
                                 "<td>". $row["location"] . "</td>".
+                                "<td><a href= 'doctorAdding.php?cid=".$row["id"]."'><button type='button' class = 'btn btn-primary btn-sm'> See List </button></a></td>".
                                 "<td align=right>". $row["nbeds"] . "</td>". 
                                 "<td> <button type= 'button' class = 'btn btn-success btn-sm editbtn'> Edit</button> ".
                                 "<button type='button' class = 'btn btn-danger btn-sm deletebtn'> DELETE </button></td>";
