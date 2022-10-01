@@ -122,6 +122,12 @@ $_SESSION['clinicid'] = $cid;
                 
                     while($row = $result->fetch_assoc()) {
                         $docid = $row["doctor_id"];
+
+
+                        
+
+
+
                         $docFetchSql = "SELECT * FROM doctor 
                         WHERE id = $docid
                         ";

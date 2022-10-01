@@ -66,10 +66,11 @@
                     <tr>
                         <th>ID</th>
                         <th>Clinic Name</th>
+                        <th>Number of Beds</th>
+                        <th>Hotline</th>
                         <th>Current Location</th>
                         <th>Doctor List</th>
                         <th>Nurse List</th>
-                        <th>Number of Beds</th>
                         <th>Action</th>
                   
                         
@@ -95,10 +96,11 @@
                             echo"<tr>";
                             echo "<td align=right>". $row["id"]. "</td>".
                                 "<td>". $row["clinicname"]. "</td>" .
+                                "<td align=right>". $row["nbeds"] . "</td>". 
+                                "<td>". $row["phn"]. "</td>" .
                                 "<td>". $row["location"] . "</td>".
                                 "<td><a href= 'doctorList.php?cid=".$row["id"]."&cname=".$row['clinicname']."'><button type='button' class = 'btn btn-primary btn-sm'> See Doctors </button></a></td>".
                                 "<td><a href= 'nurseList.php?cid=".$row["id"]."'><button type='button' class = 'btn btn-primary btn-sm'> See Nurses </button></a></td>".
-                                "<td align=right>". $row["nbeds"] . "</td>". 
                                 "<td> <button type= 'button' class = 'btn btn-success btn-sm editbtn'> Edit</button> ".
                                 "<button type='button' class = 'btn btn-danger btn-sm deletebtn'> DELETE </button></td>";
                             echo"</tr>";
@@ -197,7 +199,16 @@ include('../footer.php');
         
             
 
+         
+            <label for="nbeds">Number of Beds</label>
+            <input type="text" id="nbeds" name="nbeds" placeholder="Number of Beds...">
+
             
+            <label for="phn">Hotline number</label>
+            <input type="text" id="phn" name="phn" >
+
+
+               
             <label for="location">Current Location</label>
             <select id="location" name="location">
                 <option disabled selected>Select District</option>
@@ -268,10 +279,6 @@ include('../footer.php');
             </select>
 
 
-            <label for="nbeds">Number of Beds</label>
-            <input type="text" id="nbeds" name="nbeds" placeholder="Number of Beds...">
-
-
 
 
             <div class="modal-footer">
@@ -327,10 +334,11 @@ include('../footer.php');
 
                 $('#update_id').val(data[0]);
                 $('#clinicname').val(data[1]);
-                $('#location').val(data[2]);
-                $('#cdoctor').val(data[5]);
-                $('#cnurse').val(data[6]);
-                $('#nbeds').val(data[7]);
+                $('#nbeds').val(data[2]);
+                $('#phn').val(data[3]);
+                $('#location').val(data[4]);
+
+                
                 
 
                

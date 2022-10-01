@@ -1,5 +1,5 @@
 <?php
-    include('connect.php');
+    include('../connect.php');
 
     $clinicname = $_POST['clinicname'];
     $nbeds = $_POST['nbeds'];
@@ -11,7 +11,7 @@
 
 
     $stmt = "INSERT INTO clinic (clinicname, nbeds, phn,location)
-    VALUES ('$clincname', '$nbeds', '$phn', '$location')";
+    VALUES ('$clinicname', '$nbeds', '$phn', '$location')";
 
 
     if ($conn->query($stmt) === TRUE) {

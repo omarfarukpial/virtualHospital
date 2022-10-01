@@ -100,10 +100,20 @@
                 </tr>
                 </thead>
             <?php
+
+
+
+
+
+// SELECT * FROM demo_table1 WHERE NAME NOT IN (SELECT NAME FROM demo_table2);
                 
 
 
-                $sql = "SELECT * FROM doctor";
+                $sql = "SELECT * FROM doctor WHERE id NOT IN (SELECT doctor_id FROM clinicdoclist WHERE clinic_id = $cid)";
+
+
+
+
                 $result = $conn->query($sql);
                 
                 
@@ -181,7 +191,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
     } 
 
-
+    echo "<script>alert('Doctor Added Successfully!')</script>";
     echo "<script>window.location = 'clinic.php';</script>";
 
     session_destroy();
