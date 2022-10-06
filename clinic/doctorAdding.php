@@ -1,3 +1,44 @@
+    
+<?php
+    session_start();
+    
+    include('../connect.php');
+    $cid = $_SESSION['clinicid'];
+    $clinicname = $_SESSION['clinicName'];
+
+?>
+
+
+
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // collect value of input field
+    $docidlist = $_POST['doctorselectlist'];
+    $clinicid = $_POST['clinicid'];
+    $clinicname = $_POST['clinicName'];
+    
+    foreach($docidlist as $docidlist){ 
+        $docAddSql = "INSERT INTO clinicdoclist (doctor_id, clinic_id)
+        VALUES ('$docidlist', '$clinicid')"; 
+        $conn->query($docAddSql);
+            
+    } 
+
+    echo "<script>alert('Doctor Added Successfully!')</script>";
+    header("Location:./doctorList.php?cid=$clinicid&cname=$clinicname");
+
+    session_destroy();
+
+    $conn->close();
+
+
+
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,15 +72,8 @@
 <body class="container-fluid">
     
 
-    
 <?php
-    session_start();
-    include('../navbar.php');
-    include('../connect.php');
-    $cid = $_SESSION['clinicid'];
- 
-
-
+include('../navbar.php');
 ?>
 
 
@@ -81,6 +115,8 @@
     <div class="container" style="width:100%; margin: auto;">
         <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
         <input type="hidden" name="clinicid" value="<?php echo $cid ?>">
+        <input type="hidden" name="clinicName" value="<?php echo $clinicname ?>">
+
 
 
             <table id = "table_id" class="table table-striped table-borderd text-center  mx-auto  table-hover" style="border-radius: 1em;
@@ -178,29 +214,6 @@
 include('../footer.php');
 ?>
 
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // collect value of input field
-    $docidlist = $_POST['doctorselectlist'];
-    $clinicid = $_POST['clinicid'];
-    
-    foreach($docidlist as $docidlist){ 
-        $docAddSql = "INSERT INTO clinicdoclist (doctor_id, clinic_id)
-        VALUES ('$docidlist', '$clinicid')"; 
-        $conn->query($docAddSql);
-            
-    } 
-
-    echo "<script>alert('Doctor Added Successfully!')</script>";
-    echo "<script>window.location = 'clinic.php';</script>";
-
-    session_destroy();
-
-    $conn->close();
-    
-
-}
-?>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

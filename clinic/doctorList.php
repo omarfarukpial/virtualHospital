@@ -8,6 +8,7 @@ $cid = $_GET['cid'];
 $clinicname = $_GET['cname'];
 
 $_SESSION['clinicid'] = $cid;
+$_SESSION['clinicName'] = $clinicname;
 
 
 
@@ -33,7 +34,7 @@ $_SESSION['clinicid'] = $cid;
     <script src="https://kit.fontawesome.com/c045880d2c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/newcss.css">
-    <title>Doctor List inn Clinic</title>
+    <title>Doctor List in Clinic</title>
 
 
     <!-- Jquery adding for Table management -->
@@ -76,20 +77,7 @@ $_SESSION['clinicid'] = $cid;
 
    
 
-    <div class="row" style="">
-        
-        <!-- <div class="col-md-6 text-left">
-            <a href="index.html">
-                <button type = "button" class="btn-back"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
-            </a>
-        </div> -->
-        
-        <div style="margin-left:1030px" class="container">
-      
-        </div>
-    
-        
-    </div>
+
 
     <div class="container" style="width:100%; margin: auto;">
 
@@ -106,6 +94,9 @@ $_SESSION['clinicid'] = $cid;
                     <th>Fees</th>
                     <th>Current Location</th>
                     <th>Phone Number</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
             <?php
@@ -123,6 +114,9 @@ $_SESSION['clinicid'] = $cid;
                 
                     while($row = $result->fetch_assoc()) {
                         $docid = $row["doctor_id"];
+                        $docStartTime = $row["doctor_start_time"];
+                        $docEndTime = $row["doctor_end_time"];
+                        
 
 
                         
@@ -144,7 +138,12 @@ $_SESSION['clinicid'] = $cid;
                             "<td>". $docRow["designation"] . "</td>".
                             "<td align=right>". number_format($docRow["fees"],2) . "</td>".
                             "<td>". $docRow["location"] . "</td>".
-                            "<td align=right>". $docRow["phoneNumber"] . "</td>"
+                            "<td align=right>". $docRow["phoneNumber"] . "</td>".
+                            "<td>". $docStartTime. "</td>".
+                            "<td>". $docEndTime. "</td>".
+                            "<td><a href= './doctorTimeEdit.php?cid=".$cid."&did=".$docid."&cname=".$clinicname."'><button type='button' class = 'btn btn-success btn-sm'> Edit Time </button></a></td>"
+
+
                             
                             ;
                         echo"</tr>";
