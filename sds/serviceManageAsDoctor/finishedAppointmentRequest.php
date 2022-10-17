@@ -18,58 +18,39 @@
     <link rel="stylesheet" href="../../css/newcss.css">
     <link rel="stylesheet" href="../../css/inputFormNew.css">
 
-    <title>Manage service</title>
+    <title>Manage service as doctor</title>
 
  
 
 </head>
-<body>
+<body class="container-fluid">
     
 <?php
+    session_start();
     include('../../navbar.php');
+    include('../../connect.php');
+    $apt_id = $_GET['apt_id'];
+    $sql = "UPDATE appointmentrequest
+            SET finished = 'yes'
+            WHERE appointmentrequest_id = '$apt_id'";
+    $conn->query($sql);
+    $conn->close();
 ?>
   
 
-<section id="news" class="d-flex justify-content-between ml-2 mr-2">
-    <div>
-        <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
-    </div>
-    <div>
-    <h1 class="text-center header-font mt-4"> Appointment <span class="p-text">Schedule</span> </h1>
-    </div>
-    <div>
-        <button style="visibility:hidden;" type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
-    </div>
-</section>
 
-<?php
-
-$aid = $_GET['aid'];
-
-
-?>
-
-
-<div class="mx-auto ">
-    <div class = "shadow-lg p-3 mx-auto mt-5 bg-white rounded w-50 ">
-        <h4 class = "text-center mt-4 mb-4">Select Appointment Date and Time</h4>
-
-            <form action="acceptAppointmentManage.php" method="post">
-            <input type="hidden" value="<?php echo $aid ?>" name="aid" />
-                <div class="input-group">
-                    <input class = "mx-auto rounded-pill w-auto px-3" type="datetime-local" id="appointmentDateTime" name="appointmentDateTime">
-                </div>
-                
-                <div class="input-group w-50 mx-auto mt-5 mb-5">
-                    <input type="submit" value="Submit">
-                </div>
-                
-            </form>
-    </div>
-
-
+<div class="mx-auto text-center">
+    <h1>Appointment finished!</h1>
 
 </div>
+
+
+
+
+
+
+    
+    
 
 
 
@@ -98,3 +79,4 @@ include('../../footer.php');
     
 </body>
 </html>
+

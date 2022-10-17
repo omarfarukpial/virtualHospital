@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../../css/newcss.css">
     <link rel="stylesheet" href="../../css/inputFormNew.css">
 
-    <title>Manage service</title>
+    <title>Manage service Of Doctor</title>
 
  
 
@@ -26,6 +26,8 @@
 <body class="container-fluid">
     
 <?php
+    session_start();
+    $did = $_SESSION['did'];
     include('../../navbar.php');
 ?>
   
@@ -37,7 +39,7 @@
 </div>
 
     <div>
-    <h1 class="text-center text-white header-font mt-4">All Requested Appointments</h1>
+    <h1 class="text-center text-white header-font mt-4"> Accepted Appointments</h1>
     </div>
 
     <div>
@@ -53,12 +55,11 @@
 
 <div style="border-radius: 15px;">
 
-<table class="table table-striped table-borderd text-center w-75 mx-auto  table-hover" style="border-radius: .5em;
+<table class="table table-striped table-borderd text-center w-auto mx-auto  table-hover" style="border-radius: 1em;
 overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
         <thead class="thead-dark">
         <tr>
             <th>ID</th>
-            <th>Clinic Name</th>
             <th>Doctor Name</th>
             <th>Specialization</th>
             <th>Fees</th>
@@ -66,22 +67,18 @@ overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba
             <th>Patient Location</th>
             <th>Patient Phone</th>
             <th>Patient Problem</th>
-            <th>Submission Time</th>
-            <th colspan = "2">Action</th>
+            <th>Appointment Time</th>
         </tr>
         </thead>
     <?php
         
         include('../../connect.php');
 
-        $sql = "SELECT appointmentrequest.appointmentrequest_id as apt_id, clinic.id as c_id, clinic.clinicname as c_name, doctor.id as d_id, doctor.name as d_name, doctor.specialization as d_sp, doctor.fees as d_fees, userinfo.id as u_id, userinfo.name as u_name, userinfo.location as u_loc, userinfo.phone as u_phn, appointmentrequest.problem as apt_prob, appointmentrequest.time as apt_time, appointmentrequest.status as apt_status
-        FROM appointmentrequest
-        JOIN clinic ON clinic.id = appointmentrequest.clinicid
-        JOIN doctor ON doctor.id = appointmentrequest.doctorid
-        JOIN userinfo ON userinfo.id = appointmentrequest.userid
-        WHERE appointmentrequest.status = 'pending' ";
-
-    
+        $sql = "SELECT appointmentrequest_id, doctorid, finished, doctor.name as dname, doctor.specialization as dsp, doctor.fees as dfees,userinfo.name as uname, userinfo.location as uloc, userinfo.phone as uphn, problem,appointmenttime  FROM appointmentrequest
+                INNER JOIN doctor ON appointmentrequest.doctorid = doctor.id
+                INNER JOIN userinfo ON appointmentrequest.userid = userinfo.id
+                WHERE status = 'accepted' AND doctorid = '$did' AND finished = 'yes';
+          ";
         $result = $conn->query($sql);
         
         
@@ -91,18 +88,15 @@ overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba
             while($row = $result->fetch_assoc()) {
                 
                 echo"<tr>";
-                echo "<td align=right>". $row["apt_id"]. "</td>".
-                    "<td>". $row["c_name"]. "</td>" .
-                    "<td>". $row["d_name"]. "</td>" .
-                    "<td>". $row["d_sp"]. "</td>" .
-                    "<td align=right>". number_format($row["d_fees"],2) . "</td>".
-                    "<td>". $row["u_name"] . "</td>".
-                    "<td>". $row["u_loc"] . "</td>".
-                    "<td>". $row["u_phn"] . "</td>".
-                    "<td>". $row["apt_prob"] . "</td>".
-                    "<td>". $row["apt_time"] . "</td>".
-                    "<td> <a class='btn btn-success' href=acceptAppointmentRequest.php?aid=".$row['apt_id']." role='button'>Accept</a> </td>".
-                    "<td> <a class='btn btn-danger' href=rejectAppointmentRequest.php?aid=".$row['apt_id']." role='button'>Reject</a> </td>"
+                echo "<td align=right>". $row["appointmentrequest_id"]. "</td>".
+                    "<td>". $row["dname"]. "</td>" .
+                    "<td>". $row["dsp"]. "</td>" .
+                    "<td align=right>". number_format($row["dfees"],2) . "</td>".
+                    "<td>". $row["uname"] . "</td>".
+                    "<td>". $row["uloc"] . "</td>".
+                    "<td>". $row["uphn"] . "</td>".
+                    "<td>". $row["problem"] . "</td>".
+                    "<td>". $row["appointmenttime"] . "</td>"
                     ;
                 echo"</tr>";
             }

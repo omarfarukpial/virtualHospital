@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../../css/newcss.css">
     <link rel="stylesheet" href="../../../../css/inputFormNew.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <title>Manual Doctor Suggestion</title>
 
@@ -155,22 +157,29 @@
             <option value="Thakurgaon">Thakurgaon</option>
           </select>
 
+
+          <label for="cid">Select Clinic</label>
+            <select name="cid" id = "cid" >
+                <option disable selected> Select Clinic</option>
+                <?php
+                    $csql = "SELECT id, clinicname FROM clinic";
+                    $cres = $conn->query($csql);
+                    while ($crow = $cres->fetch_assoc()) {
+                        printf(
+                            '<option value="%s">%s', $crow['id'], $crow['clinicname']
+                        );
+                    }
+
+                ?>
+            </select>
+
        
 
           <label for="did">Select Doctor</label>
-                    <select name="did" onchange="showDoc(this.value)" >
-                        <option disable selected> Select Doctor</option>
-                        <?php
-                            $sql = 'SELECT id,name FROM doctor';
-                            $res = $conn->query($sql);
-                            while ($row = $res->fetch_assoc()) {
-                                printf(
-                                    '<option value="%s">%s', $row['id'], $row['name']
-                                );
-                            }
-
-                        ?>
-                    </select>
+            <select name="did" id = "did" onchange="showDoc(this.value)" >
+                <option disable selected> Select Doctor</option>
+                
+            </select>
 
           <br>
 
@@ -215,6 +224,34 @@ include('../../../../footer.php');
 
 
 
+        <script>
+$(document).ready(function(){
+    $('#cid').on('change', function(){
+        var cid = $(this).val();
+        if(cid){
+            $.ajax({
+                type:'POST',
+                url:'fetchdoctor.php',
+                data:'cid='+cid,
+                success:function(html){
+                    $('#did').html(html);
+                  
+                }
+            }); 
+        }else{
+            $('#did').html('<option value="">Select Clinic first</option>');
+  
+        }
+    });
+
+});
+</script>
+
+
+
+
+
+
 
 
 <!-- User info fillup using fetch api  -->
@@ -246,6 +283,12 @@ include('../../../../footer.php');
 
 
 
+
+
+      
+
+
+
       
     <script>
             function showDoc(str) {
@@ -260,7 +303,7 @@ include('../../../../footer.php');
                 xmlhttp.send();
         
             }
-        </script>
+    </script>
 
 
             

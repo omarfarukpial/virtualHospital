@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../../css/newcss.css">
     <link rel="stylesheet" href="../../css/inputFormNew.css">
 
-    <title>Manage service</title>
+    <title>Manage service as doctor</title>
 
  
 
@@ -26,22 +26,26 @@
 <body class="container-fluid">
     
 <?php
+    session_start();
     include('../../navbar.php');
+    include('../../connect.php');
+    $did = $_SESSION['did'];
 ?>
   
 
   <section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
 
-<div>
-    <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
-</div>
-
     <div>
-    <h1 class="text-center text-white header-font mt-4">All Requested Appointments</h1>
+        <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
     </div>
 
     <div>
-    <button style="visibility:hidden;" type="button" class="btn-add"  onclick="location.href = 'sdsform.php' ">Add Service</button>
+    <h1 class="text-center text-white header-font mt-4">Requested Appointments To Doctor</h1>
+    </div>
+
+
+    <div>
+        <button style="visibility:hidden;" type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
     </div>
   
     
@@ -66,20 +70,20 @@ overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba
             <th>Patient Location</th>
             <th>Patient Phone</th>
             <th>Patient Problem</th>
-            <th>Submission Time</th>
-            <th colspan = "2">Action</th>
+            <th>Appointment Time</th>
+            <th>Action</th>
         </tr>
         </thead>
     <?php
         
-        include('../../connect.php');
+      
 
-        $sql = "SELECT appointmentrequest.appointmentrequest_id as apt_id, clinic.id as c_id, clinic.clinicname as c_name, doctor.id as d_id, doctor.name as d_name, doctor.specialization as d_sp, doctor.fees as d_fees, userinfo.id as u_id, userinfo.name as u_name, userinfo.location as u_loc, userinfo.phone as u_phn, appointmentrequest.problem as apt_prob, appointmentrequest.time as apt_time, appointmentrequest.status as apt_status
+        $sql = "SELECT appointmentrequest.appointmentrequest_id as apt_id, clinic.id as c_id, clinic.clinicname as c_name, doctor.id as d_id, doctor.name as d_name, doctor.specialization as d_sp, doctor.fees as d_fees, userinfo.id as u_id, userinfo.name as u_name, userinfo.location as u_loc, userinfo.phone as u_phn, appointmentrequest.problem as apt_prob, appointmentrequest.appointmenttime as apt_time, appointmentrequest.status as apt_status, appointmentrequest.doctorid as apt_did, appointmentrequest.finished as apt_finished
         FROM appointmentrequest
         JOIN clinic ON clinic.id = appointmentrequest.clinicid
         JOIN doctor ON doctor.id = appointmentrequest.doctorid
         JOIN userinfo ON userinfo.id = appointmentrequest.userid
-        WHERE appointmentrequest.status = 'pending' ";
+        WHERE appointmentrequest.status = 'accepted' AND appointmentrequest.doctorid = '$did' AND appointmentrequest.finished = 'no'";
 
     
         $result = $conn->query($sql);
@@ -101,8 +105,7 @@ overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba
                     "<td>". $row["u_phn"] . "</td>".
                     "<td>". $row["apt_prob"] . "</td>".
                     "<td>". $row["apt_time"] . "</td>".
-                    "<td> <a class='btn btn-success' href=acceptAppointmentRequest.php?aid=".$row['apt_id']." role='button'>Accept</a> </td>".
-                    "<td> <a class='btn btn-danger' href=rejectAppointmentRequest.php?aid=".$row['apt_id']." role='button'>Reject</a> </td>"
+                    "<td> <a class='btn btn-success' href='finishedAppointmentRequest.php?apt_id=$row[apt_id]' role='button'>Done</a> </td>"
                     ;
                 echo"</tr>";
             }

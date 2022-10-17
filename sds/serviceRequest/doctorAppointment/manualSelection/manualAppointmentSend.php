@@ -5,7 +5,7 @@ include('../../../../connect.php');
 
 
 
-
+$clinicid = $_POST['cid'];
 $docid = $_POST['did'];
 $symptom = $_POST['symptom'];
 $username = $_POST['username'];
@@ -25,8 +25,8 @@ $userid = $conn->query($usernamesql)->fetch_assoc()['id'];
 
 // Upload appointment data to database
 
-$stmt = "INSERT INTO appointmentRequest (doctorid, userid, symptom, problem, time)
-VALUES ('$docid', '$userid','$symptom', '$problem', '$time')";
+$stmt = "INSERT INTO appointmentRequest (clinicid, doctorid, userid, symptom, problem, time)
+VALUES ('$clinicid', '$docid', '$userid','$symptom', '$problem', '$time')";
 $conn->query($stmt);
 
 // $stmt->close();

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/img/logo.png">
+    <link rel="stylesheet" href="../../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,58 +19,65 @@
     <link rel="stylesheet" href="../../css/newcss.css">
     <link rel="stylesheet" href="../../css/inputFormNew.css">
 
-    <title>Manage service</title>
+    <title>Manage service as doctor</title>
 
  
 
 </head>
-<body>
+<body class="container-fluid">
     
 <?php
+    
     include('../../navbar.php');
+    include('../../connect.php');
 ?>
   
 
-<section id="news" class="d-flex justify-content-between ml-2 mr-2">
+  <section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
+
     <div>
         <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
     </div>
     <div>
-    <h1 class="text-center header-font mt-4"> Appointment <span class="p-text">Schedule</span> </h1>
+        <h1 class="text-center text-white header-font mt-4">Doctor Selection</h1>
     </div>
     <div>
         <button style="visibility:hidden;" type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
     </div>
+  
+    
+
 </section>
 
-<?php
-
-$aid = $_GET['aid'];
-
-
-?>
-
+    
 
 <div class="mx-auto ">
     <div class = "shadow-lg p-3 mx-auto mt-5 bg-white rounded w-50 ">
-        <h4 class = "text-center mt-4 mb-4">Select Appointment Date and Time</h4>
+        <h4 class = "text-center mt-4 mb-4">Select Doctor</h4>
 
-            <form action="acceptAppointmentManage.php" method="post">
-            <input type="hidden" value="<?php echo $aid ?>" name="aid" />
-                <div class="input-group">
-                    <input class = "mx-auto rounded-pill w-auto px-3" type="datetime-local" id="appointmentDateTime" name="appointmentDateTime">
-                </div>
-                
-                <div class="input-group w-50 mx-auto mt-5 mb-5">
-                    <input type="submit" value="Submit">
-                </div>
+            <form action="serviceManageAsDoctor.php" method="post">
+
+            <label for="did">Select Doctor</label>
+            <select name="did" id = "did" >
+                <option disable selected> Select Doctor</option>
+                <?php
+                    $sql = "SELECT id, name FROM doctor";
+                    $res = $conn->query($sql);
+                    while ($row = $res->fetch_assoc()) {
+                        printf(
+                            '<option value="%s">%s', $row['id'], $row['name']
+                        );
+                    }
+
+                ?>
+            </select>
+
+            <input type="submit" value="Submit">
+            
                 
             </form>
     </div>
-
-
-
-</div>
+     
 
 
 
