@@ -54,15 +54,14 @@
     <div class="dform">
         <form action="./manualAppointmentSend.php" method="post">
 
-        <label for="symptom">Symptom</label>
+        <label for="symptom">Specialist Needed</label>
         <select name="symptom" id="symptom">
             <option disable selected>Select your symptom</option>
-            <option value="Cardiology">Chest pain</option>
-            <option value="Cardiology">Shortness of breath</option>
-            <option value="Darmatology">rashes on skin</option>
-            <option value="Orthopedics">Fracture in bone</option>
-            <option value="GeneralMedicine">Fever for two days</option>
-            <option value="Gynecology">Bleeding after menopause</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Darmatology">Darmatology</option>
+            <option value="Orthopedics">Orthopedics</option>
+            <option value="GeneralMedicine">GeneralMedicine</option>
+            <option value="Gynecology">Gynecology</option>
         </select>
 
         <label for="username">Username</label>

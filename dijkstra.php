@@ -1,266 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/img/logo.png">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="js/bootstrap.min.js">
-    <!-- Font Awesome adding -->
-    <script src="https://kit.fontawesome.com/c045880d2c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="newcss.css">
-    <link rel="stylesheet" href="inputForm.css">
-    
-    <title>Mobile Infectious Disease Control Systems Location</title>
-
-  
-
-
+    <title>Document</title>
 </head>
 <body>
-   
+    <script>
+        //Dijkstra algorithm is used to find the shortest distance between two nodes inside a valid weighted graph. Often used in Google Maps, Network Router etc.
 
-     <!-- 1st nav like cdc  -->
-     <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <div class="flex">
-                <a class="navbar-brand text-dark" href="index.html"><img class="logo" src="img/svh1.png" alt="">
-                    <b>Swift<span style="color: red;"> Virtual Hospital</span> </b> </a>
-            </div>
+        //helper class for PriorityQueue
+        class Node {
+        constructor(val, priority) {
+            this.val = val;
+            this.priority = priority;
+        }
+        }
 
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
-    <!-- Start Navbar -->
-    <nav style="background-color: #005EAA; color: whitesmoke;" class="shadow rounded">
-        <div class="container-fluid">
+        class PriorityQueue {
+        constructor() {
+            this.values = [];
+        }
+        enqueue(val, priority) {
+            let newNode = new Node(val, priority);
+            this.values.push(newNode);
+            this.bubbleUp();
+        }
+        bubbleUp() {
+            let idx = this.values.length - 1;
+            const element = this.values[idx];
+            while (idx > 0) {
+            let parentIdx = Math.floor((idx - 1) / 2);
+            let parent = this.values[parentIdx];
+            if (element.priority >= parent.priority) break;
+            this.values[parentIdx] = element;
+            this.values[idx] = parent;
+            idx = parentIdx;
+            }
+        }
+        dequeue() {
+            const min = this.values[0];
+            const end = this.values.pop();
+            if (this.values.length > 0) {
+            this.values[0] = end;
+            this.sinkDown();
+            }
+            return min;
+        }
+        sinkDown() {
+            let idx = 0;
+            const length = this.values.length;
+            const element = this.values[0];
+            while (true) {
+            let leftChildIdx = 2 * idx + 1;
+            let rightChildIdx = 2 * idx + 2;
+            let leftChild, rightChild;
+            let swap = null;
 
-
-            <div class="container">
-                <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0"> -->
-                <ul style="color: white;" class="nav nav-tabs nav-fill p-3">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="index.html">HOME</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="services.php">SERVICES</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link text-white" href="doctor.php">DOCTORS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="nurse.php">NURSES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="clinic.php">CLINICS</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="ambulance.php">AMBULANCES</a>
-                    </li>
-                    
-
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            OTHER SERVICES
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="mobileclinic.php">MOBILE CLINIC</a></li>
-                            <li><a class="dropdown-item" href="mods.php">MODS</a></li>
-                            <li><a class="dropdown-item" href="midcs.php">MIDCS</a></li>
-                            <li><a class="dropdown-item" href="bloodbank.php">BLOOD BANK</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="serviceDeliverySystem.php">SERVICE DELIVERY SYSTEM</a>
-                    </li>
-
-                </ul>
-
-            </div>
-        </div>
-    </nav>
-    <!-- End Navbar-->
-
-
-    <a href="midcs.php">
-        <button class="btn-back"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
-
-    </a>
-
-
-    <section id="news" class="container my-5 pt-4">
-        <h1 class="text-center header-font my-5"> MIDCS <span class="p-text">Location</span> </h1>
-    </section>
-
-<?php
-    
-
-    $cloc = $_POST['cloc'];
-    $dloc = $_POST['dloc'];
-    $node = 5;
-    $ans;
-
-
-    $costMat = array (
-        array("location","Kushtia","Jhenaidah","Jashore", "Satkhira", "Khulna"),
-        array("Kushtia", 0, 45, 999, 999, 999),
-        array("Jhenaidah", 45, 0, 47, 999, 999),
-        array("Jashore", 999, 47, 0, 75, 65),
-        array("Satkhira", 999, 999, 75, 0, 60),
-        array("Khulna", 999, 999, 65, 60, 0)
-      );
-    $cost = array (
-        array("location","Kushtia","Jhenaidah","Jashore", "Satkhira", "Khulna"),
-        array("Kushtia", 0, 45, 999, 999, 999),
-        array("Jhenaidah", 45, 0, 47, 999, 999),
-        array("Jashore", 999, 47, 0, 75, 65),
-        array("Satkhira", 999, 999, 75, 0, 60),
-        array("Khulna", 999, 999, 65, 60, 0)
-      );
-      $p = array (array ());
-
-      for ($i = 1; $i<=$node; $i++) {
-          for ($j=1; $j<=$node; $j++) {
-            for ($k = 1; $k<=$node; $k++) {
-                for ($i = 1; $i<=$node; $i++) {
-                    for($j=1; $j<=$node; $j++) {
-                        if($cost[$i][$k]+$cost[$k][$j] < $cost[$i][$j]) {
-                            $cost[$i][$j] = $cost[$i][$k]+$cost[$k][$j];
-
-                        }
-                        
-                    }
+            if (leftChildIdx < length) {
+                leftChild = this.values[leftChildIdx];
+                if (leftChild.priority < element.priority) {
+                swap = leftChildIdx;
                 }
             }
-          }
-      }
-      $r;
-      $c;
+            if (rightChildIdx < length) {
+                rightChild = this.values[rightChildIdx];
+                if (
+                (swap === null && rightChild.priority < element.priority) ||
+                (swap !== null && rightChild.priority < leftChild.priority)
+                ) {
+                swap = rightChildIdx;
+                }
+            }
+            if (swap === null) break;
+            this.values[idx] = this.values[swap];
+            this.values[swap] = element;
+            idx = swap;
+            }
+        }
+        }
 
-      for ($i=1; $i<=$node; $i++) {
-          if ($cost[$i][0]==$cloc) {
-              $r = $i;
-              break;
+        //Dijkstra's algorithm only works on a weighted graph.
 
-          }
-      }
-      for ($j = 1; $j<=$node; $j++) {
-          if ($cost[0][$j] == $dloc) {
-              $c = $j;
-          }
-      }
-
-      $ans = $cost[$r][$c];
-      
-
-      echo "<h1 style= text-align:center> Distance between ". $cloc. " to " .$dloc. " is ";
-      echo $ans." km";
-      echo "</h1>";
-    
-
-?>
-
-
-
-
-      </div>
-
-
-            <!-- footer section -->
-
-      <br>
-          <br>
-          <br>
-    <footer class="container-fluid">
-        <div class="container partition">
-            <div>
-                <h6 style="margin-top: 20px;">Have Questions?</h6>
-                <a style="text-decoration: none; color: gray;" href="">VISIT SVH</a>
-                <h6>Call 800-232-4636</h6>
-                <a style="text-decoration: none; color: gray;" href="mail-to">Email CDC-INFO</a><br>
-                <a style="text-decoration: none; color: gray;" href="mail-to">Open 24/7</a>
-
-            </div>
-            <div style="margin-left: 190px;">
-                <h6 style="margin-top: 20px;">SVH INFORMATION</h6>
-                <p>About SVH</p>
-                <p>Jobs</p>
-                <p>Funding</p>
-                <p>info@svh.com</p>
-            </div>
-            <div style="margin-left: 190px;">
-                <h6 style="margin-top: 20px;">Privacy</h6>
-                <p>No fair act</p>
-                <p>Accessility</p>
-                <p>info@svh.com</p>
-            </div>
-
-            <div style="margin-left: 190px;">
-                <h6 style="margin-top: 20px;">CONNECT WITH SVH</h6>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item ">
-                        <a class="nav-link active text-white fontw" aria-current="page" href="#"><i
-                                class="fa fa-facebook fa-1x"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white fontw" aria-current="page" href="services.html"><i
-                                class="fa fa-twitter"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white fontw" href="#"><i class="fa fa-youtube"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white fontw" href="#"><i class="fa fa-linkedin"></i></a>
-                    </li>
-
-                </ul>
-            </div>
-
-
-        </div>
-
-
-        <div class="footer-end text-center">
-            <h5 style="color: #b3a9a9;">Developed by Pial & Tarek</h5>
-        </div>
-    </footer>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+        class WeightedGraph {
+        constructor() {
+            this.adjacencyList = {};
+        }
+        addVertex(vertex) {
+            if (!this.adjacencyList[vertex]) this.adjacencyList[vertex] = [];
+        }
+        addEdge(vertex1, vertex2, weight) {
+            this.adjacencyList[vertex1].push({ node: vertex2, weight });
+            this.adjacencyList[vertex2].push({ node: vertex1, weight });
+        }
+        Dijkstra(start, finish) {
+            const nodes = new PriorityQueue();
+            const distances = {};
+            const previous = {};
+            let path = []; //to return at end
+            let smallest;
+            //build up initial state
+            for (let vertex in this.adjacencyList) {
+            if (vertex === start) {
+                distances[vertex] = 0;
+                nodes.enqueue(vertex, 0);
+            } else {
+                distances[vertex] = Infinity;
+                nodes.enqueue(vertex, Infinity);
+            }
+            previous[vertex] = null;
+            }
+            // as long as there is something to visit
+            while (nodes.values.length) {
+            smallest = nodes.dequeue().val;
+            if (smallest === finish) {
+                //WE ARE DONE
+                //BUILD UP PATH TO RETURN AT END
+                while (previous[smallest]) {
+                path.push(smallest);
+                smallest = previous[smallest];
+                }
+                break;
+            }
+            if (smallest || distances[smallest] !== Infinity) {
+                for (let neighbor in this.adjacencyList[smallest]) {
+                //find neighboring node
+                let nextNode = this.adjacencyList[smallest][neighbor];
+                //calculate new distance to neighboring node
+                let candidate = distances[smallest] + nextNode.weight;
+                let nextNeighbor = nextNode.node;
+                if (candidate < distances[nextNeighbor]) {
+                    //updating new smallest distance to neighbor
+                    distances[nextNeighbor] = candidate;
+                    //updating previous - How we got to neighbor
+                    previous[nextNeighbor] = smallest;
+                    //enqueue in priority queue with new priority
+                    nodes.enqueue(nextNeighbor, candidate);
+                }
+                }
+            }
+            }
+            return path.concat(smallest).reverse();
+        }
+        }
 
 
 
+        //EXAMPLES=====================================================================
 
-      
+        var graph = new WeightedGraph();
+        graph.addVertex("Kushtia");
+        graph.addVertex("Jhenaidah");
+        graph.addVertex("Jashore");
+        graph.addVertex("Satkhira");
+        graph.addVertex("Khulna");
+        //graph.addVertex("F");
 
+        graph.addEdge("Kushtia", "Jhenaidah", 45);
+        graph.addEdge("Jhenaidah", "Jashore", 47);
+        graph.addEdge("Jashore", "Satkhira", 75);
+        graph.addEdge("Jashore", "Khulna", 65);
+        graph.addEdge("Satkhira", "Khulna", 60);
+        // graph.addEdge("D", "E", 3);
+        // graph.addEdge("D", "F", 1);
+        // graph.addEdge("E", "F", 1);
 
-
-
-    
-
-
-
-
-
-
-    
+        console.log(graph.Dijkstra("Kushtia", "Khulna"));
+    </script>
 </body>
 </html>

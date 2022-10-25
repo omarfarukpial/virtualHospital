@@ -60,6 +60,9 @@
         <form action="docformup.php" method="post">
           <label for="fname">Name</label>
           <input type="text" id="name" name="name" >
+
+          <label for="bmdcreg">BMDC Registration Number</label>
+          <input type="text" id="bmdcreg" name="bmdcreg" >
       
 
           <label for="phn">Phone number</label>

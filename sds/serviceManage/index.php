@@ -57,6 +57,9 @@
     <div class = "d-flex justify-content-center">
         <button  type="button" class="btn-add w-25"  onclick="location.href = 'acceptedAppointments.php' ">Accepted Appointments</button>
     </div>
+    <div class = "d-flex justify-content-center">
+        <button  type="button" class="btn-add w-25"  onclick="location.href = 'doctorVerifyReq.php' ">Doctor Verify Request</button>
+    </div>
     
 
  </div>       
