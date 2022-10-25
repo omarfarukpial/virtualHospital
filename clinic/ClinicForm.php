@@ -38,24 +38,35 @@
 
 
 
-<section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
+<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
 <div>
-    <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+<button style="display:none;" type="button" class="btn-add"  onclick="location.href = 'ClinicForm.php' ">Add Clinic</button>
 </div>
 
 <div>
 <h1 class="text-center text-white header-font mt-4"> Clinic Registration</h1>
 </div>
 <div>
-<button style="display:none;" type="button" class="btn-add"  onclick="location.href = 'ClinicForm.php' ">Add Clinic</button>
+<button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+
 </div>
 
 
 </section>
 
 
-<div style="display:flex">
+<div class="container-xxl" style="display:flex">
+
+<div class="descontent">
+      <div style="margin-left:40%;">
+      <img src="../img/clinic.png" alt="Clinic logo" height=200px width=200px style="border-radius: 50%;">
+      </div>
+      
+      <br>
+      <h5>A clinic is a health facility that is primarily focused on the care of outpatients. Clinics can be privately operated or publicly managed and funded. They typically cover the primary care needs of populations in local communities, in contrast to larger hospitals which offer more specialised treatments and admit inpatients for overnight stays. </h5>
+
+    </div>
 
         
 <div class="dform">
@@ -146,15 +157,7 @@
   </div>
 
 
-    <div class="descontent">
-      <div style="margin-left:40%;">
-      <img src="../img/clinic.png" alt="Clinic logo" height=200px width=200px style="border-radius: 50%;">
-      </div>
-      
-      <br>
-      <h5>A clinic is a health facility that is primarily focused on the care of outpatients. Clinics can be privately operated or publicly managed and funded. They typically cover the primary care needs of populations in local communities, in contrast to larger hospitals which offer more specialised treatments and admit inpatients for overnight stays. </h5>
-
-    </div>
+    
 
 
 </div>

@@ -1,6 +1,6 @@
 <!-- 1st nav like cdc  -->
-<nav class="navbar navbar-light bg-light mt-2">
-        <div class="container-fluid">
+<nav class="navbar navbar-light bg-light mt-2 ">
+        <div class="container-fluid d-flex justify-content-between d-inline">
             <div class="flex">
                 
                 <a class="navbar-brand text-dark align-items-center" href="/virtualHospital">
@@ -9,7 +9,7 @@
                             <img class="logo" src="/virtualHospital/img/svh1.png" alt="">
                             </div>
                             <div class="" >
-                        <b style="font-size: 32pt; mb-0">Swift<span style="color: red;font-size: 32pt; "> Virtual Hospital</span> <p class="mt-0">SVH 24/7: Savings life, protecting people </p> </b> 
+                        <b style="font-size: 32pt; mb-0">Swift<span style="color: red;font-size: 32pt; "> Virtual Hospital</span> <p class="mt-0">SVH 24/7: Savings life, <span style="color:red;">hotline:</span>  01521413418 </p> </b> 
                         </div>
                     </div>
                     
@@ -19,10 +19,11 @@
                     
             </div>
 
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+             
+                <img class="" style="width: 20%; height: 20%; " src="/virtualHospital/img/logo2.png" alt="logo">
+                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button> -->
+             
         </div>
         
  </nav>

@@ -57,10 +57,10 @@ $_SESSION['clinicName'] = $clinicname;
 
 
 
-<section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
+<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
     <div>
-        <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+    <a href="doctorAdding.php"><button type="button" class="btn-add">Add Doctor</button></a>
     </div>
 
         <div>
@@ -68,7 +68,8 @@ $_SESSION['clinicName'] = $clinicname;
         <!-- <h1 class="text-center header-font mt-4"> Doctors in  </h1> -->
         </div>
         <div>
-            <a href="doctorAdding.php"><button type="button" class="btn-add">Add Doctor</button></a>
+        <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+            
         
         </div>
         
@@ -79,7 +80,7 @@ $_SESSION['clinicName'] = $clinicname;
 
 
 
-    <div class="container" style="width:100%; margin: auto;">
+    <div class="container-xxl" style="width:100%; margin: auto;">
 
         <table id = "table_id" class="table table-striped table-borderd text-center  mx-auto  table-hover" style="border-radius: 1em;
     overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">

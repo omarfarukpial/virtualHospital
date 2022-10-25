@@ -50,7 +50,17 @@
                 monitoring to patients
                 with
                 communicable (e.g., COVID-19) and non-communicable diseases (e.g., diabetes) using telehealth-based
-                communication, IoT devices, AI for disease patterns identification, and more.</h5>
+                communication, IoT devices, AI for disease patterns identification, and more.Virtual Hospital in devoloping
+                countries
+                like
+                Bangladesh are not adequate. The
+                major
+                issue of Bangladesh is
+                its large populatiion. The infectious disease affects severely here and spreads a lot faster than in
+                other
+                countries. The rural area lacks enough hospitals, qualified doctors. and proper medical equipment. When
+                outbreaks take places, they become cumbersome for developing countries. To solve such problems we need a
+                low-cost medical service, that will have all the necessary things that are needed for the patient</h5>
         </article>
 
     </div>
@@ -230,9 +240,9 @@
     </div>
 
     <!-- partition part -->
-    <div class="container container3">
+    <!-- <div class="container container3">
         <div class="link1">
-            <!-- <a class="menu"  href="services.php">Services</a> -->
+        
             <a class="menu" href="serviceDeliverySystem.php">Service Delivery System</a>
         </div>
 
@@ -251,7 +261,7 @@
 
         </div>
 
-    </div>
+    </div> -->
 
     <div class="container my-5">
         <div class="card-deck  ">
