@@ -30,15 +30,16 @@
 ?>
   
 
-<section id="news" class="d-flex justify-content-between ml-2 mr-2">
+<section id="news" class=" container-xxl d-flex justify-content-between ml-2 mr-2">
     <div>
-        <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+        
     </div>
     <div>
     <h1 class="text-center header-font mt-4"> Appointment <span class="p-text">Schedule</span> </h1>
     </div>
     <div>
-        <button style="visibility:hidden;" type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+    <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+        <!-- <button style="visibility:hidden;" type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button> -->
     </div>
 </section>
 

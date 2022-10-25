@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2022 at 12:02 PM
+-- Generation Time: Oct 25, 2022 at 02:57 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -50,26 +50,27 @@ INSERT INTO `ambulance` (`id`, `name`, `phone`, `tcost`, `location`) VALUES
 
 CREATE TABLE `appointmentrequest` (
   `appointmentrequest_id` int(11) NOT NULL,
+  `clinicid` int(11) NOT NULL,
   `doctorid` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
   `symptom` varchar(50) NOT NULL,
   `problem` longtext NOT NULL,
   `time` datetime NOT NULL,
   `appointmenttime` datetime NOT NULL DEFAULT current_timestamp(),
-  `status` varchar(50) NOT NULL DEFAULT 'pending'
+  `status` varchar(50) NOT NULL DEFAULT 'pending',
+  `finished` varchar(5) NOT NULL DEFAULT 'no'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `appointmentrequest`
 --
 
-INSERT INTO `appointmentrequest` (`appointmentrequest_id`, `doctorid`, `userid`, `symptom`, `problem`, `time`, `appointmenttime`, `status`) VALUES
-(1, 1, 2, 'Cardiology', 'I am feeling chest pain badly on left side.', '2022-09-26 11:21:38', '2022-09-30 02:41:00', 'accepted'),
-(2, 1, 2, 'Cardiology', 'Feeling chest pain.', '2022-09-27 11:51:27', '2022-09-29 12:00:00', 'accepted'),
-(4, 1, 1, 'Cardiology', 'Feeling bad in left chest pain. ', '2022-09-27 12:19:24', '2022-10-01 16:21:00', 'accepted'),
-(5, 1, 1, 'Cardiology', '', '2022-09-27 01:08:44', '2022-09-27 13:12:00', 'accepted'),
-(6, 1, 0, '', '', '2022-09-27 01:08:53', '2022-09-27 13:08:53', 'pending'),
-(7, 1, 1, 'Cardiology', 'Feeling chest pain', '2022-09-28 12:11:59', '2022-10-01 12:12:00', 'accepted');
+INSERT INTO `appointmentrequest` (`appointmentrequest_id`, `clinicid`, `doctorid`, `userid`, `symptom`, `problem`, `time`, `appointmenttime`, `status`, `finished`) VALUES
+(1, 1, 2, 1, 'Cardiology', 'Feeling chest pain.', '2022-10-17 12:01:20', '2022-10-18 00:21:00', 'accepted', 'yes'),
+(2, 3, 5, 2, 'Cardiology', 'Hard to breath.', '2022-10-17 12:22:13', '2022-10-26 23:20:00', 'accepted', 'yes'),
+(3, 3, 5, 4, 'Cardiology', 'Chest pain', '2022-10-17 11:17:24', '2022-10-19 23:18:00', 'accepted', 'yes'),
+(4, 3, 5, 1, 'Cardiology', 'Check', '2022-10-17 11:19:37', '2022-10-20 23:20:00', 'accepted', 'yes'),
+(5, 0, 1, 1, 'Cardiology', '', '2022-10-19 10:45:19', '2022-10-19 10:45:19', 'pending', 'no');
 
 -- --------------------------------------------------------
 
@@ -126,18 +127,23 @@ INSERT INTO `clinic` (`id`, `clinicname`, `nbeds`, `phn`, `location`) VALUES
 CREATE TABLE `clinicdoclist` (
   `clinic_doc_id` int(11) NOT NULL,
   `doctor_id` int(11) NOT NULL,
-  `clinic_id` int(11) NOT NULL
+  `clinic_id` int(11) NOT NULL,
+  `doctor_start_time` time NOT NULL DEFAULT '00:00:00',
+  `doctor_end_time` time NOT NULL DEFAULT '00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `clinicdoclist`
 --
 
-INSERT INTO `clinicdoclist` (`clinic_doc_id`, `doctor_id`, `clinic_id`) VALUES
-(1, 1, 1),
-(2, 3, 1),
-(3, 3, 2),
-(4, 4, 3);
+INSERT INTO `clinicdoclist` (`clinic_doc_id`, `doctor_id`, `clinic_id`, `doctor_start_time`, `doctor_end_time`) VALUES
+(1, 2, 1, '10:11:00', '17:11:00'),
+(2, 4, 1, '17:00:00', '22:00:00'),
+(3, 1, 2, '00:00:00', '00:00:00'),
+(4, 4, 2, '00:00:00', '00:00:00'),
+(5, 4, 3, '12:00:00', '19:00:00'),
+(6, 5, 3, '00:00:00', '00:00:00'),
+(7, 3, 1, '17:54:00', '22:00:00');
 
 -- --------------------------------------------------------
 
@@ -175,25 +181,27 @@ INSERT INTO `deptweight` (`id`, `psymp`, `Cardiology`, `Darmatology`, `Orthopedi
 CREATE TABLE `doctor` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
+  `bmdcreg` int(11) NOT NULL,
   `phoneNumber` varchar(20) NOT NULL,
   `dob` date NOT NULL,
   `gender` varchar(20) NOT NULL,
   `specialization` varchar(50) NOT NULL,
   `designation` varchar(50) NOT NULL,
   `fees` double NOT NULL,
-  `location` varchar(20) NOT NULL
+  `location` varchar(20) NOT NULL,
+  `verified` varchar(5) NOT NULL DEFAULT 'no'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `doctor`
 --
 
-INSERT INTO `doctor` (`id`, `name`, `phoneNumber`, `dob`, `gender`, `specialization`, `designation`, `fees`, `location`) VALUES
-(1, 'Rakib Azad ', '01302302302', '1993-06-03', 'Male', 'Cardiology', 'Assistant Professor', 500, 'Dhaka'),
-(2, 'Nabil Ahmed', '01605365626', '1989-05-01', 'Male', 'Gynecology', 'Professor', 1000, 'Khulna'),
-(3, 'Tarek', '01921110986', '1999-03-13', 'Male', 'Cardiology', 'Designation', 500, 'Khulna'),
-(4, 'Fariha', '01521114562', '1990-03-09', 'Female', 'Gynecology', 'Designation', 500, 'Rajshahi'),
-(5, 'Riaj', '015214256352', '1996-01-02', 'Male', 'Gynecology', 'Designation', 750, 'Chittagong');
+INSERT INTO `doctor` (`id`, `name`, `bmdcreg`, `phoneNumber`, `dob`, `gender`, `specialization`, `designation`, `fees`, `location`, `verified`) VALUES
+(1, 'Rakib Azad ', 3156, '01302302302', '1993-06-03', 'Male', 'Cardiology', 'Assistant Professor', 500, 'Dhaka', 'no'),
+(2, 'Nabil Ahmed', 4563, '01605365626', '1989-05-01', 'Male', 'Gynecology', 'Professor', 1000, 'Khulna', 'no'),
+(3, 'Tarek', 3626, '01921110986', '1999-03-13', 'Male', 'Cardiology', 'Designation', 500, 'Khulna', 'yes'),
+(4, 'Fariha', 5925, '01521114562', '1990-03-09', 'Female', 'Gynecology', 'Designation', 500, 'Rajshahi', 'no'),
+(5, 'Riaj', 9245, '015214256352', '1996-01-02', 'Male', 'Gynecology', 'Designation', 750, 'Chittagong', 'no');
 
 -- --------------------------------------------------------
 
@@ -245,6 +253,13 @@ CREATE TABLE `mobileclinic` (
   `hotline` varchar(20) NOT NULL,
   `location` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mobileclinic`
+--
+
+INSERT INTO `mobileclinic` (`id`, `mobileclinicname`, `hotline`, `location`) VALUES
+(1, 'Mobile unit 1', '01701010101', 'Jashore');
 
 -- --------------------------------------------------------
 
@@ -519,7 +534,7 @@ ALTER TABLE `ambulance`
 -- AUTO_INCREMENT for table `appointmentrequest`
 --
 ALTER TABLE `appointmentrequest`
-  MODIFY `appointmentrequest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `appointmentrequest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `bloodbank`
@@ -537,7 +552,7 @@ ALTER TABLE `clinic`
 -- AUTO_INCREMENT for table `clinicdoclist`
 --
 ALTER TABLE `clinicdoclist`
-  MODIFY `clinic_doc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `clinic_doc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `deptweight`
@@ -567,7 +582,7 @@ ALTER TABLE `midcs`
 -- AUTO_INCREMENT for table `mobileclinic`
 --
 ALTER TABLE `mobileclinic`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mods`

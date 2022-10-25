@@ -34,10 +34,10 @@
 
 
 
-<section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
+<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
 <div>
-    <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+<button style="display:none;" type="button" class="btn-add"  onclick="location.href = 'NurseForm.php' ">Add Nurse</button>
 </div>
 
     <div>
@@ -45,7 +45,9 @@
     </div>
 
     <div>
-    <button style="display:none;" type="button" class="btn-add"  onclick="location.href = 'NurseForm.php' ">Add Nurse</button>
+    
+
+    <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
     </div>
   
     
@@ -53,7 +55,18 @@
 </section>
 
 
-    <div style="display: flex;">
+    <div class="container-xxl" style="display: flex;">
+
+      <div class="descontent">
+          <div style="margin-left:40%;">
+          <img src="../img/nurseimage.jpg" alt="nurse logo" height=200px width=200px style="border-radius: 50%;">
+          </div>
+          
+          <br>
+          <h5>A nurse is a health care professional who is engaged in the practice of nursing. Nurses are men and women who are responsible (along with other health care professionals) for the treatment, safety and recovery of acutely or chronically ill or injured people, health maintenance of the healthy, and treatment of life-threatening emergencies in a wide range of health care settings. </h5>
+
+      </div>
+
     <div class="dform">
         <form action="nurseformup.php" method="post">
           <label for="name">Name</label>
@@ -172,15 +185,7 @@
         </form>
       </div>
 
-      <div class="descontent">
-          <div style="margin-left:40%;">
-          <img src="../img/nurseimage.jpg" alt="nurse logo" height=200px width=200px style="border-radius: 50%;">
-          </div>
-          
-          <br>
-          <h5>A nurse is a health care professional who is engaged in the practice of nursing. Nurses are men and women who are responsible (along with other health care professionals) for the treatment, safety and recovery of acutely or chronically ill or injured people, health maintenance of the healthy, and treatment of life-threatening emergencies in a wide range of health care settings. </h5>
-
-        </div>
+      
   
     </div>
 

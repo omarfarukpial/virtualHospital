@@ -35,10 +35,10 @@
 
 
 
-<section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
+<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
 <div>
-    <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+<button style="display:none;" type="button" class="btn-add"  onclick="location.href = 'DocForm.php' ">Add Doctor</button>
 </div>
 
     <div>
@@ -46,31 +46,45 @@
     </div>
 
     <div>
-    <button style="display:none;" type="button" class="btn-add"  onclick="location.href = 'DocForm.php' ">Add Doctor</button>
+    <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+    
     </div>
   
     
 
 </section>
     
-    <div style="display:flex">
+    <div class="container-xxl" style="display:flex">
 
         
-    <div class="dform">
-        <form action="docformup.php" method="post">
+    
+
+    
+        <div class="descontent">
+          <div style="margin-left:40%;">
+          <img src="../img/doctorimage.webp" alt="Doctor logo" height=200px width=200px style="border-radius: 50%;">
+          </div>
+          
+          <br>
+          <h5>A doctor is someone who is experienced and certified to practice medicine to help maintain or restore physical and mental health. A doctor is tasked with interacting with patients, diagnosing medical problems and successfully treating illness or injury. There are many specific areas in the field of medicine that students can study. </h5>
+
+        </div>
+
+        <div class="dform">
+        <form class="m-0" action="docformup.php" method="post">
           <label for="fname">Name</label>
-          <input type="text" id="name" name="name" >
+          <input class="form-control form-control-sm" type="text" id="name" name="name" >
 
           <label for="bmdcreg">BMDC Registration Number</label>
-          <input type="text" id="bmdcreg" name="bmdcreg" >
+          <input class="form-control form-control-sm" type="text" id="bmdcreg" name="bmdcreg" >
       
 
           <label for="phn">Phone number</label>
-          <input type="text" id="phn" name="phone" >
+          <input class="form-control form-control-sm" type="text" id="phn" name="phone" >
 
           <label for="dob">Date of Birth</label> <br>
-          <input type="date" id="dob" name="dob">
-          <br><br>
+          <input class="form-control form-control-sm" type="date" id="dob" name="dob">
+          <br>
 
 
           <label for="gender">Gender</label>
@@ -199,17 +213,6 @@
           <input type="submit" value="Submit">
         </form>
       </div>
-
-    
-        <div class="descontent">
-          <div style="margin-left:40%;">
-          <img src="../img/doctorimage.webp" alt="Doctor logo" height=200px width=200px style="border-radius: 50%;">
-          </div>
-          
-          <br>
-          <h5>A doctor is someone who is experienced and certified to practice medicine to help maintain or restore physical and mental health. A doctor is tasked with interacting with patients, diagnosing medical problems and successfully treating illness or injury. There are many specific areas in the field of medicine that students can study. </h5>
-
-        </div>
 
 
     </div>

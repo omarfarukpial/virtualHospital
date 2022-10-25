@@ -34,16 +34,17 @@
 
 
 
-    <section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
+    <section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
         <div>
-            <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+        <button type="button" class="btn-add"  onclick="location.href = 'MobileClinicForm.php' ">Add Mobile Clinic</button>
         </div>
         <div>
             <h1 class="text-center text-white header-font mt-4"> Mobile Clinic List</h1>
         </div>
         <div>
-            <button type="button" class="btn-add"  onclick="location.href = 'MobileClinicForm.php' ">Add Mobile Clinic</button>
+        <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+            
         </div>
         
 
@@ -53,7 +54,7 @@
     
         
 
-            <table class="table table-striped table-borderd text-center w-75 mx-auto  table-hover" style="border-radius: 1em;
+            <table class="container-xxl table table-striped table-borderd text-center mx-auto  table-hover" style="border-radius: 1em;
     overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 <thead class="thead-dark">
                     <tr>

@@ -33,17 +33,18 @@
     include('../navbar.php');
 ?>
 
-<section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
+<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
 <div>
-    <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+<button type="button" class="btn-add"  onclick="location.href = 'ambulanceform.php' ">Add Ambulance</button>
+   
 </div>
 
     <div>
     <h1 class="text-center text-white header-font mt-4"> Ambulance List</h1>
     </div>
     <div>
-    <button type="button" class="btn-add"  onclick="location.href = 'ambulanceform.php' ">Add Ambulance</button>
+    <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
     </div>
     
 
@@ -59,7 +60,8 @@
     
         
 
-            <table class="table table-striped table-borderd text-center w-75 mx-auto  table-hover" style="border-radius: .5em;
+<div class="container-xxl mx-auto" style="width:100%;">
+            <table class=" table table-striped table-borderd text-center w-100 mx-auto  table-hover" style="border-radius: .5em;
     overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 
     <thead class="thead-dark">
@@ -106,6 +108,7 @@
             ?>
                 
             </table>
+            </div>
 
   
 

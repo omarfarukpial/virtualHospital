@@ -27,18 +27,33 @@
 <?php
     include('../navbar.php');
 ?>
+<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
+
+<div>
+<!-- <button type="button" class="btn-add"  onclick="location.href = 'MobileClinicForm.php' ">Add Mobile Clinic</button> -->
+</div>
+<div>
+    <h1 class="text-center text-white header-font mt-4"> Clinic Registration Form</h1>
+</div>
+<div>
+<button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+    
+</div>
+
+
+</section>
 
 
 
 
-
-    <section id="news" class="container my-5 pt-4">
+    <!-- <section id="news" class="container my-5 pt-4">
         <h1 class="text-center header-font my-5"> Clinic <span class="p-text">Registration Form</span> </h1>
-    </section>
+    </section> -->
 
 
-    <div class="dform">
-        <form action="mobileclinicformup.php" method="post">
+    <div class="container">
+    <div class="dform align-middle">
+        <form class="align-middle" action="mobileclinicformup.php" method="post">
           <label for="mobileclinicname">Mobile Clinic Name</label>
           <input type="text" id="mobileclinicname" name="mobileclinicname" placeholder="Mobile Clinic name...">
       
@@ -122,6 +137,7 @@
           <input type="submit" value="Submit">
         </form>
       </div>
+    </div>
 
 
 <!-- footer section -->

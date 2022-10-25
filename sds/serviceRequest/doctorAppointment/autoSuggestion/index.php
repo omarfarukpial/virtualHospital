@@ -30,15 +30,16 @@
 ?>
   
 <!-- Back Button and Heading -->
-<section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
+<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
     <div>
-        <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+        
     </div>
     <div>
     <h1 class="text-center text-white header-font mt-4"> Doctor Auto Suggestion</h1>
     </div>
     <div>
-        <button style="visibility:hidden;" type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+    <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+        <!-- <button style="visibility:hidden;" type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button> -->
     </div>
 </section>
 
@@ -48,7 +49,7 @@
 
     <div style="display: flex;">
 
-    <div class="dform">
+    <div class="dform2">
         <form action="doctorAutoSuggestion.php" method="post">
 
         <label for="symptom">Symptom</label>
