@@ -38,7 +38,7 @@
 
 
 
-<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
+<section id="news" class="container-xl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
 <div>
 <button style="display:none;" type="button" class="btn-add"  onclick="location.href = 'ClinicForm.php' ">Add Clinic</button>
@@ -56,9 +56,9 @@
 </section>
 
 
-<div class="container-xxl" style="display:flex">
+<div class="container-xl" style="display:flex">
 
-<div class="descontent">
+<!-- <div class="descontent">
       <div style="margin-left:40%;">
       <img src="../img/clinic.png" alt="Clinic logo" height=200px width=200px style="border-radius: 50%;">
       </div>
@@ -66,25 +66,31 @@
       <br>
       <h5>A clinic is a health facility that is primarily focused on the care of outpatients. Clinics can be privately operated or publicly managed and funded. They typically cover the primary care needs of populations in local communities, in contrast to larger hospitals which offer more specialised treatments and admit inpatients for overnight stays. </h5>
 
-    </div>
+    </div> -->
 
         
 <div class="dform">
     <form action="clinicformup.php" method="post">
-      <label for="clinicname">Clinic Name</label>
+      <div class="row">
+        <div class="col-md-6">
+        <label for="clinicname">Clinic Name</label>
       <input type="text" id="clinicname" name="clinicname" >
-
-      <label for="nbeds">Number of Beds</label>
+        </div>
+        <div class="col-md-6">
+        <label for="nbeds">Number of Beds</label>
       <input type="text" id="nbeds" name="nbeds" >
-  
+        </div>
+        
+      </div>
+      
 
-      <label for="phn">Hotline number</label>
+      <div class="row">
+        <div class="col-md-6">
+        <label for="phn">Hotline number</label>
       <input type="text" id="phn" name="phn" >
-
-
-
-  
-      <label for="location">Location</label>
+        </div>
+        <div class="col-md-6">
+        <label for="location">Location</label>
       <select id="location" name="location">
         <option disabled selected>Select District</option>
         <option value="Bagerhat">Bagerhat</option>
@@ -152,6 +158,16 @@
         <option value="Tangail">Tangail</option>
         <option value="Thakurgaon">Thakurgaon</option>
       </select>
+        </div>
+      </div>
+  
+
+      
+
+
+
+  
+      
       <input type="submit" value="Next">
     </form>
   </div>

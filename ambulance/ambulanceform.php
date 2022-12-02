@@ -15,7 +15,7 @@
     <script src="https://kit.fontawesome.com/c045880d2c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/newcss.css">
-    <link rel="stylesheet" href="../css/inputForm.css">
+    <link rel="stylesheet" href="../css/inputFormNew.css">
 
     <title>Ambulance Form</title>
 
@@ -30,7 +30,7 @@
 
 
 
-<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
+<section id="news" class="container-xl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
 <div>
 <button style="display:none;" type="button" class="btn-add"  onclick="location.href = 'ClinicForm.php' ">Add Clinic</button>
@@ -48,27 +48,27 @@
 </section>
 
 
-    <div class="dform  my-5 container-xxl mx-auto">
+    <div class="dform  my-5 container-xl mx-auto">
         <form action="ambulanceformup.php" method="post">
-          <label for="name">Ambulance Name</label>
+          <div class="row">
+            <div class="col-md-6">
+            <label for="name">Ambulance Name</label>
           <input type="text" id="name" name="name" placeholder="Ambulance name...">
-      
-
-          <label for="phn">Phone number for Ambulance</label>
+            </div>
+            <div class="col-md-6">
+            <label for="phn">Phone number for Ambulance</label>
           <input type="text" id="phn" name="phone" placeholder="Phone number for Ambulance...">
-
-          <label for="tcost">Transportation Cost</label>
-          <input type="text" id="tcost" name="tcost" placeholder="Transportation Cost Ambulance...">
-
+            </div>
+          </div>
           
-
-         
-          
-          
-
-
       
-          <label for="division">Location</label>
+<div class="row">
+  <div class="col-md-6">
+  <label for="tcost">Transportation Cost</label>
+          <input type="text" id="tcost" name="tcost" placeholder="Transportation Cost Ambulance...">
+  </div>
+  <div class="col-md-6">
+  <label for="division">Location</label>
           <select id="division" name="division">
             <option disabled selected>Select Location</option>
             <option value="Bagerhat">Bagerhat</option>
@@ -136,6 +136,11 @@
             <option value="Tangail">Tangail</option>
             <option value="Thakurgaon">Thakurgaon</option>
           </select>
+  </div>
+</div>
+          
+      
+          
           <input type="submit" value="Submit">
         </form>
       </div>

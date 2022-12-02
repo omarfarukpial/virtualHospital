@@ -34,7 +34,7 @@
 
 
 
-<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
+<section id="news" class="container-xl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
 <div>
 <button style="display:none;" type="button" class="btn-add"  onclick="location.href = 'NurseForm.php' ">Add Nurse</button>
@@ -55,9 +55,9 @@
 </section>
 
 
-    <div class="container-xxl" style="display: flex;">
+    <div class="container-xl" style="display: flex;">
 
-      <div class="descontent">
+      <!-- <div class="descontent">
           <div style="margin-left:40%;">
           <img src="../img/nurseimage.jpg" alt="nurse logo" height=200px width=200px style="border-radius: 50%;">
           </div>
@@ -65,47 +65,65 @@
           <br>
           <h5>A nurse is a health care professional who is engaged in the practice of nursing. Nurses are men and women who are responsible (along with other health care professionals) for the treatment, safety and recovery of acutely or chronically ill or injured people, health maintenance of the healthy, and treatment of life-threatening emergencies in a wide range of health care settings. </h5>
 
-      </div>
+      </div> -->
 
     <div class="dform">
         <form action="nurseformup.php" method="post">
+
+        <div class="row">
+          <div class="col-md-4">
           <label for="name">Name</label>
           <input type="text" id="name" name="name">
+          </div>
 
+          <div class="col-md-4">
           <label for="phn">Phone number</label>
           <input type="text" id="phn" name="phone" >
+          </div>
+
+          <div class="col-md-4">
+          <label for="nfee">Fees per hour</label>
+          <input type="text" id="nfee" name="nfee">
+          </div>
+        </div>
+          
+
+          
 
 
 
-          <label for="dob">Date of Birth</label> <br>
-          <input type="date" id="dob" name="dob">
-          <br><br>
-
-   
-
-          <label for="gender">Gender</label>
+          
+      <div class="row mt-2">
+        <div class="col-md-4">
+        <label for="gender">Gender</label>
           <select id="gender" name="gender">
             <option disabled selected>Select Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
-
-          <label for="designation">Designation</label>
+        </div>
+        <div class="col-md-4">
+        <label for="designation">Designation</label>
           <select id="designation" name="designation">
             <option disabled selected>Select Designation</option>
             <option value="Senior Staff Nurse">Senior Staff Nurse</option>
             <option value="Staff Nurse">Staff Nurse</option>
             <option value="Nurse">Nurse</option>
           </select>
+        </div>
+        <div class="col-md-4">
+        <label for="dob">Date of Birth</label> <br>
+          <input type="date" id="dob" name="dob">
+        
+        </div>
+      </div>
 
-          <label for="nfee">Fees per hour</label>
-          <input type="text" id="nfee" name="nfee">
+   
+
           
-          
-
-
-      
-          <label for="location">Current Location</label>
+<div class="row mt-2">
+  <div class="col-md-4">
+  <label for="location">Current Location</label>
           <select id="location" name="location">
           
             <option disabled selected>Select District</option>
@@ -174,6 +192,21 @@
             <option value="Tangail">Tangail</option>
             <option value="Thakurgaon">Thakurgaon</option>
           </select>
+  </div>
+  <div class="col-md-4">
+
+  </div>
+  <div class="col-md-4"></div>
+</div>
+          
+
+          
+          
+          
+
+
+      
+          
 
 
 

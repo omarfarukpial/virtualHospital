@@ -31,25 +31,31 @@
 
 
 
-    <section id="news" class="container  pt-4">
+    <section id="news" class="container-xl  pt-4">
         <h1 class="text-center header-font my-5"> MODS <span class="p-text">Registration Form</span> </h1>
     </section>
 
 
     <div class="dform">
         <form action="modsformup.php" method="post">
-          <label for="modsname">MODS Name</label>
+            <div class="row">
+                <div class="col-md-6">
+                <label for="modsname">MODS Name</label>
           <input type="text" id="modsname" name="modsname" placeholder="MODS name...">
-          <label for="oxygenprice">Oxygen Rental Price per Month</label>
+                </div>
+                <div class="col-md-6">
+                <label for="oxygenprice">Oxygen Rental Price per Month</label>
           <input type="text" id="oxygenprice" name="oxygenprice" placeholder="Oxygen Rental Price per Month...">
-      
-          <label for="hotline">Hotline</label>
+                </div>
+            </div>
+          
+          <div class="row">
+            <div class="col-md-6">
+            <label for="hotline">Hotline</label>
           <input type="text" id="hotline" name="hotline" placeholder="Hotline Number...">
-
-          
-
-          
-          <label for="location">Location</label>
+            </div>
+            <div class="col-md-6">
+            <label for="location">Location</label>
           <select id="location" name="location">
             <option disabled selected>Select District</option>
             <option value="Bagerhat">Bagerhat</option>
@@ -117,6 +123,15 @@
             <option value="Tangail">Tangail</option>
             <option value="Thakurgaon">Thakurgaon</option>
           </select>
+            </div>
+          </div>
+      
+          
+
+          
+
+          
+          
 
       
           

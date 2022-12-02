@@ -38,16 +38,21 @@
 
     <div class="dform">
         <form action="midcsformup.php" method="post">
-          <label for="midcsname">MIDCS Name</label>
+          <div class="row">
+            <div class="col-md-6">
+            <label for="midcsname">MIDCS Name</label>
           <input type="text" id="midcsname" name="midcsname" placeholder="MIDCS name...">
-          
-          <label for="hotline">Hotline</label>
+            </div>
+            <div class="col-md-6">
+            <label for="hotline">Hotline</label>
           <input type="text" id="hotline" name="hotline" placeholder="Hotline Number...">
-
+            </div>
+          </div>
           
-
           
-          <label for="location">Location</label>
+          <div class="row">
+            <div class="col-md-6">
+            <label for="location">Location</label>
           <select id="location" name="location">
             <option disabled selected>Select District</option>
             <option value="Bagerhat">Bagerhat</option>
@@ -115,6 +120,14 @@
             <option value="Tangail">Tangail</option>
             <option value="Thakurgaon">Thakurgaon</option>
           </select>
+            </div>
+            <div class="col-md-6"></div>
+          </div>
+
+          
+
+          
+          
 
       
           

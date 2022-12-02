@@ -20,7 +20,7 @@
             </div>
 
              
-                <img class="" style="width: 20%; height: 20%; " src="/virtualHospital/img/logo2.png" alt="logo">
+                <img class="" style="width: 20%; height: 20%;border-radius: 15px; " src="/virtualHospital/img/svh6.png" alt="logo">
                 <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button> -->
              

@@ -18,8 +18,15 @@
     <link rel="stylesheet" href="../css/newcss.css">
     <link rel="stylesheet" href="../css/inputFormNew.css">
 
-    <title>Doctor Form</title>
+    <!-- For new form design  -->
+    <!-- <link href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/smart_wizard.min.css" rel="stylesheet" type="text/css" />
+ <link href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/smart_wizard_theme_arrows.min.css" rel="stylesheet" type="text/css" />
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/jquery.smartWizard.min.js"></script> -->
 
+    <title>Doctor Form</title>
+<!-- <style>
+  body{background-color: #eee}.form-control:focus{color: #495057;background-color: #fff;border-color: #80bdff;outline: 0;box-shadow: 0 0 0 0rem rgba(0,123,255,.25)}.btn-secondary:focus{box-shadow: 0 0 0 0rem rgba(108,117,125,.5)}.close:focus{box-shadow: 0 0 0 0rem rgba(108,117,125,.5)}.mt-200{margin-top:200px}
+</style> -->
 
 </head>
 <body class="container-fluid">
@@ -35,7 +42,7 @@
 
 
 
-<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
+<section id="news" class="container-xl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
 <div>
 <button style="display:none;" type="button" class="btn-add"  onclick="location.href = 'DocForm.php' ">Add Doctor</button>
@@ -53,14 +60,22 @@
     
 
 </section>
-    
-    <div class="container-xxl" style="display:flex">
 
-        
-    
 
+
+
+                                 
+                             
+                        
+                         
+      
+
+                     
     
-        <div class="descontent">
+    <div class="container-xl" style="display:flex">
+
+      
+        <!-- <div class="descontent">
           <div style="margin-left:40%;">
           <img src="../img/doctorimage.webp" alt="Doctor logo" height=200px width=200px style="border-radius: 50%;">
           </div>
@@ -68,33 +83,49 @@
           <br>
           <h5>A doctor is someone who is experienced and certified to practice medicine to help maintain or restore physical and mental health. A doctor is tasked with interacting with patients, diagnosing medical problems and successfully treating illness or injury. There are many specific areas in the field of medicine that students can study. </h5>
 
-        </div>
+        </div> -->
 
         <div class="dform">
         <form class="m-0" action="docformup.php" method="post">
-          <label for="fname">Name</label>
-          <input class="form-control form-control-sm" type="text" id="name" name="name" >
+                <div class="row">
+                        <div class="col-md-4">
+                        <label for="fname">Name</label>
+                      <input class="form-control form-control-sm" type="text" id="name" name="name" >
+                        </div>
 
-          <label for="bmdcreg">BMDC Registration Number</label>
-          <input class="form-control form-control-sm" type="text" id="bmdcreg" name="bmdcreg" >
+                        <div class="col-md-4">
+                        <label for="bmdcreg">BMDC Registration Number</label>
+                      <input class="form-control form-control-sm" type="text" id="bmdcreg" name="bmdcreg" >
+                        </div>
+                        
+                        <div class="col-md-4">
+                        <label for="phn">Phone number</label>
+                      <input class="form-control form-control-sm" type="text" id="phn" name="phone" >
+                </div>
+            </div>
+          
+
+          
       
 
-          <label for="phn">Phone number</label>
-          <input class="form-control form-control-sm" type="text" id="phn" name="phone" >
-
-          <label for="dob">Date of Birth</label> <br>
+          
+          <div class="row mt-2">
+            <div class="col-md-4">
+            <label for="dob">Date of Birth</label> <br>
           <input class="form-control form-control-sm" type="date" id="dob" name="dob">
-          <br>
+            </div>
 
-
-          <label for="gender">Gender</label>
+            <div class="col-md-4">
+            <label for="gender">Gender</label>
           <select id="gender" name="gender">
             <option disabled selected>Select Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
 
-          <label for="specialization">Specialization</label>
+            </div>
+            <div class="col-md-4">
+            <label for="specialization">Specialization</label>
           <select id="specialization" name="specialization">
           <option selected>Specialists</option>
                 <option value="Allergy and immunology">Allergy and immunology</option>
@@ -122,27 +153,30 @@
                 <option value="Surgery">Surgery</option>
                 <option value="Urology">Urology</option>
           </select>
+            </div>
+          </div>
+
+          
+      
 
 
-          <label for="designation">Designation</label>
+          
+<div class="row mt-2">
+  <div class="col-md-4">
+  <label for="designation">Designation</label>
           <select id="designation" name="designation">
           <option selected>Designation</option>
                 <option value="Professor">Professor</option>
                 <option value="Associate Professor">Associate Professor</option>
                 <option value="Assistant Professor">Assistant Professor</option>
           </select>
-
-
-
-
-
-          <label for="fees">Fees</label>
+  </div>
+  <div class="col-md-4">
+  <label for="fees">Fees</label>
           <input type="text" id="fees" name="fees" >
-          
-
-
-      
-          <label for="location">Current Location</label>
+  </div>
+  <div class="col-md-4">
+  <label for="location">Current Location</label>
           <select id="location" name="location">
             <option disabled selected>Select District</option>
             <option value="Bagerhat">Bagerhat</option>
@@ -210,6 +244,9 @@
             <option value="Tangail">Tangail</option>
             <option value="Thakurgaon">Thakurgaon</option>
           </select>
+  </div>
+</div>
+       
           <input type="submit" value="Submit">
         </form>
       </div>
@@ -250,7 +287,20 @@ include('../footer.php');
 
 
 
+<script>
+  $(document).ready(function(){
 
+$('#smartwizard').smartWizard({
+        selected: 0,
+        theme: 'arrows',
+        autoAdjustHeight:true,
+        transitionEffect:'fade',
+        showStepURLhash: false,
+     
+});
+
+});
+</script>
     
 </body>
 </html>

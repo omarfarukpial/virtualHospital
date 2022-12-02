@@ -40,7 +40,7 @@
 
 
 
-<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
+<section id="news" class="mt-4 container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
     <div>
     <button type="button" class="btn-add"  onclick="location.href = 'DocForm.php' ">Add Doctor</button>

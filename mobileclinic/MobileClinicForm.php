@@ -27,7 +27,7 @@
 <?php
     include('../navbar.php');
 ?>
-<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
+<section id="news" class="container-xl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
 <div>
 <!-- <button type="button" class="btn-add"  onclick="location.href = 'MobileClinicForm.php' ">Add Mobile Clinic</button> -->
@@ -51,19 +51,25 @@
     </section> -->
 
 
-    <div class="container">
+    <div class="container-xl">
     <div class="dform align-middle">
+    
         <form class="align-middle" action="mobileclinicformup.php" method="post">
-          <label for="mobileclinicname">Mobile Clinic Name</label>
+            <div class="row">
+                <div class="col-md-6">
+                <label for="mobileclinicname">Mobile Clinic Name</label>
           <input type="text" id="mobileclinicname" name="mobileclinicname" placeholder="Mobile Clinic name...">
-      
-          <label for="hotline">Hotline</label>
+                </div>
+                <div class="col-md-6">
+                <label for="hotline">Hotline</label>
           <input type="text" id="hotline" name="hotline" placeholder="Hotline Number...">
-
+                </div>
+            </div>
           
-
-          
-          <label for="location">Location</label>
+      
+          <div class="row">
+            <div class="col-md-6">
+            <label for="location">Location</label>
           <select id="location" name="location">
             <option disabled selected>Select District</option>
             <option value="Bagerhat">Bagerhat</option>
@@ -131,6 +137,14 @@
             <option value="Tangail">Tangail</option>
             <option value="Thakurgaon">Thakurgaon</option>
           </select>
+            </div>
+            <div class="col-md-6"></div>
+          </div>
+
+          
+
+          
+          
 
       
           

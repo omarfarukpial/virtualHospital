@@ -33,7 +33,7 @@
 ?>
   
 <!-- Back Button and Heading -->
-<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
+<section id="news" class="container-xl d-flex justify-content-between mb-4 rounded bg-info shadow">
     <div>
         
     </div>
@@ -51,12 +51,13 @@
 <!-- Appointment info form -->
 
 
-    <div style="display: flex;">
+    <div class="container-xl" style="display: flex;">
 
     <div class="dform2">
         <form action="./manualAppointmentSend.php" method="post">
-
-        <label for="symptom">Specialist Needed</label>
+<div class="row">
+    <div class="col-md-4">
+    <label for="symptom">Specialist Needed</label>
         <select name="symptom" id="symptom">
             <option disable selected>Select your symptom</option>
             <option value="Cardiology">Cardiology</option>
@@ -65,31 +66,38 @@
             <option value="GeneralMedicine">GeneralMedicine</option>
             <option value="Gynecology">Gynecology</option>
         </select>
-
-        <label for="username">Username</label>
+    </div>
+    <div class="col-md-4">
+    <label for="username">Username</label>
         <input type="text" id="username" name="username" onkeyup="userinfofill(this.value)" value="">
-
-        <label for="name">Name</label>
+    </div>
+    <div class="col-md-4">
+    <label for="name">Name</label>
         <input type="text" id="name" name="name" >
-
-        <label for="age">Age</label>
+    </div>
+</div>
+        
+<div class="row">
+    <div class="col-md-4">
+    <label for="age">Age</label>
         <input type="text" id="age" name="age" >
-      
-        <label for="gender">Gender</label>
+    </div>
+    <div class="col-md-4">
+    <label for="gender">Gender</label>
         <input type="text" id="gender" name="gender" >
-
-        <label for="phn">Phone Number</label>
+    </div>
+    <div class="col-md-4">
+    <label for="phn">Phone Number</label>
         <input type="text" id="phn" name="phn" >
+    </div>
+</div>
+        
 
         
 
-
-          
-
-          
-
-          
-          <label for="location">Current Location</label>
+        <div class="row">
+            <div class="col-md-4">
+            <label for="location">Current Location</label>
           <select id="location" name="location">
             <option disabled selected>Select District</option>
             <option value="Bagerhat">Bagerhat</option>
@@ -157,9 +165,9 @@
             <option value="Tangail">Tangail</option>
             <option value="Thakurgaon">Thakurgaon</option>
           </select>
-
-
-          <label for="cid">Select Clinic</label>
+            </div>
+            <div class="col-md-4">
+            <label for="cid">Select Clinic</label>
             <select name="cid" id = "cid" >
                 <option disable selected> Select Clinic</option>
                 <?php
@@ -173,21 +181,26 @@
 
                 ?>
             </select>
-
-       
-
-          <label for="did">Select Doctor</label>
+            </div>
+            <div class="col-md-4">
+            <label for="did">Select Doctor</label>
             <select name="did" id = "did" onchange="showDoc(this.value)" >
                 <option disable selected> Select Doctor</option>
                 
             </select>
-
-          <br>
-
-
-
-        <label for="problem">Tell us about your problem</label>
+            </div>
+        </div>
+      
+        <div class="row">
+            <div class="col-md-4">
+            <label for="problem">Tell us about your problem</label>
         <textarea class="form-control mb-4" name = "problem" id="problem" rows="5"></textarea>
+            </div>
+        </div>
+
+
+
+        
 
       
           
