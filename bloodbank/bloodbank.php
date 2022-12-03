@@ -3,20 +3,20 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/img/logo.png">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="icon" type="image/x-icon" href="/img/logo.png">
+    <link rel="stylesheet" href="style.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="js/bootstrap.min.js">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/bootstrap.min.js">
     <!-- Font Awesome adding -->
     <script src="https://kit.fontawesome.com/c045880d2c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="newcss.css">
-    <link rel="stylesheet" href="inputForm.css">
+    <link rel="stylesheet" href="../css/newcss.css">
+    <link rel="stylesheet" href="./css/inputForm.css">
 
     <title>Blood Bank</title>
   
@@ -27,26 +27,28 @@
     
 
 <?php
-    include('navbar.php');
+    include('../navbar.php');
 ?>
 
 
 
-    <section id="news" class="container pt-4">
-        <h1 class="text-center header-font mt-4"> Blood <span class="p-text">Banks</span> </h1>
-    </section>
+   
+<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
-    <div class="row" style="margin-left: 10%; margin-right:10%">
-        
-        
-    <div style="margin-left:1030px" class="container">
-            <a href="bloodbankForm.php">
-                <button type="button" class="addB">Add Blood Bank</button>
-            </a>
-        </div>
+<div>
+<button type="button" class="btn-add"  onclick="location.href = 'bloodbankForm.php' ">Add Blood Bank</button>
     
-        
-    </div>
+</div>
+
+<div>
+<h1 class="text-center text-white header-font mt-4"> Blood Bank</h1>
+</div>
+<div>
+<button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+</div>
+
+
+</section>
 
     
         
@@ -56,8 +58,7 @@
         <thead class="thead-dark">
         <tr>
                     <th>ID</th>
-                    <th>Blood Bank Name</th>
-                    
+                    <th>Blood Bank Name</th>   
                     <th>Hotline Number</th>
                     <th>Location</th>
                     
@@ -67,9 +68,9 @@
 
             <?php
                 
-                include('connect.php');
+                include('../connect.php');
 
-                $sql = "SELECT * FROM bloodbankform";
+                $sql = "SELECT * FROM bloodbank";
                 $result = $conn->query($sql);
                 
                 
@@ -96,11 +97,7 @@
             </table>
 
 
-            <div style="margin-right:155px" class="container text-right">
-            <a href="index.php">
-                <button type = "button" class="btn-back"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
-            </a>
-            </div>
+           
 
             
  <!-- footer section -->
@@ -108,7 +105,7 @@
 <br>
 <br>
 <?php
-include('footer.php');
+include('../footer.php');
 ?>
 
 

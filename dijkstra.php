@@ -17,7 +17,7 @@
     <script src="https://kit.fontawesome.com/c045880d2c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/newcss.css">
-    <title>Doctor</title>
+    <title>Dijkstra</title>
 
 
     <!-- Jquery adding for Table management -->
@@ -35,11 +35,15 @@
     <br>
 
     <div class="container">
+
+   
         
 
         <div id = "pathprint" style="display: none">
 
         </div>
+        <canvas id="myCanvas" width="800px" height="500px" style="border:1px solid #000000; display:none">
+        </canvas>
         <div id = "mindist" style="display: none">
 
         </div>
@@ -109,6 +113,7 @@
 
 
     <script>
+        
 
         function dijkstra () {
             var cloc = document.getElementById("cloc").value;
@@ -116,6 +121,8 @@
             document.getElementById("formdiv").style.display = "none";
             document.getElementById("pathprint").style.display = "block";
             document.getElementById("mindist").style.display = "block";
+            document.getElementById("myCanvas").style.display = "block";
+
 
 
 
@@ -284,6 +291,7 @@
           
 
             result = graph.Dijkstra(cloc, dloc);
+           
 
             resultString = "";
             for (let i = 0; i<result.length-1; i++) {
@@ -292,7 +300,18 @@
             resultString = resultString + result[result.length-1]
             // console.log(resultString);
 
-            document.getElementById("pathprint").innerHTML = "<h1>Your path is</h1> <br>"+resultString   ;
+            document.getElementById("pathprint").innerHTML = "<h1>Your path is</h1> <br>"+resultString;
+
+            if (result[0] == "Kushtia" && result[1] == "Jhenaidah") drawKhustiaToJhenaidah();
+            if (result[0] == "Jhenaidah" && result[1] == "Jashore") drawJhenaidahToJashore();
+            if (result[0] == "Jashore" && result[1] == "Khulna") drawJashoreToKhulna();
+            if (result[0] == "Jashore" && result[1] == "Satkhira") drawJashoreToSatkhira();
+            if (result[0] == "Satkhira" && result[1] == "Khulna") drawSatkhiraToKhulna();
+
+            if (count(result) == 3 && result[0] == "Kushtia" && result[1] == "Jhenaidah" && result[2] == "Jashore") drawKhustiaToJhenaidahToJashore();
+
+
+            
             
 
 
@@ -306,9 +325,494 @@
 
 
 
-
+      
 
         
     </script>
+
+
+<!-- For map  -->
+
+<script>
+
+    function drawKhustiaToJhenaidah() {
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.font = "12px Arial";
+        ctx.fillText("Kushtia", 290, 80);
+        ctx.fillText("Jhenaidah", 300, 150);
+        ctx.fillText("Jashore", 300, 250);
+        ctx.fillText("Satkhira", 150, 400);
+        ctx.fillText("Khulna", 450, 380);
+
+    
+        // Kushtia to Jhenaidah line draw
+        ctx.moveTo(290+25, 80+2);
+        ctx.lineTo(300+25, 150-8);
+
+        ctx.strokeStyle = '#ff0000';
+        ctx.lineWidth = 10;
+        ctx.stroke();
+        
+        // if (result[0] == "Kushtia" && result[0+1] == "Jhenaidah") {
+
+        //     console.log("HEllo");
+        
+        //     ctx.stroke();
+            
+            
+        // }
+    
+        // Jhenaidah to Jashore line draw
+        ctx.moveTo(300+25, 150+2);
+        ctx.lineTo(300+25, 250-8);
+        // if (result[0] == "Jhenaidah" && result[0+1] == "Jashore") {
+        //     ctx.strokeStyle = '#ff0000';
+        
+        // }
+    
+        // Jashore to Satkhira line draw 
+        ctx.moveTo(300+25, 250+2);
+        ctx.lineTo(150+25, 400-12);
+        // if (result[0] == "Jashore" && result[0+1] == "Satkhira") {
+        //     ctx.strokeStyle = '#ff0000';
+            
+        // }
+    
+        // Jahsore to Khulna line draw
+        ctx.moveTo(300+25, 250+2);
+        ctx.lineTo(450+15, 380-12);
+        // if (result[0] == "Jashore" && result[0+1] == "Khulna") {
+        //     ctx.strokeStyle = '#ff0000';
+        // }
+
+        // Satkhira to Khulna line draw
+        ctx.moveTo(150+50, 400-5);
+        ctx.lineTo(450-5, 380-3);
+        // if (result[0] == "Satkhira" && result[0+1] == "Khulna") {
+        //     ctx.strokeStyle = '#ff0000';
+        // }
+
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 1;
+
+        
+        ctx.stroke();
+
+
+
+    }
+
+
+    function drawJhenaidahToJashore() {
+
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.font = "12px Arial";
+        ctx.fillText("Kushtia", 290, 80);
+        ctx.fillText("Jhenaidah", 300, 150);
+        ctx.fillText("Jashore", 300, 250);
+        ctx.fillText("Satkhira", 150, 400);
+        ctx.fillText("Khulna", 450, 380);
+
+        ctx.beginPath();
+        // Kushtia to Jhenaidah line draw
+        ctx.moveTo(290+25, 80+2);
+        ctx.lineTo(300+25, 150-8);
+
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 0;
+        ctx.stroke();
+
+      
+        
+        // if (result[0] == "Kushtia" && result[0+1] == "Jhenaidah") {
+
+        //     console.log("HEllo");
+        
+        //     ctx.stroke();
+            
+            
+        // }
+    
+        // Jhenaidah to Jashore line draw
+        ctx.beginPath();
+        ctx.moveTo(300+25, 150+2);
+        ctx.lineTo(300+25, 250-8);
+
+        ctx.strokeStyle = '#ff0000';
+        ctx.lineWidth = 10;
+        ctx.stroke();
+        // if (result[0] == "Jhenaidah" && result[0+1] == "Jashore") {
+        //     ctx.strokeStyle = '#ff0000';
+        
+        // }
+    
+        // Jashore to Satkhira line draw 
+        ctx.moveTo(300+25, 250+2);
+        ctx.lineTo(150+25, 400-12);
+        // if (result[0] == "Jashore" && result[0+1] == "Satkhira") {
+        //     ctx.strokeStyle = '#ff0000';
+            
+        // }
+    
+        // Jahsore to Khulna line draw
+        ctx.moveTo(300+25, 250+2);
+        ctx.lineTo(450+15, 380-12);
+        // if (result[0] == "Jashore" && result[0+1] == "Khulna") {
+        //     ctx.strokeStyle = '#ff0000';
+        // }
+
+        // Satkhira to Khulna line draw
+        ctx.moveTo(150+50, 400-5);
+        ctx.lineTo(450-5, 380-3);
+        // if (result[0] == "Satkhira" && result[0+1] == "Khulna") {
+        //     ctx.strokeStyle = '#ff0000';
+        // }
+
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 1;
+
+        
+        ctx.stroke();
+
+
+    }
+
+    function drawJashoreToKhulna() {
+
+        
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.font = "12px Arial";
+        ctx.fillText("Kushtia", 290, 80);
+        ctx.fillText("Jhenaidah", 300, 150);
+        ctx.fillText("Jashore", 300, 250);
+        ctx.fillText("Satkhira", 150, 400);
+        ctx.fillText("Khulna", 450, 380);
+
+        ctx.beginPath();
+        // Kushtia to Jhenaidah line draw
+        ctx.moveTo(290+25, 80+2);
+        ctx.lineTo(300+25, 150-8);
+
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 0;
+        ctx.stroke();
+
+      
+        
+        // if (result[0] == "Kushtia" && result[0+1] == "Jhenaidah") {
+
+        //     console.log("HEllo");
+        
+        //     ctx.stroke();
+            
+            
+        // }
+    
+        // Jhenaidah to Jashore line draw
+        ctx.beginPath();
+        ctx.moveTo(300+25, 150+2);
+        ctx.lineTo(300+25, 250-8);
+        ctx.stroke();
+        // if (result[0] == "Jhenaidah" && result[0+1] == "Jashore") {
+        //     ctx.strokeStyle = '#ff0000';
+        
+        // }
+    
+        // Jashore to Satkhira line draw 
+        ctx.beginPath();
+        ctx.moveTo(300+25, 250+2);
+        ctx.lineTo(150+25, 400-12);
+        ctx.stroke();
+        // if (result[0] == "Jashore" && result[0+1] == "Satkhira") {
+        //     ctx.strokeStyle = '#ff0000';
+            
+        // }
+    
+        // Jahsore to Khulna line draw
+        ctx.beginPath();
+        ctx.moveTo(300+25, 250+2);
+        ctx.lineTo(450+15, 380-12);
+        ctx.strokeStyle = '#ff0000';
+        ctx.lineWidth = 10;
+        ctx.stroke();
+        // if (result[0] == "Jashore" && result[0+1] == "Khulna") {
+        //     ctx.strokeStyle = '#ff0000';
+        // }
+
+        // Satkhira to Khulna line draw
+        ctx.beginPath();
+        ctx.moveTo(150+50, 400-5);
+        ctx.lineTo(450-5, 380-3);
+        // if (result[0] == "Satkhira" && result[0+1] == "Khulna") {
+        //     ctx.strokeStyle = '#ff0000';
+        // }
+
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 1;
+
+        
+        ctx.stroke();
+
+    }
+
+
+    function drawJashoreToSatkhira () {
+
+        
+        
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.font = "12px Arial";
+        ctx.fillText("Kushtia", 290, 80);
+        ctx.fillText("Jhenaidah", 300, 150);
+        ctx.fillText("Jashore", 300, 250);
+        ctx.fillText("Satkhira", 150, 400);
+        ctx.fillText("Khulna", 450, 380);
+
+        ctx.beginPath();
+        // Kushtia to Jhenaidah line draw
+        ctx.moveTo(290+25, 80+2);
+        ctx.lineTo(300+25, 150-8);
+
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 0;
+        ctx.stroke();
+
+      
+        
+        // if (result[0] == "Kushtia" && result[0+1] == "Jhenaidah") {
+
+        //     console.log("HEllo");
+        
+        //     ctx.stroke();
+            
+            
+        // }
+    
+        // Jhenaidah to Jashore line draw
+        ctx.beginPath();
+        ctx.moveTo(300+25, 150+2);
+        ctx.lineTo(300+25, 250-8);
+        ctx.stroke();
+        // if (result[0] == "Jhenaidah" && result[0+1] == "Jashore") {
+        //     ctx.strokeStyle = '#ff0000';
+        
+        // }
+    
+        // Jashore to Satkhira line draw 
+        ctx.beginPath();
+        ctx.moveTo(300+25, 250+2);
+        ctx.lineTo(150+25, 400-12);
+        ctx.strokeStyle = '#ff0000';
+        ctx.lineWidth = 10;
+        ctx.stroke();
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 1;
+        // if (result[0] == "Jashore" && result[0+1] == "Satkhira") {
+        //     ctx.strokeStyle = '#ff0000';
+            
+        // }
+    
+        // Jahsore to Khulna line draw
+        ctx.beginPath();
+        ctx.moveTo(300+25, 250+2);
+        ctx.lineTo(450+15, 380-12);
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        // if (result[0] == "Jashore" && result[0+1] == "Khulna") {
+        //     ctx.strokeStyle = '#ff0000';
+        // }
+
+        // Satkhira to Khulna line draw
+        ctx.beginPath();
+        ctx.moveTo(150+50, 400-5);
+        ctx.lineTo(450-5, 380-3);
+        // if (result[0] == "Satkhira" && result[0+1] == "Khulna") {
+        //     ctx.strokeStyle = '#ff0000';
+        // }
+
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 1;
+
+        
+        ctx.stroke();
+
+
+    }
+
+    function drawSatkhiraToKhulna() {
+          
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.font = "12px Arial";
+        ctx.fillText("Kushtia", 290, 80);
+        ctx.fillText("Jhenaidah", 300, 150);
+        ctx.fillText("Jashore", 300, 250);
+        ctx.fillText("Satkhira", 150, 400);
+        ctx.fillText("Khulna", 450, 380);
+
+        ctx.beginPath();
+        // Kushtia to Jhenaidah line draw
+        ctx.moveTo(290+25, 80+2);
+        ctx.lineTo(300+25, 150-8);
+
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 0;
+        ctx.stroke();
+
+      
+        
+        // if (result[0] == "Kushtia" && result[0+1] == "Jhenaidah") {
+
+        //     console.log("HEllo");
+        
+        //     ctx.stroke();
+            
+            
+        // }
+    
+        // Jhenaidah to Jashore line draw
+        ctx.beginPath();
+        ctx.moveTo(300+25, 150+2);
+        ctx.lineTo(300+25, 250-8);
+        ctx.stroke();
+        // if (result[0] == "Jhenaidah" && result[0+1] == "Jashore") {
+        //     ctx.strokeStyle = '#ff0000';
+        
+        // }
+    
+        // Jashore to Satkhira line draw 
+        ctx.beginPath();
+        ctx.moveTo(300+25, 250+2);
+        ctx.lineTo(150+25, 400-12);
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        // if (result[0] == "Jashore" && result[0+1] == "Satkhira") {
+        //     ctx.strokeStyle = '#ff0000';
+            
+        // }
+    
+        // Jahsore to Khulna line draw
+        ctx.beginPath();
+        ctx.moveTo(300+25, 250+2);
+        ctx.lineTo(450+15, 380-12);
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        // if (result[0] == "Jashore" && result[0+1] == "Khulna") {
+        //     ctx.strokeStyle = '#ff0000';
+        // }
+
+        // Satkhira to Khulna line draw
+        ctx.beginPath();
+        ctx.moveTo(150+50, 400-5);
+        ctx.lineTo(450-5, 380-3);
+        // if (result[0] == "Satkhira" && result[0+1] == "Khulna") {
+        //     ctx.strokeStyle = '#ff0000';
+        // }
+   
+
+        ctx.strokeStyle = '#ff0000';
+        ctx.lineWidth = 10;
+        ctx.stroke();
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 1;
+
+        
+        ctx.stroke();
+
+    }
+
+    function drawKhustiaToJhenaidahToJashore() {
+
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.font = "12px Arial";
+        ctx.fillText("Kushtia", 290, 80);
+        ctx.fillText("Jhenaidah", 300, 150);
+        ctx.fillText("Jashore", 300, 250);
+        ctx.fillText("Satkhira", 150, 400);
+        ctx.fillText("Khulna", 450, 380);
+
+        ctx.beginPath();
+        // Kushtia to Jhenaidah line draw
+        ctx.moveTo(290+25, 80+2);
+        ctx.lineTo(300+25, 150-8);
+
+        ctx.strokeStyle = '#ff0000';
+        ctx.lineWidth = 10;
+        ctx.stroke();
+
+      
+        
+        // if (result[0] == "Kushtia" && result[0+1] == "Jhenaidah") {
+
+        //     console.log("HEllo");
+        
+        //     ctx.stroke();
+            
+            
+        // }
+    
+        // Jhenaidah to Jashore line draw
+        ctx.beginPath();
+        ctx.moveTo(300+25, 150+2);
+        ctx.lineTo(300+25, 250-8);
+        ctx.strokeStyle = '#ff0000';
+        ctx.lineWidth = 10;
+        ctx.stroke();
+        // if (result[0] == "Jhenaidah" && result[0+1] == "Jashore") {
+        //     ctx.strokeStyle = '#ff0000';
+        
+        // }
+    
+        // Jashore to Satkhira line draw 
+        ctx.beginPath();
+        ctx.moveTo(300+25, 250+2);
+        ctx.lineTo(150+25, 400-12);
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        // if (result[0] == "Jashore" && result[0+1] == "Satkhira") {
+        //     ctx.strokeStyle = '#ff0000';
+            
+        // }
+    
+        // Jahsore to Khulna line draw
+        ctx.beginPath();
+        ctx.moveTo(300+25, 250+2);
+        ctx.lineTo(450+15, 380-12);
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        // if (result[0] == "Jashore" && result[0+1] == "Khulna") {
+        //     ctx.strokeStyle = '#ff0000';
+        // }
+
+        // Satkhira to Khulna line draw
+        ctx.beginPath();
+        ctx.moveTo(150+50, 400-5);
+        ctx.lineTo(450-5, 380-3);
+        // if (result[0] == "Satkhira" && result[0+1] == "Khulna") {
+        //     ctx.strokeStyle = '#ff0000';
+        // }
+   
+
+   
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+    }
+
+  
+    
+
+</script>
 </body>
 </html>
