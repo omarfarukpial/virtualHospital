@@ -27,6 +27,8 @@
 <body class="container-fluid">
     
 <?php
+
+    session_start();
     
     include('../../navbar.php');
     include('../../connect.php');
