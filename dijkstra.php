@@ -302,13 +302,26 @@
 
             document.getElementById("pathprint").innerHTML = "<h1>Your path is</h1> <br>"+resultString;
 
-            if (result[0] == "Kushtia" && result[1] == "Jhenaidah") drawKhustiaToJhenaidah();
-            if (result[0] == "Jhenaidah" && result[1] == "Jashore") drawJhenaidahToJashore();
-            if (result[0] == "Jashore" && result[1] == "Khulna") drawJashoreToKhulna();
-            if (result[0] == "Jashore" && result[1] == "Satkhira") drawJashoreToSatkhira();
-            if (result[0] == "Satkhira" && result[1] == "Khulna") drawSatkhiraToKhulna();
+            // if (result[0] == "Kushtia" && result[1] == "Jhenaidah") drawKhustiaToJhenaidah();
+            // if (result[0] == "Jhenaidah" && result[1] == "Jashore") drawJhenaidahToJashore();
+            // if (result[0] == "Jashore" && result[1] == "Khulna") drawJashoreToKhulna();
+            // if (result[0] == "Jashore" && result[1] == "Satkhira") drawJashoreToSatkhira();
+            // if (result[0] == "Satkhira" && result[1] == "Khulna") drawSatkhiraToKhulna();
+            // else drawMap();
 
-            if (count(result) == 3 && result[0] == "Kushtia" && result[1] == "Jhenaidah" && result[2] == "Jashore") drawKhustiaToJhenaidahToJashore();
+            let len = result.length;
+
+            for (let itr = 0; itr<len-1; itr=itr+1) {
+                if (result[0] == "Kushtia" && result[1] == "Jhenaidah" || result[1] == "Kushtia" && result[0] == "Jhenaidah") drawKhustiaToJhenaidah();
+                if (result[0] == "Jhenaidah" && result[1] == "Jashore" || result[1] == "Jhenaidah" && result[0] == "Jashore") drawJhenaidahToJashore();
+                if (result[0] == "Jashore" && result[1] == "Khulna" || result[1] == "Jashore" && result[0] == "Khulna") drawJashoreToKhulna();
+                if (result[0] == "Jashore" && result[1] == "Satkhira" || result[1] == "Jashore" && result[0] == "Satkhira") drawJashoreToSatkhira();
+                if (result[0] == "Satkhira" && result[1] == "Khulna" || result[1] == "Satkhira" && result[0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001] == "Khu1lna") drawSatkhiraToKhulna();
+                result.shift();
+
+            }
+
+
 
 
             
@@ -345,7 +358,7 @@
         ctx.fillText("Satkhira", 150, 400);
         ctx.fillText("Khulna", 450, 380);
 
-    
+   
         // Kushtia to Jhenaidah line draw
         ctx.moveTo(290+25, 80+2);
         ctx.lineTo(300+25, 150-8);
@@ -414,6 +427,9 @@
         ctx.fillText("Jashore", 300, 250);
         ctx.fillText("Satkhira", 150, 400);
         ctx.fillText("Khulna", 450, 380);
+
+     
+
 
         ctx.beginPath();
         // Kushtia to Jhenaidah line draw
@@ -808,6 +824,71 @@
         ctx.lineWidth = 1;
         ctx.stroke();
 
+    }
+
+    function drawMap () {
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.font = "12px Arial";
+        ctx.fillText("Kushtia", 290, 80);
+        ctx.fillText("Jhenaidah", 300, 150);
+        ctx.fillText("Jashore", 300, 250);
+        ctx.fillText("Satkhira", 150, 400);
+        ctx.fillText("Khulna", 450, 380);
+
+    
+        // Kushtia to Jhenaidah line draw
+        ctx.moveTo(290+25, 80+2);
+        ctx.lineTo(300+25, 150-8);
+
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        
+        // if (result[0] == "Kushtia" && result[0+1] == "Jhenaidah") {
+
+        //     console.log("HEllo");
+        
+        //     ctx.stroke();
+            
+            
+        // }
+    
+        // Jhenaidah to Jashore line draw
+        ctx.moveTo(300+25, 150+2);
+        ctx.lineTo(300+25, 250-8);
+        // if (result[0] == "Jhenaidah" && result[0+1] == "Jashore") {
+        //     ctx.strokeStyle = '#ff0000';
+        
+        // }
+    
+        // Jashore to Satkhira line draw 
+        ctx.moveTo(300+25, 250+2);
+        ctx.lineTo(150+25, 400-12);
+        // if (result[0] == "Jashore" && result[0+1] == "Satkhira") {
+        //     ctx.strokeStyle = '#ff0000';
+            
+        // }
+    
+        // Jahsore to Khulna line draw
+        ctx.moveTo(300+25, 250+2);
+        ctx.lineTo(450+15, 380-12);
+        // if (result[0] == "Jashore" && result[0+1] == "Khulna") {
+        //     ctx.strokeStyle = '#ff0000';
+        // }
+
+        // Satkhira to Khulna line draw
+        ctx.moveTo(150+50, 400-5);
+        ctx.lineTo(450-5, 380-3);
+        // if (result[0] == "Satkhira" && result[0+1] == "Khulna") {
+        //     ctx.strokeStyle = '#ff0000';
+        // }
+
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 1;
+
+        
+        ctx.stroke();
     }
 
   

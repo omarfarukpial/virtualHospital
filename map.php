@@ -7,9 +7,9 @@
     <style>
         /* Set the size of the div element that contains the map */
         #map {
-        height: 1400px;
+        height: 90vh;
         /* The height is 400 pixels */
-        width: 100%;
+        width: 90%;
         /* The width is the width of the web page */
         }       
     </style>
@@ -17,6 +17,7 @@
   <body>
     <h3>My Google Maps Demo</h3>
     <!--The div element for the map -->
+    
     <div id="map"></div>
 
     <!-- 
@@ -26,22 +27,65 @@
      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
     -->
 
+
+    
     <script>
+
+ 
+
+      
+
         // Initialize and add the map
         function initMap() {
-        // The location of Uluru
-        const uluru = { lat: -25.344, lng: 131.031 };
-        // The map, centered at Uluru
+
+
+     
+
+
+        // The location 
+      
+        const Jashore = { lat: 23.1634, lng: 89.2182 };
+        const Khulna = { lat: 22.8456, lng: 89.5403 };
+        const Kushtia = { lat: 23.9088, lng: 89.1220 };
+
+
+
+
+        // The map, centered at Jashore
         const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 4,
-            center: uluru,
+            zoom: 8,
+            center: Jashore
+           
         });
-        // The marker, positioned at Uluru
-        const marker = new google.maps.Marker({
-            position: uluru,
-            map: map,
-        });
-        }
+        // The marker, positioned at Jashore
+
+        addCurrMarker(Jashore);
+        addMarker(Khulna);
+        addMarker(Kushtia);
+
+        
+        function addCurrMarker(coords) {
+              var marker = new google.maps.Marker({
+              position:coords,
+              map:map,
+              icon: {
+                url: "./img/cloc.png",
+                scaledSize: new google.maps.Size(50, 50)
+              }
+            });
+          }
+
+        
+
+
+
+          function addMarker(coords) {
+              var marker = new google.maps.Marker({
+              position:coords,
+              map:map,
+            });
+          }
+      }
 
         window.initMap = initMap;
     </script>
