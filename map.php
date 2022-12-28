@@ -7,6 +7,7 @@
     <style>
         /* Set the size of the div element that contains the map */
         #map {
+        margin: auto;
         height: 90vh;
         /* The height is 400 pixels */
         width: 90%;
@@ -15,7 +16,7 @@
     </style>
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
+    <h1 style = "text-align: center">Nearest Ambulances</h1>
     <!--The div element for the map -->
     
     <div id="map"></div>
@@ -47,13 +48,17 @@
         const Jashore = { lat: 23.1634, lng: 89.2182 };
         const Khulna = { lat: 22.8456, lng: 89.5403 };
         const Kushtia = { lat: 23.9088, lng: 89.1220 };
+        const Magura = { lat: 23.4855, lng: 89.4198 };
+        const Jhikargacha = { lat: 23.103141, lng: 89.100598 };
+
+
 
 
 
 
         // The map, centered at Jashore
         const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 8,
+            zoom: 9,
             center: Jashore
            
         });
@@ -62,6 +67,10 @@
         addCurrMarker(Jashore);
         addMarker(Khulna);
         addMarker(Kushtia);
+        addMarker(Magura);
+        addMarker(Jhikargacha);
+
+
 
         
         function addCurrMarker(coords) {
@@ -83,6 +92,10 @@
               var marker = new google.maps.Marker({
               position:coords,
               map:map,
+              icon: {
+                url: "./img/ambulanceMapIcon.png",
+                scaledSize: new google.maps.Size(50, 50)
+              }
             });
           }
       }

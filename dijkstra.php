@@ -300,7 +300,7 @@
             resultString = resultString + result[result.length-1]
             // console.log(resultString);
 
-            document.getElementById("pathprint").innerHTML = "<h1>Your path is</h1> <br>"+resultString;
+            document.getElementById("pathprint").innerHTML = "<h1>The directed path is</h1> <br>"+resultString;
 
             // if (result[0] == "Kushtia" && result[1] == "Jhenaidah") drawKhustiaToJhenaidah();
             // if (result[0] == "Jhenaidah" && result[1] == "Jashore") drawJhenaidahToJashore();
