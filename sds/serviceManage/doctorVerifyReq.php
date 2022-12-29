@@ -90,7 +90,7 @@
                     <th class="text-center">Fees</th>
                     <th class="text-center">Current Location</th>
                     <th class="text-center">Phone Number</th>
-                    <th class="text-center">Verified</th>
+                    <th class="text-center">Action</th>
                 </tr>
                 </thead>
             <?php

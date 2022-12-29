@@ -79,7 +79,6 @@
                 $sql= "SELECT a.id as a_id, a.name as a_name,b.id as b_id, b.docid as b_docid, b.weight as b_weight, a.id as a_id, a.phoneNumber as a_phoneNumber, a.specialization as a_specialization, a.location as a_location, a.fees as a_fees
                     FROM doctor as a
                     INNER JOIN temptable as b ON (a.id=b.docid)
-                    WHERE b.weight > 2.5
                     ORDER BY b.weight DESC";
                 $result = $conn->query($sql);
 

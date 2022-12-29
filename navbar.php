@@ -77,6 +77,9 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="/virtualHospital/sds/sds.php">SERVICE DELIVERY SYSTEM</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/virtualHospital/sds/serviceManage/doctorVerifyReq.php">Doctor Verify</a>
+                    </li>
 
                 </ul>
 
