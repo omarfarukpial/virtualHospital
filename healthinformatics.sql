@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2022 at 09:20 AM
+-- Generation Time: Dec 28, 2022 at 03:34 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -70,7 +70,10 @@ INSERT INTO `appointmentrequest` (`appointmentrequest_id`, `clinicid`, `doctorid
 (2, 3, 5, 2, 'Cardiology', 'Hard to breath.', '2022-10-17 12:22:13', '2022-10-26 23:20:00', 'accepted', 'yes'),
 (3, 3, 5, 4, 'Cardiology', 'Chest pain', '2022-10-17 11:17:24', '2022-10-19 23:18:00', 'accepted', 'yes'),
 (4, 3, 5, 1, 'Cardiology', 'Check', '2022-10-17 11:19:37', '2022-10-20 23:20:00', 'accepted', 'yes'),
-(5, 0, 1, 1, 'Cardiology', '', '2022-10-19 10:45:19', '2022-10-19 10:45:19', 'pending', 'no');
+(5, 0, 1, 1, 'Cardiology', '', '2022-10-19 10:45:19', '2022-10-19 10:45:19', 'pending', 'no'),
+(6, 3, 4, 1, 'Cardiology', 'Feeling chest pain', '2022-12-16 11:33:33', '2022-12-21 23:00:00', 'accepted', 'yes'),
+(7, 1, 3, 1, 'Cardiology', 'Cardiological problem', '2022-12-16 11:34:41', '2022-12-16 16:00:00', 'accepted', 'no'),
+(8, 0, 3, 1, 'Cardiology', 'Feeling chest pain', '2022-12-19 10:59:10', '2022-12-19 22:59:10', 'pending', 'no');
 
 -- --------------------------------------------------------
 
@@ -148,6 +151,26 @@ INSERT INTO `clinicdoclist` (`clinic_doc_id`, `doctor_id`, `clinic_id`, `doctor_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `clinicnurselist`
+--
+
+CREATE TABLE `clinicnurselist` (
+  `clinicnurselist_id` int(11) NOT NULL,
+  `clinic_id` int(11) NOT NULL,
+  `nurse_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `clinicnurselist`
+--
+
+INSERT INTO `clinicnurselist` (`clinicnurselist_id`, `clinic_id`, `nurse_id`) VALUES
+(1, 3, 1),
+(2, 1, 2);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `deptweight`
 --
 
@@ -201,7 +224,7 @@ INSERT INTO `doctor` (`id`, `name`, `bmdcreg`, `phoneNumber`, `dob`, `gender`, `
 (2, 'Nabil Ahmed', 4563, '01605365626', '1989-05-01', 'Male', 'Gynecology', 'Professor', 1000, 'Khulna', 'no'),
 (3, 'Tarek', 3626, '01921110986', '1999-03-13', 'Male', 'Cardiology', 'Designation', 500, 'Khulna', 'yes'),
 (4, 'Fariha', 5925, '01521114562', '1990-03-09', 'Female', 'Gynecology', 'Designation', 500, 'Rajshahi', 'no'),
-(5, 'Riaj', 9245, '015214256352', '1996-01-02', 'Male', 'Gynecology', 'Designation', 750, 'Chittagong', 'no');
+(5, 'Riaj', 9245, '015214256352', '1996-01-02', 'Male', 'Gynecology', 'Designation', 750, 'Chittagong', 'yes');
 
 -- --------------------------------------------------------
 
@@ -241,6 +264,13 @@ CREATE TABLE `midcs` (
   `location` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `midcs`
+--
+
+INSERT INTO `midcs` (`id`, `midcsname`, `hotline`, `location`) VALUES
+(1, 'MIDCS 1 ', '01723622122', 'Jashore');
+
 -- --------------------------------------------------------
 
 --
@@ -275,6 +305,13 @@ CREATE TABLE `mods` (
   `location` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `mods`
+--
+
+INSERT INTO `mods` (`id`, `modsname`, `oxygenprice`, `hotline`, `location`) VALUES
+(1, 'Fresh Oxygen LTD', 5000, '01920123456', 'Jashore');
+
 -- --------------------------------------------------------
 
 --
@@ -297,7 +334,8 @@ CREATE TABLE `nurse` (
 --
 
 INSERT INTO `nurse` (`id`, `name`, `phoneNumber`, `dob`, `gender`, `designation`, `location`, `fee`) VALUES
-(1, 'Sabina Yesmin', '0192259634', '1996-04-03', 'Female', 'Nurse', 'Jashore', 200);
+(1, 'Sabina Yesmin', '0192259634', '1996-04-03', 'Female', 'Nurse', 'Jashore', 200),
+(2, 'Sumaiya Sultana', '01720200200', '2002-12-02', 'Female', 'Staff Nurse', 'Dhaka', 300);
 
 -- --------------------------------------------------------
 
@@ -428,7 +466,10 @@ ALTER TABLE `ambulance`
 -- Indexes for table `appointmentrequest`
 --
 ALTER TABLE `appointmentrequest`
-  ADD PRIMARY KEY (`appointmentrequest_id`);
+  ADD PRIMARY KEY (`appointmentrequest_id`),
+  ADD KEY `doctorid` (`doctorid`),
+  ADD KEY `clinicid` (`clinicid`),
+  ADD KEY `userid` (`userid`);
 
 --
 -- Indexes for table `bloodbank`
@@ -447,6 +488,12 @@ ALTER TABLE `clinic`
 --
 ALTER TABLE `clinicdoclist`
   ADD PRIMARY KEY (`clinic_doc_id`);
+
+--
+-- Indexes for table `clinicnurselist`
+--
+ALTER TABLE `clinicnurselist`
+  ADD PRIMARY KEY (`clinicnurselist_id`);
 
 --
 -- Indexes for table `deptweight`
@@ -534,7 +581,7 @@ ALTER TABLE `ambulance`
 -- AUTO_INCREMENT for table `appointmentrequest`
 --
 ALTER TABLE `appointmentrequest`
-  MODIFY `appointmentrequest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `appointmentrequest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `bloodbank`
@@ -555,6 +602,12 @@ ALTER TABLE `clinicdoclist`
   MODIFY `clinic_doc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `clinicnurselist`
+--
+ALTER TABLE `clinicnurselist`
+  MODIFY `clinicnurselist_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `deptweight`
 --
 ALTER TABLE `deptweight`
@@ -564,7 +617,7 @@ ALTER TABLE `deptweight`
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `locationweight`
@@ -576,7 +629,7 @@ ALTER TABLE `locationweight`
 -- AUTO_INCREMENT for table `midcs`
 --
 ALTER TABLE `midcs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mobileclinic`
@@ -588,13 +641,13 @@ ALTER TABLE `mobileclinic`
 -- AUTO_INCREMENT for table `mods`
 --
 ALTER TABLE `mods`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `nurse`
 --
 ALTER TABLE `nurse`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sds`
@@ -625,6 +678,16 @@ ALTER TABLE `temptable`
 --
 ALTER TABLE `userinfo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `appointmentrequest`
+--
+ALTER TABLE `appointmentrequest`
+  ADD CONSTRAINT `appointmentrequest_ibfk_1` FOREIGN KEY (`doctorid`) REFERENCES `doctor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

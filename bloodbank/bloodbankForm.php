@@ -16,7 +16,7 @@
     <script src="https://kit.fontawesome.com/c045880d2c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/newcss.css">
-    <link rel="stylesheet" href="../css/inputForm.css">
+    <link rel="stylesheet" href="../css/inputFormNew.css">
     
     <title>Blood Bank Form</title>
 
@@ -48,7 +48,7 @@
 </section>
 
     <div style="display:flex">
-        <div class="dform"  >
+        <div class="dform  my-5 container-xl mx-auto"  >
             <form action="bloodbankformup.php" method="post" style="display: inline block !important;">
             <label for="bloodbankname">Blood Bank Name</label>
             <input type="text" id="bloodbankname" name="bloodbankname" placeholder="Blood Bank Name...">
