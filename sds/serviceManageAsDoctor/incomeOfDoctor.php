@@ -60,6 +60,12 @@
         
         include('../../connect.php');
 
+        $dNameFetchSql = "SELECT * FROM Doctor
+                            WHERE id = '$did'";
+        $dName = $conn->query($dNameFetchSql)->fetch_assoc();
+
+        $docName = $dName['name'];
+
 
         $sql = "SELECT appointmentrequest_id, doctorid, finished, doctor.name as dname, doctor.specialization as dsp, doctor.fees as dfees, userinfo.name as uname, userinfo.location as uloc, userinfo.phone as uphn, problem,appointmenttime  FROM appointmentrequest
                 INNER JOIN doctor ON appointmentrequest.doctorid = doctor.id
@@ -74,11 +80,9 @@
         
             while($row = $result->fetch_assoc()) {
                $totalFees = $totalFees + $row['dfees'];
-               $docName = $row['dname'];
+              
             }
-        } else {
-            echo "0 results";
-        }
+        } 
 
 
     ?>
@@ -88,7 +92,7 @@
 
 
 <div class="mx-auto text-center">
-    <h1>Total income of <?php echo $docName ?> is <?php echo $totalFees ?></h1>
+    <h1>Total income of <?php echo $docName ?> is <?php echo $totalFees ?> taka</h1>
 
 
 </div>

@@ -30,7 +30,7 @@
     session_start();
     include('../../navbar.php');
     include('../../connect.php');
-    $did = $_POST['did'];
+    $did = $_GET['did'];
 
     $_SESSION['did'] = $did;
     

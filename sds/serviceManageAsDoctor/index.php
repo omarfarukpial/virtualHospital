@@ -28,7 +28,7 @@
     
 <?php
 
-    session_start();
+    // session_start();
     
     include('../../navbar.php');
     include('../../connect.php');
@@ -58,7 +58,7 @@
     <div class = "shadow-lg p-3 mx-auto mt-5 bg-white rounded w-50 ">
         <h4 class = "text-center mt-4 mb-4">Select Doctor</h4>
 
-            <form action="serviceManageAsDoctor.php" method="post">
+            <form action="serviceManageAsDoctor.php" method="get">
 
             <label for="did">Select Doctor</label>
             <select name="did" id = "did" >

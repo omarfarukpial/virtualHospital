@@ -11,7 +11,7 @@ mysqli_select_db($conn,"healthinformatics");
 $sql="SELECT * FROM doctor WHERE id = '".$doctorid."'";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
-echo "<h4>Doctor Details</h4>";
+echo "<h4>Doctor Information</h4>";
 ?>
 <table class="table table-striped table-borderd   ml-5  table-hover" style="border-radius: .5em;
     overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
@@ -27,12 +27,6 @@ echo "<h4>Doctor Details</h4>";
                     <td>Gender:</td>
                     <td><?php echo $row['gender']?></td>
                 </tr>
-                <tr>
-                    <td>Phone number:</td>
-                    <td><?php echo $row['phoneNumber']?></td>
-                </tr>
-               
-
                
 
                 <tr>
