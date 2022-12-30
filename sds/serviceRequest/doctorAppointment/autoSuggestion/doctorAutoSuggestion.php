@@ -59,20 +59,28 @@
             $docid = $row["id"];
             $dsp = $row["specialization"];
             $dloc = $row["location"];
+
+
+            
             
             
 
 
-            $fetchlwsql = "SELECT '$dloc' AS lbasew FROM locationweight 
+            $fetchlwsql = "SELECT $dloc AS lbasew FROM locationweight 
             WHERE plocation = '$location' ";
             $w1 = $conn->query($fetchlwsql);
             $rowoflw = $w1->fetch_assoc();
             $lweight = $rowoflw['lbasew'];
+           
+
+            
+
+           
             
 
 
 
-            $fetchlwsql2 = "SELECT '$dsp' AS lbasew2 FROM deptweight 
+            $fetchlwsql2 = "SELECT $dsp AS lbasew2 FROM deptweight 
             WHERE psymp = '$symptom' ";
             $w2 = $conn->query($fetchlwsql2);
             $rowoflw2 = $w2->fetch_assoc();
@@ -88,6 +96,8 @@
 
 
             $totalweight =  3*(double)$lweight2 + 2*(double)$lweight;
+
+           
             
 
 
@@ -97,6 +107,7 @@
             values(?,?)");
             $dataupsql->bind_param("sd", $docid, $totalweight);
             $dataupsql->execute();
+
 
 
 
