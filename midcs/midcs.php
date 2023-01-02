@@ -67,6 +67,7 @@
                         
                         <th>Hotline Number</th>
                         <th>Location</th>
+                        <th>Action</th>
                         
                     </tr>
 
@@ -85,12 +86,11 @@
                 
                     while($row = $result->fetch_assoc()) {
                         echo"<tr>";
-                        echo "<td align=right>". $row["id"]. "</td>".
-                            "<td>". $row["midcsname"]. "</td>" .
-                            
-                            "<td align=right>". $row["hotline"] . "</td>".
-                                                    
-                            "<td>". $row["location"] . "</td>";
+                        echo "<td >". $row["id"]. "</td>".
+                            "<td>". $row["midcsname"]. "</td>".
+                            "<td >". $row["hotline"] . "</td>".                
+                            "<td>". $row["location"] . "</td>".
+                            "<td><a class='btn btn-primary' href='midcsMap.php?id=".$row["id"]."' role='button'>Map</a></td>";
                         echo"</tr>";
                     }
                 } else {
