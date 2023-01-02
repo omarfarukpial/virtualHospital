@@ -63,7 +63,6 @@ overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba
         <thead class="thead-dark">
         <tr>
             <th>ID</th>
-            <th>Clinic Name</th>
             <th>Doctor Name</th>
             <th>Specialization</th>
             <th>Fees</th>
@@ -79,9 +78,8 @@ overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba
         
       
 
-        $sql = "SELECT appointmentrequest.appointmentrequest_id as apt_id, clinic.id as c_id, clinic.clinicname as c_name, doctor.id as d_id, doctor.name as d_name, doctor.specialization as d_sp, doctor.fees as d_fees, userinfo.id as u_id, userinfo.name as u_name, userinfo.location as u_loc, userinfo.phone as u_phn, appointmentrequest.problem as apt_prob, appointmentrequest.appointmenttime as apt_time, appointmentrequest.status as apt_status, appointmentrequest.doctorid as apt_did, appointmentrequest.finished as apt_finished
+        $sql = "SELECT appointmentrequest.appointmentrequest_id as apt_id,  doctor.id as d_id, doctor.name as d_name, doctor.specialization as d_sp, doctor.fees as d_fees, userinfo.id as u_id, userinfo.name as u_name, userinfo.location as u_loc, userinfo.phone as u_phn, appointmentrequest.problem as apt_prob, appointmentrequest.appointmenttime as apt_time, appointmentrequest.status as apt_status, appointmentrequest.doctorid as apt_did, appointmentrequest.finished as apt_finished
         FROM appointmentrequest
-        JOIN clinic ON clinic.id = appointmentrequest.clinicid
         JOIN doctor ON doctor.id = appointmentrequest.doctorid
         JOIN userinfo ON userinfo.id = appointmentrequest.userid
         WHERE appointmentrequest.status = 'accepted' AND appointmentrequest.doctorid = '$did' AND appointmentrequest.finished = 'no'";
@@ -97,7 +95,6 @@ overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba
                 
                 echo"<tr>";
                 echo "<td align=right>". $row["apt_id"]. "</td>".
-                    "<td>". $row["c_name"]. "</td>" .
                     "<td>". $row["d_name"]. "</td>" .
                     "<td>". $row["d_sp"]. "</td>" .
                     "<td align=right>". number_format($row["d_fees"],2) . "</td>".

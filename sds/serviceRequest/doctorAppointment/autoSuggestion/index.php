@@ -50,7 +50,7 @@
     <div class="container-xl" style="display: flex;">
 
     <div class="dform2">
-        <form action="doctorAutoSuggestion.php" method="post">
+        <form action="suggestionKMeans.php" method="post">
 
         <div class="row">
           <div class="col-md-4">
@@ -168,6 +168,12 @@
             <option value="Thakurgaon">Thakurgaon</option>
           </select>
           </div>
+
+
+   
+
+
+
           <div class="col-md-4">
           <label for="problem">Tell us about your problem</label>
         <textarea class="form-control mb-4" name = "problem" id="problem" rows="5"></textarea>
