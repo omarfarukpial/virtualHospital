@@ -58,7 +58,7 @@
     </div>
 
         <div>
-        <h1 class="text-center text-white header-font mt-4"> Doctors List</h1>
+        <h1 class="text-center text-white header-font mt-4"> Doctor's Profile for Validation</h1>
         </div>
         <div>
         <button style="visibility: hidden;" type="button" class="btn-add"  onclick="location.href = 'DocForm.php' ">Add Doctor</button>
