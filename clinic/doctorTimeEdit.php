@@ -30,7 +30,7 @@
 ?>
   
 
-<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
+<section id="news" class="container-xl d-flex justify-content-between mb-4 rounded bg-info shadow">
     <div>
         <button type = "button" class="btn-back invisible" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> </button>
     </div>

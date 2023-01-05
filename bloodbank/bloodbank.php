@@ -52,8 +52,8 @@
 
     
         
-
-            <table class="table table-striped table-borderd text-center w-75 mx-auto  table-hover" style="border-radius: 1em;
+<div class="container-xxl" style="width:100%; margin: auto; ">
+            <table class="table table-striped table-borderd text-center w-100 mx-auto  table-hover" style="border-radius: 1em;
     overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
         <thead class="thead-dark">
         <tr>
@@ -79,10 +79,10 @@
                 
                     while($row = $result->fetch_assoc()) {
                         echo"<tr>";
-                        echo "<td align=right>". $row["id"]. "</td>".
+                        echo "<td align=middle>". $row["id"]. "</td>".
                             "<td>". $row["bloodbankname"]. "</td>" .
                             
-                            "<td align=right>". $row["hotline"] . "</td>".
+                            "<td align=middle>". $row["hotline"] . "</td>".
                                                     
                             "<td>". $row["location"] . "</td>";
                         echo"</tr>";
@@ -95,7 +95,7 @@
             ?>
                 
             </table>
-
+            </div>
 
            
 

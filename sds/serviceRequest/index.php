@@ -32,9 +32,10 @@
   
 <!-- Back Button and Heading -->
 <section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
-    <div>
-        
-    </div>
+<div>
+<button class="invisible" style="" type="button" class="btn-add"  onclick="location.href = 'bloodbankForm.php' ">Add Blood Bank</button>
+    
+</div>
     <div>
     <h1 class="text-center text-white header-font mt-4"> Request For Service</h1>
     </div>

@@ -33,19 +33,20 @@
 ?>
   
 
-  <section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
+  <section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
-<div>
-    <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
-</div>
+  <div>
+    <button class="invisible" style="" type="button" class="btn-add"  onclick="location.href = 'sdsform.php' ">Add Service</button>
+    </div>
 
     <div>
     <h1 class="text-center text-white header-font mt-4"> Accepted Appointments</h1>
     </div>
 
     <div>
-    <button style="visibility:hidden;" type="button" class="btn-add"  onclick="location.href = 'sdsform.php' ">Add Service</button>
-    </div>
+    <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+</div>
+    
   
     
 
@@ -92,7 +93,9 @@
 
 
 <div class="mx-auto text-center">
+    
     <h1>Total income of <?php echo $docName ?> is <?php echo $totalFees ?> taka</h1>
+    <a href="" download> download</a>
 
 
 </div>

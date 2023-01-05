@@ -35,7 +35,7 @@
 <!-- Back Button and Heading -->
 <section id="news" class="container-xl d-flex justify-content-between mb-4 rounded bg-info shadow">
     <div>
-        
+    <button class="invisible" type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Add Docotr </button>
     </div>
     <div>
     <h1 class="text-center text-white header-font mt-4"> Doctor Manual Selection</h1>
@@ -204,7 +204,9 @@
 
       
           
-          <input type="submit" value="Submit">
+        <div class="input-group w-50 mx-auto mt-0 mb-1">
+                    <input type="submit" value="Submit">
+                </div>
         </form>
       </div>
 

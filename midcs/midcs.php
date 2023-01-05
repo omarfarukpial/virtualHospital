@@ -55,9 +55,9 @@
 
 
     
-        
+<div class="container-xxl" style="width:100%; margin: auto; ">
 
-            <table class="table table-striped table-borderd text-center w-75 mx-auto  table-hover" style="border-radius: 1em;
+            <table class="table table-striped table-borderd text-center w-100 mx-auto  table-hover" style="border-radius: 1em;
     overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
 
                 <thead class="thead-dark">
@@ -101,7 +101,7 @@
             ?>
                 
             </table>
-
+            </div>
 
            
 <!-- footer section -->

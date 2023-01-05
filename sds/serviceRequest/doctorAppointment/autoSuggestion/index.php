@@ -31,12 +31,15 @@
   
 <!-- Back Button and Heading -->
 <section id="news" class="container-xl d-flex justify-content-between mb-4 rounded bg-info shadow">
-    <div>
-        
-    </div>
+<div>
+<button class="invisible" style="" type="button" class="btn-add"  onclick="location.href = 'bloodbankForm.php' ">Add Blood Bank</button>
+    
+</div>
+
     <div>
     <h1 class="text-center text-white header-font mt-4"> Doctor Auto Suggestion</h1>
     </div>
+
     <div>
     <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
         <!-- <button style="visibility:hidden;" type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button> -->
@@ -190,7 +193,9 @@
 
       
           
-          <input type="submit" value="Submit">
+                <div class="input-group w-50 mx-auto mt-0 mb-1">
+                    <input type="submit" value="Submit">
+                </div>
         </form>
       </div>
 

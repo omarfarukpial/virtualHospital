@@ -58,7 +58,7 @@
     overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 <thead class="thead-dark">
                     <tr>
-                        <th>ID</th>
+                        <th class="text-center">ID</th>
                         <th>Mobile Clinic Name</th>
 
                         <th>Hotline Number</th>
@@ -80,9 +80,9 @@
                 
                     while($row = $result->fetch_assoc()) {
                         echo"<tr>";
-                        echo "<td align=right>". $row["id"]. "</td>".
+                        echo "<td align=middle>". $row["id"]. "</td>".
                             "<td>". $row["mobileclinicname"]. "</td>" .
-                            "<td align=right>". $row["hotline"] . "</td>".
+                            "<td align=middle>". $row["hotline"] . "</td>".
                             
                            
                             "<td>". $row["location"] . "</td>";

@@ -71,9 +71,9 @@
         
 <div class="dform">
     <form action="clinicformup.php" method="post">
-      <div class="row">
-        <div class="col-md-6">
-        <label for="clinicname">Clinic Name</label>
+      <div class="row ">
+        <div class="col-md-6 ">
+        <label class="" for="clinicname">Clinic Name</label>
       <input type="text" id="clinicname" name="clinicname" >
         </div>
         <div class="col-md-6">
@@ -168,7 +168,9 @@
 
   
       
-      <input type="submit" value="Next">
+      <div class="input-group w-50 mx-auto mt-0 mb-1">
+                    <input type="submit" value="Submit">
+                </div>
     </form>
   </div>
 

@@ -33,7 +33,7 @@
 <!-- Back Button and Heading -->
 <section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
     <div>
-        
+    <button class="invisible" style="" type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> add doctor </button>
     </div>
     <div>
     <h1 class="text-center text-white header-font mt-4"> Doctor Auto Suggestion</h1>

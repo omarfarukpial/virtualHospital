@@ -58,6 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://kit.fontawesome.com/c045880d2c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/newcss.css">
+    <link rel="stylesheet" href="../css/inputFormNew.css">
     <title>Doctor</title>
 
 
@@ -79,18 +80,20 @@ include('../navbar.php');
 
 
 
-<section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
+<section id="news" class="container-xl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
-    <div>
-        <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
-    </div>
+<div>
+        <button class="invisible" style="" type="button" class="btn-add"  onclick="location.href = 'DocForm.php' ">Add Doctor</button>
+        </div>
 
         <div>
         <h1 class="text-center text-white header-font mt-4"> Add Doctor</h1>
         </div>
+
         <div>
-        <button style="display:none;" type="button" class="btn-add"  onclick="location.href = 'DocForm.php' ">Add Doctor</button>
-        </div>
+        <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+    </div>
+        
         
 
     </section>
@@ -182,10 +185,13 @@ include('../navbar.php');
                 
             </table>
 
-            <div class = "col-md-12 text-center">
+            <div class="input-group w-50 mx-auto mt-0 mb-2">
+                    <input type="submit" value="Submit">
+                </div>
+            <!-- <div class = "input-group w-50 mx-auto mt-3 mb-2">
                 <button type="submit" class="btn btn-primary mx-auto">Submit</button>
 
-            </div>
+            </div> -->
 
 
 

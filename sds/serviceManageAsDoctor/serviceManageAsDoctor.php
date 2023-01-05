@@ -37,16 +37,16 @@
 ?>
   
 
-  <section id="news" class="d-flex justify-content-between mb-4 rounded bg-info shadow">
+  <section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
     <div>
-        <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+        <button class="invisible" type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Add Doctor </button>
     </div>
     <div>
         <h1 class="text-center text-white header-font mt-4">Manage Services As Doctor</h1>
     </div>
     <div>
-        <button style="visibility:hidden;" type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+        <button style="" type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
     </div>
   
     

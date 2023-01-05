@@ -30,10 +30,10 @@
 
 
 
-<section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
+<section id="news" class="container-xl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
 <div>
-<button style="display:none" type="button" class="btn-add"  onclick="location.href = 'bloodbankForm.php' ">Add Blood Bank</button>
+<button class="invisible" style="" type="button" class="btn-add"  onclick="location.href = 'bloodbankForm.php' ">Add Blood Bank</button>
     
 </div>
 
@@ -130,7 +130,9 @@
 
         
             
-            <input type="submit" value="Submit">
+            <div class="input-group w-50 mx-auto mt-0 mb-1">
+                      <input type="submit" value="Submit">
+                  </div>
             </form>
       </div>
 

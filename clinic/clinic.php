@@ -65,14 +65,14 @@
         overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 <thead class="thead-dark">
                     <tr>
-                        <th>ID</th>
-                        <th>Clinic Name</th>
-                        <th>Number of Beds</th>
-                        <th>Hotline</th>
-                        <th>Current Location</th>
-                        <th>Doctor List</th>
-                        <th>Nurse List</th>
-                        <th>Action</th>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Clinic Name</th>
+                        <th class="text-center">Number of Beds</th>
+                        <th class="text-center">Hotline</th>
+                        <th class="text-center">Current Location</th>
+                        <th class="text-center">Doctor List</th>
+                        <th class="text-center">Nurse List</th>
+                        <th class="text-center">Action</th>
                   
                         
                     </tr>
@@ -95,9 +95,9 @@
 
 
                             echo"<tr>";
-                            echo "<td align=right>". $row["id"]. "</td>".
+                            echo "<td align=middle>". $row["id"]. "</td>".
                                 "<td>". $row["clinicname"]. "</td>" .
-                                "<td align=right>". $row["nbeds"] . "</td>". 
+                                "<td align=middle>". $row["nbeds"] . "</td>". 
                                 "<td>". $row["phn"]. "</td>" .
                                 "<td>". $row["location"] . "</td>".
                                 "<td><a href= 'doctorList.php?cid=".$row["id"]."&cname=".$row['clinicname']."'><button type='button' class = 'btn btn-primary btn-sm'> See Doctors </button></a></td>".

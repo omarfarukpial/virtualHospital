@@ -86,14 +86,14 @@ $_SESSION['clinicName'] = $clinicname;
     overflow: hidden;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 <thead class="thead-dark">
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                    <th>Designation</th>
-                    <th>Fees</th>
-                    <th>Current Location</th>
-                    <th>Phone Number</th>
+                    <th class="text-center">ID</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Age</th>
+                    <th class="text-center">Gender</th>
+                    <th class="text-center">Designation</th>
+                    <th class="text-center">Fees</th>
+                    <th class="text-center">Current Location</th>
+                    <th class="text-center">Phone Number</th>
                 </tr>
                 </thead>
             <?php
@@ -126,14 +126,14 @@ $_SESSION['clinicName'] = $clinicname;
                         
                         
                         echo"<tr>";
-                        echo "<td align=right>". $docRow["id"]. "</td>".
+                        echo "<td align=middle>". $docRow["id"]. "</td>".
                             "<td>". $docRow["name"]. "</td>" .
-                            "<td align=right>". date_diff(date_create($docRow["dob"]), date_create(date("Y-m-d")))->format('%y') . "</td>".
+                            "<td align=middle>". date_diff(date_create($docRow["dob"]), date_create(date("Y-m-d")))->format('%y') . "</td>".
                             "<td>". $docRow["gender"] . "</td>".
                             "<td>". $docRow["designation"] . "</td>".
-                            "<td align=right>". number_format($docRow["fee"],2) . "</td>".
+                            "<td align=middle>". number_format($docRow["fee"],2) . "</td>".
                             "<td>". $docRow["location"] . "</td>".
-                            "<td align=right>". $docRow["phoneNumber"] . "</td>"
+                            "<td align=middle>". $docRow["phoneNumber"] . "</td>"
                             ;
                         echo"</tr>";
                     }

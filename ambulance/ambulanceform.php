@@ -33,7 +33,7 @@
 <section id="news" class="container-xl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
 <div>
-<button style="display:none;" type="button" class="btn-add"  onclick="location.href = 'ClinicForm.php' ">Add Clinic</button>
+<button class="invisible" style="" type="button" class="btn-add"  onclick="location.href = 'ClinicForm.php' ">Add Clinic</button>
 </div>
 
 <div>
@@ -141,7 +141,9 @@
           
       
           
-          <input type="submit" value="Submit">
+                <div class="input-group w-50 mx-auto mt-0 mb-1">
+                    <input type="submit" value="Submit">
+                </div>
         </form>
       </div>
 

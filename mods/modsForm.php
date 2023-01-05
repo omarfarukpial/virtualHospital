@@ -34,7 +34,7 @@
 <section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
     <div>
-    <button style="display:none" type="button" class="btn-add"  onclick="location.href = 'modsForm.php' ">Add MODS</button>
+    <button class="invisible" style="" type="button" class="btn-add"  onclick="location.href = 'modsForm.php' ">Add MODS</button>
         
     </div>
 
@@ -139,16 +139,9 @@
             </div>
           </div>
       
-          
-
-          
-
-          
-          
-
-      
-          
-          <input type="submit" value="Submit">
+          <div class="input-group w-50 mx-auto mt-0 mb-1">
+                    <input type="submit" value="Submit">
+                </div>
         </form>
       </div>
 
