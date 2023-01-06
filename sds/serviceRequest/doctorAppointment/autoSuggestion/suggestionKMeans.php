@@ -120,11 +120,12 @@ foreach ($csvFile as $line) {
         <thead class="thead-dark">
             <tr>
                 
-                <th>Doctor Name</th>
-                <th>Doctor Specialization</th>
-                <th>Doctor Location</th>
-                <th>Doctor Fees</th>
-                <th>Doctor Phone</th>
+                <th>Doctor's Name</th>
+                <th>Gender</th>
+                <th>Specialization</th>
+                <th>Location</th>
+                <th>Fees</th>
+                <th>Phone</th>
                 <th>Action</th>
   
             </tr>
@@ -147,6 +148,7 @@ foreach ($csvFile as $line) {
                         
                         echo"<tr>";
                         echo"<td>".$row["name"]."</td>".
+                        "<td>".$row["gender"]."</td>".
                         "<td>".$row["specialization"]."</td>".
                         "<td>".$row["location"]."</td>".
                         "<td>".number_format($row["fees"],2)."</td>". 
