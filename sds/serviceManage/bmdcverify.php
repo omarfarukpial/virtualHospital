@@ -58,11 +58,7 @@
     </div>
 
         <div>
-<<<<<<< HEAD
-        <h1 class="text-center text-white header-font mt-4"> Doctors Profile for Validation</h1>
-=======
         <h1 class="text-center text-white header-font mt-4"> Doctor's Profile for Validation</h1>
->>>>>>> 762a4c2dc091be09edb9e9cdb97d46aab2aaa787
         </div>
         <div>
         <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
