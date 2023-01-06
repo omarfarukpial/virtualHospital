@@ -148,7 +148,7 @@ include('../navbar.php');
                 
 
 
-                $sql = "SELECT * FROM doctor WHERE id NOT IN (SELECT doctor_id FROM clinicdoclist WHERE clinic_id = $cid)";
+                $sql = "SELECT * FROM doctor WHERE id NOT IN (SELECT doctor_id FROM clinicdoclist WHERE clinic_id = '$cid')";
 
 
 

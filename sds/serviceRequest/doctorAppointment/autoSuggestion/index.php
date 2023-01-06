@@ -57,16 +57,35 @@
 
         <div class="row">
           <div class="col-md-4">
-          <label for="symptom">Symptom</label>
-        <select name="symptom" id="symptom">
-            <option disable selected>Select your symptom</option>
-            <option value="Cardiology">Chest pain</option>
-            <option value="Cardiology">Shortness of breath</option>
-            <option value="Darmatology">rashes on skin</option>
-            <option value="Orthopedics">Fracture in bone</option>
-            <option value="GeneralMedicine">Fever for two days</option>
-            <option value="Gynecology">Bleeding after menopause</option>
-        </select>
+          <label for="symptom">Specialization Needed</label>
+   
+        <select id="symptom" name="symptom">
+          <option selected>Select Specialists</option>
+                <option value="Allergy and immunology">Allergy and immunology</option>
+                <option value="Anesthesiology">Anesthesiology</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="Dermatology">Dermatology</option>
+                <option value="Diagnostic radiology">Diagnostic radiology</option>
+                <option value="Emergency medicine">Emergency medicine</option>
+                <option value="Family medicine">Family medicine</option>
+                <option value="General Medicine">General medicine</option>
+                <option value="Gynecology">Gynecology</option>
+                <option value="Internal medicine">Internal medicine</option>
+                <option value="Medical genetics">Medical genetics</option>
+                <option value="Neurology">Neurology</option>
+                <option value="Nuclear medicine">Nuclear medicine</option>
+                <option value="Obstetrics and gynecology">Obstetrics and gynecology</option>
+                <option value="Ophthalmology">Ophthalmology</option>
+                <option value="Orthopedics">Orthopedics</option>
+                <option value="Pathology">Pathology</option>
+                <option value="Pediatrics">Pediatrics</option>
+                <option value="Physical medicine and rehabilitation">Physical medicine and rehabilitation</option>
+                <option value="Preventive medicine">Preventive medicine</option>
+                <option value="Psychiatry">Psychiatry</option>
+                <option value="Radiation oncology">Radiation oncology</option>
+                <option value="Surgery">Surgery</option>
+                <option value="Urology">Urology</option>
+          </select>
 
           </div>
 
