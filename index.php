@@ -147,7 +147,7 @@
 
     </div> -->
     <!-- search part  -->
-    <div style="border: 1px solid gray; margin-top: 15px; border-radius: 10px; box-shadow: 5px 10px 8px #888888; margin-bottom: 20px;"
+    <!-- <div style="border: 1px solid gray; margin-top: 15px; border-radius: 10px; box-shadow: 5px 10px 8px #888888; margin-bottom: 20px;"
         class="container">
         <div
             style="border: 1px solid gray; padding: 10px; margin: 15px; border-radius: 10px; box-shadow: 2px 6px 5px #d9cecec2;">
@@ -237,7 +237,7 @@
 
 
 
-    </div>
+    </div> -->
 
     <!-- partition part -->
     <!-- <div class="container container3">
