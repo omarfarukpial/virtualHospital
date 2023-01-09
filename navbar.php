@@ -20,9 +20,18 @@
             </div>
 
              
-                <img class="" style="width: 20%; height: 20%;border-radius: 15px; " src="/virtualHospital/img/svh6.png" alt="logo">
+                <!-- <img class="" style="width: 20%; height: 20%;border-radius: 15px; " src="/virtualHospital/img/svh6.png" alt="logo"> -->
                 <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button> -->
+
+              
+                <div style="display: block">
+
+                    
+                    <a class="nav-link text-white" href="/virtualHospital/usermanagement/login.php"><img src="/virtualHospital/img/user.png" width="30px" height="30px" alt="User"></a>
+                    <div>Guest</div>
+
+                </div>
              
         </div>
         
@@ -84,6 +93,7 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="/virtualHospital/sds/serviceManage/doctorVerifyReq.php">Doctor Verify</a>
                     </li>
+
 
                 </ul>
 
