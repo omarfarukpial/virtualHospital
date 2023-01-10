@@ -31,7 +31,7 @@
     // session_start();
     
     include('../../navbar.php');
-    include('../../connect.php');
+    // include('../../connect.php');
 ?>
   
 

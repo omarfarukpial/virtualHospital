@@ -37,7 +37,7 @@
 </div>
 
     <div>
-    <h1 class="text-center text-white header-font mt-4"> Doctor Auto Suggestion</h1>
+    <h1 class="text-center text-white header-font mt-4">Doctor Auto Suggestion</h1>
     </div>
 
     <div>
@@ -50,17 +50,15 @@
 <!-- Appointment info form -->
 
 
-    <div class="container-xl" style="display: flex;">
+<div class="container-xl" style="display: flex;">
 
-    <div class="dform2">
-        <form action="suggestionKMeans.php" method="post">
-
+  <div class="dform2">
+      <form action="suggestionKMeans.php" method="post">
         <div class="row">
           <div class="col-md-4">
-          <label for="symptom">Specialization Needed</label>
-   
-        <select id="symptom" name="symptom">
-          <option selected>Select Specialists</option>
+            <label for="symptom">Specialization Needed</label>
+            <select id="symptom" name="symptom">
+                <option selected>Select Specialists</option>
                 <option value="Allergy and immunology">Allergy and immunology</option>
                 <option value="Anesthesiology">Anesthesiology</option>
                 <option value="Cardiology">Cardiology</option>
@@ -85,10 +83,10 @@
                 <option value="Radiation oncology">Radiation oncology</option>
                 <option value="Surgery">Surgery</option>
                 <option value="Urology">Urology</option>
-          </select>
+            </select>
 
           </div>
-
+<!-- 
           <div class="col-md-4">
           <label for="username">Username</label>
         <input type="text" id="username" name="username" onkeyup="userinfofill(this.value)" value="">
@@ -107,99 +105,114 @@
         <div class="col-md-4">
 <label for="age">Age</label>
         <input type="text" id="age" name="age" >
-</div>
+</div> -->
 
-          <div class="col-md-4">
+          <!-- <div class="col-md-4">
           <label for="gender">Gender</label>
         <input type="text" id="gender" name="gender" >
-          </div>
+          </div> -->
 
           <div class="col-md-4">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+            <option selected>Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+            </select>
+
+          </div>
+          <div class="col-md-4">
+              <label for="location"> Location</label>
+              <select id="location" name="location">
+                <option disabled selected>Select District</option>
+                <option value="Bagerhat">Bagerhat</option>
+                <option value="Bandarban">Bandarban</option>
+                <option value="Barguna">Barguna</option>
+                <option value="Barisal">Barisal</option>
+                <option value="Bhola">Bhola</option>
+                <option value="Bogra">Bogra</option>
+                <option value="Brahmanbaria">Brahmanbaria</option>
+                <option value="Chandpur">Chandpur</option>
+                <option value="Chittagong">Chittagong</option>
+                <option value="Chuadanga">Chuadanga</option>
+                <option value="Comilla">Comilla</option>
+                <option value="Cox'sBazar">Cox'sBazar</option>
+                <option value="Dhaka">Dhaka</option>
+                <option value="Dinajpur">Dinajpur</option>
+                <option value="Faridpur">Faridpur</option>
+                <option value="Feni">Feni</option>
+                <option value="Gaibandha">Gaibandha</option>
+                <option value="Gazipur">Gazipur</option>
+                <option value="Gopalganj">Gopalganj</option>
+                <option value="Habiganj">Habiganj</option>
+                <option value="Jaipurhat">Jaipurhat</option>
+                <option value="Jamalpur">Jamalpur</option>
+                <option value="Jashore">Jashore</option>
+                <option value="Jhalokati">Jhalokati</option>
+                <option value="Jhenaidah">Jhenaidah</option>
+                <option value="Khagrachari">Khagrachari</option>
+                <option value="Khulna">Khulna</option>
+                <option value="Kishoreganj">Kishoreganj</option>
+                <option value="Kurigram">Kurigram</option>
+                <option value="Kushtia">Kushtia</option>
+                <option value="Lakshmipur">Lakshmipur</option>
+                <option value="Lalmonirhat">Lalmonirhat</option>
+                <option value="Madaripur">Madaripur</option>
+                <option value="Magura">Magura</option>
+                <option value="Manikganj">Manikganj</option>
+                <option value="Maulvibazar">Maulvibazar</option>
+                <option value="Meherpur">Meherpur</option>
+                <option value="Munshiganj">Munshiganj</option>
+                <option value="Mymensingh">Mymensingh</option>
+                <option value="Naogaon">Naogaon</option>
+                <option value="Narail">Narail</option>
+                <option value="Narayanganj">Narayanganj</option>
+                <option value="Narsingdi">Narsingdi</option>
+                <option value="Natore">Natore</option>
+                <option value="Nawabganj">Nawabganj</option>
+                <option value="Netrokona">Netrokona</option>
+                <option value="Nilphamari">Nilphamari</option>
+                <option value="Noakhali">Noakhali</option>
+                <option value="Pabna">Pabna</option>
+                <option value="Panchagarh">Panchagarh</option>
+                <option value="Patuakhali">Patuakhali</option>
+                <option value="Pirojpur">Pirojpur</option>
+                <option value="Rajbari">Rajbari</option>
+                <option value="Rajshahi">Rajshahi</option>
+                <option value="Rangamati">Rangamati</option>
+                <option value="Rangpur">Rangpur</option>
+                <option value="Satkhira">Satkhira</option>
+                <option value="Shariatpur">Shariatpur</option>
+                <option value="Sherpur">Sherpur</option>
+                <option value="Sirajganj">Sirajganj</option>
+                <option value="Sunamganj">Sunamganj</option>
+                <option value="Sylhet">Sylhet</option>
+                <option value="Tangail">Tangail</option>
+                <option value="Thakurgaon">Thakurgaon</option>
+              </select>
+            </div>
+
+ 
+
+          <!-- <div class="col-md-4">
           <label for="phn">Phone Number</label>
         <input type="text" id="phn" name="phn" >
-          </div>
+          </div> -->
 
           <div class="row">
-          <div class="col-md-4">
-          <label for="location">Current Location</label>
-          <select id="location" name="location">
-            <option disabled selected>Select District</option>
-            <option value="Bagerhat">Bagerhat</option>
-            <option value="Bandarban">Bandarban</option>
-            <option value="Barguna">Barguna</option>
-            <option value="Barisal">Barisal</option>
-            <option value="Bhola">Bhola</option>
-            <option value="Bogra">Bogra</option>
-            <option value="Brahmanbaria">Brahmanbaria</option>
-            <option value="Chandpur">Chandpur</option>
-            <option value="Chittagong">Chittagong</option>
-            <option value="Chuadanga">Chuadanga</option>
-            <option value="Comilla">Comilla</option>
-            <option value="Cox'sBazar">Cox'sBazar</option>
-            <option value="Dhaka">Dhaka</option>
-            <option value="Dinajpur">Dinajpur</option>
-            <option value="Faridpur">Faridpur</option>
-            <option value="Feni">Feni</option>
-            <option value="Gaibandha">Gaibandha</option>
-            <option value="Gazipur">Gazipur</option>
-            <option value="Gopalganj">Gopalganj</option>
-            <option value="Habiganj">Habiganj</option>
-            <option value="Jaipurhat">Jaipurhat</option>
-            <option value="Jamalpur">Jamalpur</option>
-            <option value="Jashore">Jashore</option>
-            <option value="Jhalokati">Jhalokati</option>
-            <option value="Jhenaidah">Jhenaidah</option>
-            <option value="Khagrachari">Khagrachari</option>
-            <option value="Khulna">Khulna</option>
-            <option value="Kishoreganj">Kishoreganj</option>
-            <option value="Kurigram">Kurigram</option>
-            <option value="Kushtia">Kushtia</option>
-            <option value="Lakshmipur">Lakshmipur</option>
-            <option value="Lalmonirhat">Lalmonirhat</option>
-            <option value="Madaripur">Madaripur</option>
-            <option value="Magura">Magura</option>
-            <option value="Manikganj">Manikganj</option>
-            <option value="Maulvibazar">Maulvibazar</option>
-            <option value="Meherpur">Meherpur</option>
-            <option value="Munshiganj">Munshiganj</option>
-            <option value="Mymensingh">Mymensingh</option>
-            <option value="Naogaon">Naogaon</option>
-            <option value="Narail">Narail</option>
-            <option value="Narayanganj">Narayanganj</option>
-            <option value="Narsingdi">Narsingdi</option>
-            <option value="Natore">Natore</option>
-            <option value="Nawabganj">Nawabganj</option>
-            <option value="Netrokona">Netrokona</option>
-            <option value="Nilphamari">Nilphamari</option>
-            <option value="Noakhali">Noakhali</option>
-            <option value="Pabna">Pabna</option>
-            <option value="Panchagarh">Panchagarh</option>
-            <option value="Patuakhali">Patuakhali</option>
-            <option value="Pirojpur">Pirojpur</option>
-            <option value="Rajbari">Rajbari</option>
-            <option value="Rajshahi">Rajshahi</option>
-            <option value="Rangamati">Rangamati</option>
-            <option value="Rangpur">Rangpur</option>
-            <option value="Satkhira">Satkhira</option>
-            <option value="Shariatpur">Shariatpur</option>
-            <option value="Sherpur">Sherpur</option>
-            <option value="Sirajganj">Sirajganj</option>
-            <option value="Sunamganj">Sunamganj</option>
-            <option value="Sylhet">Sylhet</option>
-            <option value="Tangail">Tangail</option>
-            <option value="Thakurgaon">Thakurgaon</option>
-          </select>
-          </div>
-
-
-   
-
+            
 
 
           <div class="col-md-4">
-          <label for="problem">Tell us about your problem</label>
-        <textarea class="form-control mb-4" name = "problem" id="problem" rows="5"></textarea>
-          </div>
+              
+            </div>
+
+
+
+            <div class="col-md-4">
+              <label for="problem">Tell us about your problem</label>
+              <textarea class="form-control mb-4" name = "problem" id="problem" rows="5"></textarea>
+            </div>
           </div>
           
           

@@ -9,12 +9,18 @@ from sklearn.cluster import KMeans
 df = pd.read_csv(r'C:\xampp\htdocs\virtualHospital\sds\serviceRequest\doctorAppointment\autoSuggestion\doctors.csv')
 
 # Select the features for clustering
-X = df[['specialization', 'location', 'gender']]
+X = df[['specialization', 'location']]
+
+
+
+
+
+
 
 # Define the preprocessing steps
 preprocessor = ColumnTransformer(
     transformers=[
-        ('cat', OneHotEncoder(), ['specialization', 'location', 'gender'])
+        ('cat', OneHotEncoder(), ['specialization', 'location'])
     ]
 )
 
@@ -31,7 +37,7 @@ pipeline.fit(X)
 patient_df = pd.read_csv(r'C:\xampp\htdocs\virtualHospital\sds\serviceRequest\doctorAppointment\autoSuggestion\patient.csv')
 
 # Select the patient's features
-patient = patient_df[['specialization', 'location', 'gender']].iloc[0]
+patient = patient_df[['specialization', 'location']].iloc[0]
 
 
 # Predict the cluster
@@ -40,22 +46,18 @@ prediction = pipeline.predict(pd.DataFrame([patient]))
 # Find all doctors in the nearest cluster
 closest_doctors = df[pipeline.named_steps['clusterer'].labels_ == prediction]
 
-# Sort the doctors by specialization and location
-# closest_doctors = closest_doctors.sort_values(['specialization'])
-closest_doctors = closest_doctors[closest_doctors['specialization'] == patient['specialization']]
+# closest_doctors = closest_doctors[closest_doctors['specialization'] == patient['specialization']]
 
-# Suggest all the doctors in the nearest cluster
-# print('We suggest the following doctors:')
+# other_doctors = df[pipeline.named_steps['clusterer'].labels_ == prediction].drop(closest_doctors.index)
 
-# Find the other doctors in the cluster
-other_doctors = df[pipeline.named_steps['clusterer'].labels_ == prediction].drop(closest_doctors.index)
+# ranked_doctors = pd.concat([closest_doctors, other_doctors])
+exact_matches = closest_doctors[(closest_doctors['specialization'] == patient['specialization']) & (closest_doctors['location'] == patient['location'])]
+if exact_matches.empty:
+    closest_doctors = closest_doctors.sort_values(['specialization', 'location'])
+    ranked_doctors = closest_doctors
+else:
+    ranked_doctors = exact_matches.append(closest_doctors.drop(exact_matches.index), ignore_index=True)
 
-
-# for i, row in closest_doctors.iterrows():
-#     print(f'{row["id"]}')
-
-# Concatenate the two dataframes
-ranked_doctors = pd.concat([closest_doctors, other_doctors])
 
 
 with open('result.csv', 'w') as fpres:

@@ -1,3 +1,22 @@
+<?php
+session_start();
+include('C:\xampp\htdocs\virtualHospital\connect.php');
+
+
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+    $islogged = 1;
+    $userInfoSql = "SELECT * FROM userinfo WHERE username = '$username'";
+    $userInfo = $conn->query($userInfoSql)->fetch_assoc();
+    $name = $userInfo['name'];
+}
+else {
+    $islogged = 0;
+}
+
+
+?>
+
 <!-- 1st nav like cdc  -->
 <nav class="navbar navbar-light bg-light mt-2 ">
         <div class="container-fluid d-flex justify-content-between d-inline">
@@ -25,11 +44,28 @@
                 <button class="btn btn-outline-success" type="submit">Search</button> -->
 
               
-                <div style="display: block">
+                <div>
+                    <?php
+                        if ($islogged == 1) {
+                            ?>
+                             <div class="text-center"><?php echo $name ?></div>
+                            <div>
+                            <a class="nav-link text-white" href="/virtualHospital/usermanagement/logout.php"><button class="btn align-middle" style="background-color: purple;color: white;   border: none;border-radius: 5px; cursor: pointer;  ">Log Out</button></a>
+                            </div>
 
+                            <?php
+                        }
+                        else {
+                    ?>
+                        <div class="ml-4">Guest</div>
+                        <div>
+                        <a class="nav-link text-white" href="/virtualHospital/usermanagement/login.php"><button class="btn " style="background-color: purple;color: white;   border: none;border-radius: 5px; cursor: pointer;  ">Log In</button></a>
+                        </div>
+                    <?php
+                        }
+                        ?>
                     
-                    <a class="nav-link text-white" href="/virtualHospital/usermanagement/login.php"><img src="/virtualHospital/img/user.png" width="30px" height="30px" alt="User"></a>
-                    <div>Guest</div>
+                    
 
                 </div>
              
@@ -90,9 +126,18 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="/virtualHospital/aidoctor/">AI Doctor</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="/virtualHospital/sds/serviceManage/doctorVerifyReq.php">Doctor Verify</a>
-                    </li>
+                    <?php 
+                    if (isset($_SESSION['username'])) {
+                        if ($_SESSION['username']=='admin') {
+                            ?>
+
+                            <li class="nav-item">
+                            <a class="nav-link text-white" href="/virtualHospital/sds/serviceManage/doctorVerifyReq.php">Doctor Verify</a>
+                            </li>
+                        <?php
+                        }
+                    }
+                    ?>
 
 
                 </ul>

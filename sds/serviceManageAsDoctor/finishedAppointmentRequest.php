@@ -26,9 +26,9 @@
 <body class="container-fluid">
     
 <?php
-    session_start();
+    // session_start();
     include('../../navbar.php');
-    include('../../connect.php');
+    // include('../../connect.php');
     $apt_id = $_GET['apt_id'];
     $sql = "UPDATE appointmentrequest
             SET finished = 'yes'

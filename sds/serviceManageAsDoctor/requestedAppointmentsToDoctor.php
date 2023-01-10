@@ -26,9 +26,9 @@
 <body class="container-fluid">
     
 <?php
-    session_start();
+    // session_start();
     include('../../navbar.php');
-    include('../../connect.php');
+    // include('../../connect.php');
     $did = $_SESSION['did'];
 ?>
   

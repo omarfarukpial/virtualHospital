@@ -15,7 +15,7 @@ $auth= $conn->query($authsql);
 if ($auth->num_rows > 0) {
     
     
-    $_SESSION = $username;
+    $_SESSION['username'] = $username;
     header("Location: ../index.php");
 
 }

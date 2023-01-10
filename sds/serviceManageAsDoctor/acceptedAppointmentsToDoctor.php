@@ -26,9 +26,10 @@
 <body class="container-fluid">
     
 <?php
-    session_start();
-    $did = $_SESSION['did'];
     include('../../navbar.php');
+    // session_start();
+    $did = $_SESSION['did'];
+
 ?>
   
 

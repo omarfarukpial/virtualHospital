@@ -50,10 +50,24 @@
     <div class = "d-flex justify-content-center">
         <button  type="button" class="btn-add w-25 p-4"  onclick="location.href = 'autoSuggestion' ">Automatic Suggestion</button>
     </div>
+<?php
+    if (isset($_SESSION['username'])) {
+        ?>
 
-    <div class = "d-flex justify-content-center">
-        <button  type="button" class="btn-add w-25 p-4"  onclick="location.href = 'manualSelection' ">Manual Selection</button>
-    </div>
+        <div class = "d-flex justify-content-center">
+            <button  type="button" class="btn-add w-25 p-4"  onclick="location.href = 'manualSelection' ">Manual Selection</button>
+        </div>
+
+    <?php
+    }
+    else {
+        ?>
+            <div class = "d-flex justify-content-center">
+                <button  type="button" class="btn-add w-25 p-4"  onclick="location.href = '../../../usermanagement/login.php' ">Manual Selection</button>
+            </div>
+        <?php
+    }
+?>
     
 
  </div>       

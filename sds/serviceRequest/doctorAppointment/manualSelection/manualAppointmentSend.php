@@ -1,46 +1,3 @@
-
-<?php
-
-include('../../../../connect.php');
-
-
-
-$clinicid = $_POST['cid'];
-$docid = $_POST['did'];
-$symptom = $_POST['symptom'];
-$username = $_POST['username'];
-$problem = $_POST['problem'];
-
-
-date_default_timezone_set("Asia/Dhaka");
-$time = date("Y-m-d h:i:sa");
-
-
-
-// Userid find from username 
-
-$usernamesql = "SELECT id FROM userinfo WHERE username = '$username'";
-$userid = $conn->query($usernamesql)->fetch_assoc()['id'];
-
-
-// Upload appointment data to database
-
-$stmt = "INSERT INTO appointmentRequest (clinicid, doctorid, userid, symptom, problem, time)
-VALUES ('$clinicid', '$docid', '$userid','$symptom', '$problem', '$time')";
-$conn->query($stmt);
-
-// $stmt->close();
-$conn->close();
-
-?>
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,6 +28,42 @@ $conn->close();
 <?php
     include('../../../../navbar.php');
 ?>
+<?php
+// session_start();
+// include('../../../../connect.php');
+
+
+
+$clinicid = $_POST['cid'];
+$docid = $_POST['did'];
+$symptom = $_POST['symptom'];
+$username = $_SESSION['username'];
+$problem = $_POST['problem'];
+
+
+date_default_timezone_set("Asia/Dhaka");
+$time = date("Y-m-d h:i:sa");
+
+
+
+// Userid find from username 
+
+$usernamesql = "SELECT id FROM userinfo WHERE username = '$username'";
+$userid = $conn->query($usernamesql)->fetch_assoc()['id'];
+
+
+// Upload appointment data to database
+
+$stmt = "INSERT INTO appointmentRequest (clinicid, doctorid, userid, symptom, problem, time)
+VALUES ('$clinicid', '$docid', '$userid','$symptom', '$problem', '$time')";
+$conn->query($stmt);
+
+// $stmt->close();
+$conn->close();
+
+?>
+
+
   
 <!-- Back Button and Heading -->
 <section id="news" class="d-flex justify-content-between ml-2 mr-2">

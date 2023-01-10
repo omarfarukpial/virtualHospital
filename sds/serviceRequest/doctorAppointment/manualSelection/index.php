@@ -29,7 +29,8 @@
     
 <?php
     include('../../../../navbar.php');
-    include('../../../../connect.php');
+    // include('../../../../connect.php');
+    
 ?>
   
 <!-- Back Button and Heading -->
@@ -59,37 +60,83 @@
     <div class="col-md-4">
     <label for="symptom">Specialist Needed</label>
         <select name="symptom" id="symptom">
-            <option disable selected>Select your symptom</option>
-            <option value="Cardiology">Cardiology</option>
-            <option value="Darmatology">Darmatology</option>
-            <option value="Orthopedics">Orthopedics</option>
-            <option value="GeneralMedicine">GeneralMedicine</option>
-            <option value="Gynecology">Gynecology</option>
+                <option selected>Select Specialists</option>
+                <option value="Allergy and immunology">Allergy and immunology</option>
+                <option value="Anesthesiology">Anesthesiology</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="Dermatology">Dermatology</option>
+                <option value="Diagnostic radiology">Diagnostic radiology</option>
+                <option value="Emergency medicine">Emergency medicine</option>
+                <option value="Family medicine">Family medicine</option>
+                <option value="General Medicine">General medicine</option>
+                <option value="Gynecology">Gynecology</option>
+                <option value="Internal medicine">Internal medicine</option>
+                <option value="Medical genetics">Medical genetics</option>
+                <option value="Neurology">Neurology</option>
+                <option value="Nuclear medicine">Nuclear medicine</option>
+                <option value="Obstetrics and gynecology">Obstetrics and gynecology</option>
+                <option value="Ophthalmology">Ophthalmology</option>
+                <option value="Orthopedics">Orthopedics</option>
+                <option value="Pathology">Pathology</option>
+                <option value="Pediatrics">Pediatrics</option>
+                <option value="Physical medicine and rehabilitation">Physical medicine and rehabilitation</option>
+                <option value="Preventive medicine">Preventive medicine</option>
+                <option value="Psychiatry">Psychiatry</option>
+                <option value="Radiation oncology">Radiation oncology</option>
+                <option value="Surgery">Surgery</option>
+                <option value="Urology">Urology</option>
         </select>
     </div>
     <div class="col-md-4">
+            <label for="cid">Select Clinic</label>
+            <select name="cid" id = "cid" >
+                <option disable selected> Select Clinic</option>
+                <?php
+                    $csql = "SELECT id, clinicname FROM clinic";
+                    $cres = $conn->query($csql);
+                    while ($crow = $cres->fetch_assoc()) {
+                        printf(
+                            '<option value="%s">%s', $crow['id'], $crow['clinicname']
+                        );
+                    }
+
+                ?>
+            </select>
+            </div>
+    <!-- <div class="col-md-4">
     <label for="username">Username</label>
         <input type="text" id="username" name="username" onkeyup="userinfofill(this.value)" value="">
-    </div>
-    <div class="col-md-4">
+    </div> -->
+    <!-- <div class="col-md-4">
     <label for="name">Name</label>
         <input type="text" id="name" name="name" >
-    </div>
+    </div> -->
 </div>
         
 <div class="row">
-    <div class="col-md-4">
+        <div class="col-md-4">
+            <label for="did">Select Doctor</label>
+            <select name="did" id = "did" onchange="showDoc(this.value)" >
+                <option disable selected> Select Doctor</option>
+                
+            </select>
+            </div>
+    <!-- <div class="col-md-4">
     <label for="age">Age</label>
         <input type="text" id="age" name="age" >
-    </div>
-    <div class="col-md-4">
+    </div> -->
+    <!-- <div class="col-md-4">
     <label for="gender">Gender</label>
         <input type="text" id="gender" name="gender" >
     </div>
     <div class="col-md-4">
     <label for="phn">Phone Number</label>
         <input type="text" id="phn" name="phn" >
-    </div>
+    </div> -->
+    <div class="col-md-4">
+            <label for="problem">Tell us about your problem</label>
+        <textarea class="form-control mb-4" name = "problem" id="problem" rows="5"></textarea>
+            </div>
 </div>
         
 
@@ -97,7 +144,7 @@
 
         <div class="row">
             <div class="col-md-4">
-            <label for="location">Current Location</label>
+            <!-- <label for="location">Current Location</label>
           <select id="location" name="location">
             <option disabled selected>Select District</option>
             <option value="Bagerhat">Bagerhat</option>
@@ -164,38 +211,14 @@
             <option value="Sylhet">Sylhet</option>
             <option value="Tangail">Tangail</option>
             <option value="Thakurgaon">Thakurgaon</option>
-          </select>
+          </select> -->
             </div>
-            <div class="col-md-4">
-            <label for="cid">Select Clinic</label>
-            <select name="cid" id = "cid" >
-                <option disable selected> Select Clinic</option>
-                <?php
-                    $csql = "SELECT id, clinicname FROM clinic";
-                    $cres = $conn->query($csql);
-                    while ($crow = $cres->fetch_assoc()) {
-                        printf(
-                            '<option value="%s">%s', $crow['id'], $crow['clinicname']
-                        );
-                    }
-
-                ?>
-            </select>
-            </div>
-            <div class="col-md-4">
-            <label for="did">Select Doctor</label>
-            <select name="did" id = "did" onchange="showDoc(this.value)" >
-                <option disable selected> Select Doctor</option>
-                
-            </select>
-            </div>
+            
+            
         </div>
       
         <div class="row">
-            <div class="col-md-4">
-            <label for="problem">Tell us about your problem</label>
-        <textarea class="form-control mb-4" name = "problem" id="problem" rows="5"></textarea>
-            </div>
+            
         </div>
 
 

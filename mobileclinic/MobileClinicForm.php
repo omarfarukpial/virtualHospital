@@ -33,7 +33,7 @@
 <button class="invisible" type="button" class="btn-add"  onclick="location.href = 'MobileClinicForm.php' ">Add Mobile Clinic</button>
 </div>
 <div>
-    <h1 class="text-center text-white header-font mt-4"> Clinic Registration Form</h1>
+    <h1 class="text-center text-white header-font mt-4"> Mobile Clinic Registration Form</h1>
 </div>
 <div>
 <button type = "button" class="btn-back" onclick="history.back()"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>

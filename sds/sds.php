@@ -50,17 +50,67 @@
 
 </section>
 
+
     
  <div class="mt-5">
-    <div class = "d-flex justify-content-center">
-        <button  type="button" class="btn-add w-25 p-4"  onclick="location.href = 'serviceRequest' ">Request for Services</button>
-    </div>
-    <div class = "d-flex justify-content-center">
-        <button type="button" class="btn-add w-25 p-4"  onclick="location.href = 'serviceManage' ">Manage Service</button>
-    </div>
-    <div class = "d-flex justify-content-center">
+
+ <?php
+    if (isset($_SESSION['username'])) {
+        if($_SESSION['username'] != 'admin') { 
+            ?>
+            <div class = "d-flex justify-content-center">
+                <button  type="button" class="btn-add w-25 p-4"  onclick="location.href = 'serviceRequest' ">Request for Services</button>
+            </div>
+        <?php
+        }
+    }
+    else {
+        ?>
+            <div class = "d-flex justify-content-center">
+                <button  type="button" class="btn-add w-25 p-4"  onclick="location.href = 'serviceRequest' ">Request for Services</button>
+            </div>
+        <?php
+    }
+    ?>
+
+
+
+<?php
+    if (isset($_SESSION['username'])) {
+        if($_SESSION['username'] == 'admin') { 
+            ?>
+                <div class = "d-flex justify-content-center">
+                    <button type="button" class="btn-add w-25 p-4"  onclick="location.href = 'serviceManage' ">Manage Service</button>
+                </div>
+        <?php
+        }
+    }
+    ?>
+
+
+<?php
+    if (isset($_SESSION['username'])) {
+        if($_SESSION['username'] != 'admin') { 
+            ?>
+            <div class = "d-flex justify-content-center">
         <button type="button" class="btn-add w-25 p-4"  onclick="location.href = 'serviceManageAsDoctor' ">Manage Service As Doctor</button>
     </div>
+        <?php
+        }
+    }
+    else {
+        ?>
+            <div class = "d-flex justify-content-center">
+        <button type="button" class="btn-add w-25 p-4"  onclick="location.href = 'serviceManageAsDoctor' ">Manage Service As Doctor</button>
+    </div>
+        <?php
+    }
+    ?>
+
+
+
+    
+   
 
  </div>       
 

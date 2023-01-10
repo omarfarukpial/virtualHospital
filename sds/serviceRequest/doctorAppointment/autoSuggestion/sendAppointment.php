@@ -1,8 +1,3 @@
-<?php
-session_start();
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +51,7 @@ session_start();
 
 <?php
 
-include('../../../../connect.php');
+
 
 
 
@@ -88,7 +83,7 @@ $conn->query($stmt);
 
 
 
-session_destroy();
+// session_destroy();
 
 // $stmt->close();
 $conn->close();

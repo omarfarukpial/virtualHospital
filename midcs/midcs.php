@@ -36,10 +36,36 @@
 
 <section id="news" class="container-xxl d-flex justify-content-between mb-4 rounded bg-info shadow">
 
-    <div>
-    <button type="button" class="btn-add"  onclick="location.href = 'midcsForm.php' ">Add MIDCS</button>
-        
-    </div>
+
+
+    <?php
+    if (isset($_SESSION['username'])) {
+        if ($_SESSION['username'] == 'admin') {
+            ?>
+                <div>
+                <button type="button" class="btn-add"  onclick="location.href = 'midcsForm.php' ">Add MIDCS</button>
+                </div>
+
+        <?php
+        }
+        else {
+            ?>
+            <div>
+                <button type="button" class="btn-add invisible"  onclick="location.href = 'DocForm.php' ">Add Doctor</button>
+            </div>
+
+            <?php
+        }
+    }
+    else {
+        ?>
+            <div>
+                <button type="button" class="btn-add invisible"  onclick="location.href = 'DocForm.php' ">Add Doctor</button>
+            </div>
+    <?php
+    }
+
+    ?>
 
     <div>
     <h1 class="text-center text-white header-font mt-4"> Mobile Infectious Disease Control System</h1>

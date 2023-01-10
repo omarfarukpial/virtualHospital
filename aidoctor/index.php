@@ -26,11 +26,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+   
+   
 
+    
+ 
  
 
 </head>
-<body class="container-fluid">
+<body class="container-fluid content">
     
 
     
@@ -62,6 +66,9 @@
 
 
     <div class="container-xxl">
+    
+    <h2 class="text-center">Use <span style="color:red">CTRL+F</span>  to find quickly</h2>
+
 
         
     <form class = "dform" action="redirectpyfile.php" method="post">
@@ -263,7 +270,7 @@ include('../footer.php');
 ?>
 
 
-    
+
 </body>
 </html>
 
